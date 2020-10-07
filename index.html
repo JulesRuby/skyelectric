@@ -15,7 +15,7 @@
 	<!-- Page Wrapper (struggling to decide if this is necessary?) -->
 	<div class="page-wrapper">
 		<!-- Header | to contain: vertical layered nav(logo/home-link + business contact strip + site navigation) -->
-		<header class="hero-header">
+		<header id="header" class="hero-header">
 			<!-- Business contact info -->
 			<div class="contact-strip">
 				<ul class="contact-list">
@@ -99,7 +99,7 @@
 			</h6> -->
 
 			<button type="button" class="cta button">
-				Get Estimate!
+				<a href="#contact">Get Estimate</a>
 			</button>
 		</header>
 
@@ -187,7 +187,7 @@
 						</div>
 				</article>
 	
-				<button class="button read-more" type="button">Learn More</button>
+				<button class="button read-more" type="button"><a href="#header">Learn More</a></button>
 			</section>
 			
 			<!-- Small about section leading into another page that we'll talk more about the company, I guess? This one is tough -->
@@ -204,7 +204,7 @@
 
 				<img src="./assets/images/aboutsky.jpg" alt="Yas, bitch">
 				
-				<button class="button read-more" type="button">Learn More</button>
+				<button class="button read-more" type="button"><a href="#header">Learn More</a></button>
 			</section>
 	
 			<!-- Projects / "Our Work" Something about how we invented lighting a Tesla paid money to eat our ancestors' asses-->
@@ -232,7 +232,7 @@
 				</article>
 
 	
-				<button class="button" type="button">View Gallery</button>
+				<button class="button" type="button"><a href="#header">View Gallery</a></button>
 			</section>
 	
 			<!-- Testimonials This one is going to be caught in the pipline for a while I think. We'll add it in when we can generate some content for it -->
@@ -279,7 +279,7 @@
 	
 			<!-- Contact Section Include as useful of apporximation of location as I am allowed to include as well as a contact form -->
 			<!-- Might also be worth it to include to flow process of getting in touch with the company as well? -->
-			<section class="section contact">
+			<section id="contact" class="section contact">
 				<h2 class="section-heading">Get in Touch!</h2>
 	
 				<article class="blonk contact-process flex-row-aro">
@@ -303,9 +303,8 @@
 					<p>skyelectric1101@gmail.com</p>
 	
 					<form class="contact-form" action="#" method="POST">
-						<fieldset disabled>
-
-							<legend class="form-legend">Contact Us!</legend>
+						
+							<h3 class="form-heading">Contact Us!</h3>
 	
 							<div class="label-input-wrap">
 								<label class="form-label" for="name">Name:</label>
@@ -321,7 +320,6 @@
 								<label class="form-label" for="message">Message:</label>
 								<textarea class="form-input form-textarea" name="message" id="message" cols="30" rows="10"></textarea>
 							</div>
-						</fieldset>
 
 						<button class="button" type="submit">Submit</button>
 					</form>
