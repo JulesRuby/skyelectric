@@ -1,0 +1,541 @@
+@import url("./variables.css");
+@import url("./utility-classes.css");
+
+/* vvvvvvvvvv Basics + Resets vvvvvvvvvv */
+.vport {
+	margin: auto;
+	background-color: var(--detail);
+	padding: 1rem 0;
+	text-align: center;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-size: var(--fluid-rem);
+	font-family: var(--body-family);
+	color: var(--quat);
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+h1 {
+	font-size: var(--h1-size);
+	font-weight: var(--wt800)
+}
+
+h2 {
+	font-size: var(--h2-size);
+	font-weight: var(--wt700)
+}
+
+h3 {
+	font-size: var(--h3-size);
+	font-weight: var(--wt600)
+}
+
+h4 {
+	font-size: var(--h4-size);
+	font-weight: var(--wt500)
+}
+h5 {
+	font-size: var(--h5-size);
+	font-weight: var(--wt400)
+}
+
+h6 {
+	font-size: var(--h6-size);
+	font-weight: var(--wt400)
+}
+
+.page-wrapper {
+	min-height: 100vh;
+}
+
+/* ^^^^^^^^^^ Base Styles ^^^^^^^^^^ */
+
+
+/* vvvvvvvvvv HEADER vvvvvvvvvv */
+.hero-header {
+	position: relative;
+	min-height: 80vh; /** rough **/
+
+	background: url(/assets/images/sky.jpg) center no-repeat var(--sec);
+}
+
+.hero-header::before {
+	position: absolute;
+	display: block;
+	content: "";
+	background-color: var(--quad);
+	background-color: #333;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: calc(100% - 7.5rem);
+	opacity: 0.6;
+}
+
+.hero-header > h1,
+.hero-header button {
+	position: relative;
+	color: var(--prim);
+}
+
+header .accent-span {
+	color: var(--detail);
+
+}
+header h1 .accent-span:last-child {
+	font-style: italic;
+}
+
+.cta {
+	border: 2px solid var(--prim);
+}
+
+/* ^^^^^^^^^^ HEADER ^^^^^^^^^^ */
+
+/* vvvvvvvvvv NAVIGATION vvvvvvvvvv */
+.navlink {
+	text-transform: uppercase;
+}
+
+.contact-list {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 5vh; /** rough **/
+	height: 2.5rem; /** rough **/
+
+	background-color: var(--prim);
+}
+
+.navbar {
+	height: 5rem;
+
+	align-items: center;
+	background-color: var(--quat);
+}
+
+.nav-logo > img {
+	width: 5rem;
+}
+
+.nav-menu {
+	position: fixed;
+	top: 7.5rem;
+	right: -100%;
+
+	height:100%;
+	width:80%;
+
+	letter-spacing: .1rem;
+	font-weight: var(--wt700);
+
+	background-color: var(--quat);
+	transition: 100ms;
+
+	z-index: 100;
+}
+
+	/* Expand the mobile menu */
+.expanded {
+	right: 0;
+}
+
+.navlink {
+	position: relative;
+	display: block;
+
+	padding: 1.5rem;
+
+	text-align: center;
+	color: var(--prim);
+
+	transition: 200ms; /** No transition in mobile **/
+}
+
+	/* Using pseudo elements to capture an underline effect for :hover && :active states*/
+.navlink::after {
+	position: absolute;
+	content: "";
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+
+	height: 0.2rem;
+	width: 100%;
+
+	opacity: 0;
+
+	background: var(--detail);
+	background: linear-gradient(90deg, rgba(250,159,66,0) 0%, rgba(250,159,66,0.2) 30%, rgba(250,159,66,1) 50%, rgba(250,159,66,0.2) 70%, rgba(250,159,66,0) 100%);
+
+	transition: opacity 100ms ease-in;
+}
+
+	/* --The hover effect will be rerserved for desktops, but I am using it here to help me visualize things. */
+.navlink:hover {
+	position: relative;
+}
+
+.navlink:hover::after {
+	opacity: 1;
+}
+
+.active-link {
+	color: var(--detail);
+}
+
+.active-link::after {
+	opacity: 1;
+}
+
+.hamburger {
+	position: relative;
+	margin-right: .5rem;
+	
+	width: 3rem;
+	height: 3rem;
+
+	border-radius: 2px;
+	background-color:var(--quat);
+}
+
+.hamburger > span {
+	position: relative;
+	display: block;
+	
+	width: 100%;
+	height: 4px;
+
+	border-radius: 1px;
+	color: var(--prim);
+	background-color: var(--prim);
+	opacity: 1;
+
+	transition: 150ms;
+}
+
+	/* Hamburger Open/Close state + transition */
+.hamburger.open > span {
+	position: absolute;
+}
+
+.hamburger.open > span:nth-child(1) {
+	transform: rotate(45deg);
+	transform-origin: center center;
+}
+
+.hamburger.open > span:nth-child(2) {
+	opacity: 0;
+}
+
+.hamburger.open > span:nth-child(3) {
+	transform: rotate(-45deg);
+	transform-origin: center center;
+}
+
+/* ^^^^^^^^^^ NAVIGATION ^^^^^^^^^^ */
+
+/* vvvvvvvvvv HOME--FEATURED SERVICES vvvvvvvvvv */
+
+
+
+.service-card {
+	/* temp dimensions */
+	height: 50vw;
+	width: 100%;
+	/* temp dimensions */
+
+	text-align: center;
+}
+
+.service-card > img, 
+.cert-card > img {
+	margin: auto;
+	width: 50%;
+}
+
+.cert-card {
+	text-align: center;
+}
+
+
+
+/* ^^^^^^^^^^ HOME--FEATURED SERVICES ^^^^^^^^^^ */
+
+/* vvvvvvvvvv HOME--ABOUT US vvvvvvvvvv */
+
+
+
+/* ^^^^^^^^^^ HOME--ABOUT US ^^^^^^^^^^ */
+
+/* vvvvvvvvvv HOME--PROJECTS vvvvvvvvvv */
+
+.projects-gallery {
+	/* gap: 1rem; */
+	/* margin: 0; */
+	grid-auto-rows: 50vw;
+}
+
+.project-card {
+
+}
+
+
+
+/* ^^^^^^^^^^ HOME--PROJECTS ^^^^^^^^^^ */
+
+/* vvvvvvvvvv HOME--TESTIMONIALS vvvvvvvvvv */
+
+	.testimonial-card {
+		margin: 1rem;
+		padding-top: 2rem;
+		background-color: var(--prim);
+
+		/* border: 1px solid var(--quat); */
+		border-radius: 4px;
+		box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.3);
+	}
+
+	.testimonial-card > img {
+		margin: 0 auto 2rem auto;
+		clip-path: circle(50% at 50% 50%);
+		width: 25%;
+		/* border-radius: 50%; */
+	}
+
+	.star-bar {
+		margin: 1rem;
+		padding: 1rem;
+		height: 4rem;
+		
+		border-radius: 5px;
+		box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.2);
+	}
+
+	.star-bar img {
+		fill: var(--detail);
+	}
+	.excerpt {
+		/* test dimensions */
+		margin: 1rem;
+		padding: 1rem;
+		min-height: 10rem;
+		/* test dimensions */
+	}
+
+	.customer {
+		display: block;
+		padding-top: 1rem;
+		font-style: italic;
+	}
+ 
+/* ^^^^^^^^^^ HOME--TESTIMONIALS ^^^^^^^^^^ */
+
+/* vvvvvvvvvv HOME--CONTACT vvvvvvvvvv */
+
+	.contact-process {
+		padding: var(--r4) 0;
+		height: min-content;
+	}
+
+	.process-cards {
+		/* temp dimensions */
+		justify-content: center;
+		align-items: center;
+		width: 5rem;
+		height: 5rem;
+		/* temp dimensions */
+
+		color: var(--detail);
+		background-color: var(--sec);
+		border-radius: 50%;
+	}
+
+	.process-cards p {
+		font-size: var(--h1-size);
+		font-weight: var(--wt900);
+	}
+
+	.form-map-container {
+		padding : 0 var(--r4);
+	}
+
+	.contact-form {
+		padding: var(--r5);
+		
+		text-align: center;
+		background-color: var(--sec);
+		border-radius: 5px;
+	}
+
+
+/* ^^^^^^^^^^ HOME--CONTACT ^^^^^^^^^^ */
+
+/* vvvvvvvvvv HOME--FOOTER vvvvvvvvvv */
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	text-align: center;
+	color: var(--prim);
+	background-color: var(--quat);
+}
+
+
+/* ^^^^^^^^^^ HOME--FOOTER ^^^^^^^^^^ */
+
+
+
+/* vvvvvvvvvv Mobile Styles vvvvvvvvvv */
+
+@media screen and (min-width: 20rem) {
+
+}
+
+/* ^^^^^^^^^^ Mobile Styles ^^^^^^^^^^ */
+
+/* vvvvvvvvvv Small Tablet Styles vvvvvvvvvv */
+
+@media screen and (min-width: 48rem) {
+	
+}
+
+/* ^^^^^^^^^^ Small Tablet Styles ^^^^^^^^^^ */
+
+/* vvvvvvvvvv Large Tablet Styles vvvvvvvvvv */
+
+@media screen and (min-width: 50rem) {
+	body {
+		background-color:var(--prim);
+	}
+}
+
+/* ^^^^^^^^^^ Large Tablet Styles ^^^^^^^^^^ */
+
+/* vvvvvvvvvv Desktop Styles vvvvvvvvvv */
+
+@media screen and (min-width: 90rem) {
+	
+}
+
+/* ^^^^^^^^^^ Desktop Styles ^^^^^^^^^^ */
+
+
+/* testing outlines */
+/* main {
+	outline: var(--wrap);
+}
+
+header,
+section {
+	outline: var(--section);
+}
+
+.contact-strip,
+nav,
+article,
+.hamburger {
+	outline: var(--component);
+}
+
+.service-card,
+.cert-card {
+	outline: var(--card);
+} */
+
+/* placeholder dimensions for development */
+.section {
+	padding: 2rem 0rem;
+	/* min-height: 100vh; */
+}
+
+article {
+	margin: 2rem 1rem;
+	min-height: 10vh;
+}
+
+footer {
+	min-height: 10vh;
+}
+
+
+
+
+
+
+
+/* Use these later? I accidentally built the menu desktop-first, again ;-; */
+
+/* .nav-menu {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+
+	background-color: var(--quat);
+}
+
+.nav-menu > li {
+	margin : 0 auto
+}
+
+.hamburger {
+	padding: .1rem .2rem;
+	width: 3.2rem;
+	height: 3rem;
+
+	border: 1px solid var(--quat);
+	border-radius: 2px;
+	background-color:var(--quat);
+
+	box-shadow: 1px 1px 0px 0px darkgoldenrod,
+							2px 2px 0px 0px darkgoldenrod;
+}
+
+.hamburger > span {
+	display: block;
+
+	width: 100%;
+	height: 4px;
+
+	border-radius: 1px;
+	color: var(--prim);
+	background-color: var(--prim);
+}
+
+.navlink {
+	display: inline-block;
+
+	padding: 1rem;
+	width: 12ch;
+
+	text-align: center;
+
+	color: var(--prim);
+	background-color: var(--sec);
+}
+
+.nav-menu > li:first-child {
+	margin: 0 auto 0 0;
+}
+
+
+.nav-menu > li:first-child > .navlink {
+	height: 10vh;
+	width: 10vw;
+
+	align-self: flex-end;
+
+	background-color:var(--tert);
+} */

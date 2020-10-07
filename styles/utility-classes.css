@@ -1,0 +1,140 @@
+/* --------------Utility Classes ------------*/
+
+/* SPACING */
+
+
+/* DA CHUNKS */
+
+.section {
+	display: grid;
+	grid-template-columns: 1fr;
+	/* grid-template-rows: ; */
+	justify-items: center;
+}
+
+.section h2 {
+	text-align: center;
+}
+
+.section > p {
+	padding: var(--r4);
+}
+
+.blonk {
+	display: block;
+	width: 100%;
+
+	background-color: var(--tert);
+}
+
+.button {
+	display: inline-block;
+	margin: var(--r5) auto;
+	padding: .75rem 1rem;
+	height: min-content;
+
+	text-transform: uppercase;
+	font-weight: var(--wt600);
+	letter-spacing: .05rem;
+	color: var(--quat);
+
+	border: 4px solid var(--quat);
+	border-radius: .2rem;
+}
+/* ---------LAYOUTS---------- */
+/* Basic Flex Row Container */
+.flex-row-eve {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
+.flex-row-bet {
+	display: flex;
+	justify-content: space-between;
+}
+
+.flex-row-aro {
+	display: flex;
+	justify-content: space-around;
+}
+
+.flex-row-cen {
+	display: flex;
+	justify-content: center;
+}
+
+/* Basic Flex Container Container */
+.flex-col-eve {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.flex-col-bet {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.flex-col-aro {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.flex-col-cen {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* Grid Stuff? */
+.tile-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+
+	justify-items: center;
+	align-items: center;
+}
+
+/* ---------FORMS----------- */
+.form-legend {
+	margin: var(--r3) auto;
+
+	font-size: var(--h3-size);
+	font-weight: var(--wt500);
+}
+
+.label-input-wrap {
+	/* display: block; */
+	margin-bottom: var(--r3);
+}
+
+.form-label{
+	display: block;
+	margin-bottom: var(--r1);
+	padding-left: 2px;
+
+	text-align: left;
+}
+
+.form-input {
+	display: block;
+	/* temp stuff */
+	padding: var(--r3);
+	width: 100%;
+	/* temp stuff */
+
+	text-align: left;
+	background-color: var(--prim);
+	border-radius: 5px;
+}
+
+.form-textarea {
+	width: 100%;
+}
+
+.form-textarea {
+	resize: none;
+}

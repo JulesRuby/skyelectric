@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  /* Just border settings applied to gauge and test positioning of elements */
+  --wrap: 5px solid lightgreen;
+	--section: 3px dashed mediumvioletred;
+  --component: 3px dotted red;
+  --card: 3px inset aquamarine;
+	
+	/*  Colors  */
+	--prim: hsla(0, 0%, 100%, 1);
+	--sec: hsla(198, 63%, 38%, 1);
+	--tert: hsla(354, 71%, 44%, 1);
+	--quat:  rgba(0, 0, 0, 1);
+	--detail:  rgba(250, 159, 66, 1);
+	/* --detail-20:  rgba(250, 159, 66, 0.2);
+	--detail-0:  rgba(250, 159, 66, 0); */
+
+
+	/* --celadon-blue: hsla(198, 63%, 38%, 1);
+	--black: hsla(0, 0%, 0%, 1);
+	--red-ncs: hsla(354, 71%, 44%, 1);
+	--white: hsla(0, 0%, 100%, 1);
+	--deep-saffron: hsla(30, 95%, 62%, 1);
+
+	--celadon-blue: rgba(36, 123, 160, 1);
+	--black: rgba(0, 0, 0, 1);
+	--red-ncs: rgba(191, 32, 47, 1);
+	--white: rgba(255, 255, 255, 1);
+	--deep-saffron: rgba(250, 159, 66, 1); */
+	
+
+  /* ---------------------TYPOGRAPHY--------------------- */
+  --base-type-size: 12px;
+  --type-modifier: 0.5;
+  --fluid-rem: calc(
+    var(--base-type-size) + var(--type-modifier) * 1vw
+  );
+  --fluid-rem: calc(var(--base-type-size) + var(--type-modifier) * 1vw);
+  --font-mod: 1.15;
+
+	/* Font-Families */
+  --body-family: "Fira Sans", sans-serif;
+  --head-family: "Orbitron", sans-serif;
+
+  /* Font-Sizing */
+  --h6-size: calc(1rem * var(--font-mod));
+  --h5-size: calc(var(--font-mod) * var(--h6-size));
+  --h4-size: calc(var(--font-mod) * var(--h5-size));
+  --h3-size: calc(var(--font-mod) * var(--h4-size));
+  --h2-size: calc(var(--font-mod) * var(--h3-size));
+  --h1-size: calc(var(--font-mod) * var(--h2-size));
+
+	/* Font-Weight */
+  --wt100: 100;
+  --wt200: 200;
+  --wt300: 300;
+  --wt400: 400;
+  --wt500: 500;
+  --wt600: 600;
+  --wt700: 700;
+  --wt800: 800;
+  --wt900: 900;
+
+
+
+  /* ---------------------SPACING--------------------- */
+
+  /* Padding || Margins */
+  --r1: 0.25rem;
+  --r2: 0.5rem;
+  --r3: 0.75rem;
+  --r4: 1rem;
+  --r5: 1.5rem;
+  --r6: 2rem;
+  --r7: 2.5rem;
+}
+/* ---------------------------------------- Resets ---------------------------------------------------------- */
+
+:root {
+  font-size: var(--fluid-rem);
+  /* This is declaring that the root font-size of the document is the calculated --fluid-rem value. this actually causes the rem of the document to remain fluid based on the actual size of the viewport, which will reduce the amount of actual typography styling delcarations down the road. Also this allows me to create a lot of scaling measurements on page elements by referencing rems if I like, and also allows the use of v-units to be a more cohesive experience */
+}
