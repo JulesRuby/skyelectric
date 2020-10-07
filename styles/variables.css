@@ -34,8 +34,7 @@
   --base-type-size: 12px;
   --type-modifier: 0.5;
   --fluid-rem: calc(
-    var(--base-type-size) + var(--type-modifier) * 1vw
-  );
+    var(--base-type-size) + var(--type-modifier) * 1vw);
   --fluid-rem: calc(var(--base-type-size) + var(--type-modifier) * 1vw);
   --font-mod: 1.15;
 
