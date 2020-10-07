@@ -349,6 +349,10 @@ header h1 .accent-span:last-child {
 		height: min-content;
 	}
 
+	.form-map-container {
+		padding : 0 var(--r4);
+	}
+
 	.process-cards {
 		/* temp dimensions */
 		justify-content: center;
@@ -367,16 +371,29 @@ header h1 .accent-span:last-child {
 		font-weight: var(--wt900);
 	}
 
-	.form-map-container {
-		padding : 0 var(--r4);
+	.contact-form-ul {
+
+		text-align: center;
+		line-height: 1.5;
 	}
 
+	.contact-form-ul > li {
+		margin-bottom: var(--r3);
+	}
+	
 	.contact-form {
 		padding: var(--r5);
 		
 		text-align: center;
 		background-color: var(--sec);
 		border-radius: 5px;
+	}
+
+	.map {
+		padding: var(--r4) 0;
+
+		max-width: 100%;
+		height: auto;
 	}
 
 
