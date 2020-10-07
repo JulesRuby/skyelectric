@@ -66,8 +66,8 @@ h6 {
 	position: relative;
 	min-height: 80vh; /** rough **/
 
-	background: url(./assets/images/sky.jpg) center no-repeat var(--sec);
-	background: url(/assets/images/sky.jpg) center no-repeat var(--sec);
+	/* background: url(./assets/images/sky.jpg) center no-repeat var(--sec); */
+	background: url(../assets/images/sky.jpg) center no-repeat var(--sec);
 }
 
 .hero-header::before {
