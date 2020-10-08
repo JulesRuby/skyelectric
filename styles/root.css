@@ -67,10 +67,10 @@ h6 {
 	min-height: 80vh; /** rough **/
 
 	/* background: url(./assets/images/sky.jpg) center no-repeat var(--sec); */
-	background: url(../assets/images/sky.jpg) center no-repeat var(--sec);
+	/* background: url(../assets/images/sky.jpg) center no-repeat var(--sec); */
 }
 
-.hero-header::before {
+/* .hero-header::before {
 	position: absolute;
 	display: block;
 	content: "";
@@ -81,10 +81,33 @@ h6 {
 	width: 100%;
 	height: calc(100% - 7.5rem);
 	opacity: 0.6;
+
+} */
+
+.hero-banner {
+	position: relative;
+	top: calc(var(--contact-strip-ht) + var(--navbar-ht));
+	height: var(--hero-banner-ht);
+
+	background: url(../assets/images/sky.jpg) center no-repeat var(--sec);
 }
 
-.hero-header > h1,
-.hero-header button {
+.hero-banner::before {
+	position: absolute;
+	display: block;
+	content: "";
+	background-color: var(--quad);
+	background-color: #333;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: calc(100% - 15vh);
+	height: 100%;
+	opacity: 0.6;
+}
+
+.hero-banner > h1,
+.hero-banner button {
 	position: relative;
 	color: var(--prim);
 }
@@ -108,34 +131,43 @@ header h1 .accent-span:last-child {
 	text-transform: uppercase;
 }
 
+.contact-strip {
+	position: fixed;
+	height: var(--contact-strip-ht);
+	background-color: var(--prim);
+
+	z-index: 100;
+}
+
 .contact-list {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 5vh; /** rough **/
-	height: 2.5rem; /** rough **/
-
-	background-color: var(--prim);
 }
 
 .navbar {
-	height: 5rem;
+	position: fixed;
+	width: 100%;
+	top: var(--contact-strip-ht);
+	height: var(--navbar-ht);
 
 	align-items: center;
 	background-color: var(--quat);
+
+	z-index:100;
 }
 
 .nav-logo > img {
-	width: 5rem;
+	width: var(--navbar-ht);
 }
 
 .nav-menu {
 	position: fixed;
-	top: 7.5rem;
+	top: calc(var(--contact-strip-ht) + var(--navbar-ht));
 	right: -100%;
 
-	height:100%;
-	width:80%;
+	height: 100%;
+	width: calc(100% - var(--navbar-ht));
 
 	letter-spacing: .1rem;
 	font-weight: var(--wt700);
@@ -256,17 +288,24 @@ header h1 .accent-span:last-child {
 	width: 100%;
 	/* temp dimensions */
 
+	border: solid 2px var(--prim);
+}
+
+.service-card h3 {
+	/* h3 hierarchy but h4 sizing */
+	font-size: var(--h4-size);
+}
+
+.service-card,
+.cert-card {
+	align-items: center;
 	text-align: center;
 }
 
 .service-card > img, 
 .cert-card > img {
-	margin: auto;
-	width: 50%;
-}
-
-.cert-card {
-	text-align: center;
+	/* margin: auto; */
+	max-width: 50%;
 }
 
 

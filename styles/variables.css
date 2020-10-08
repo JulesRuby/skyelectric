@@ -73,6 +73,15 @@
   --r5: 1.5rem;
   --r6: 2rem;
   --r7: 2.5rem;
+
+  /* ---------------------KEY ELEMENT SIZES--------------------- */
+
+  /* Header Contents */
+  --header-ht: 80vh;
+  --contact-strip-ht: 5vh;
+  --navbar-ht: 10vh;
+  --hero-banner-ht: calc(var(--header-ht) - (var(--contact-strip-ht) + var(--navbar-ht)));
+  /* --hero-banner-ht: 65vh; */
 }
 /* ---------------------------------------- Resets ---------------------------------------------------------- */
 
