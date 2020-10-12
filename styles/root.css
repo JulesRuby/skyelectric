@@ -195,7 +195,9 @@ header h1 .accent-span:last-child {
 	left: 0;
 	height: var(--contact-strip-ht);
 	background-color: var(--prim);
+	opacity: 1;
 
+	transition: all 150ms ease;
 	z-index: 100;
 }
 
@@ -206,6 +208,10 @@ header h1 .accent-span:last-child {
 	align-items: center;
 }
 
+.contact-link {
+	padding: 1rem;
+}
+
 .navbar {
 	position: fixed;
 	width: 100%;
@@ -214,8 +220,16 @@ header h1 .accent-span:last-child {
 
 	align-items: center;
 	background-color: var(--quat);
+	opacity: 1;
 
+	transition: all 150ms ease;
 	z-index:100;
+}
+
+.scroll-hide {
+	background-color: var(--sec);
+	/* transform: translateY(-15vh); */
+	opacity: 0;
 }
 
 .nav-logo > img {
@@ -454,7 +468,7 @@ header h1 .accent-span:last-child {
 	}
 
 	.form-map-container {
-		padding : 0 var(--r4);
+		padding : var(--r4);
 	}
 
 	.process-cards {
@@ -486,12 +500,83 @@ header h1 .accent-span:last-child {
 	}
 	
 	.contact-form {
+		/* position: relative; */
 		padding: var(--r5);
 		
 		text-align: center;
 		background-color: var(--sec);
 		border-radius: 5px;
 	}
+
+	/* ----------------TEST CSS FOR INPUT IDEA-------------- */
+	
+	.label-input-wrap {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.test-label {
+		position: absolute;
+
+		width: 100%;
+		height: 100%;
+		bottom: 0px;
+		left: 0%;
+
+		border-bottom: 1px solid black;
+		pointer-events: none;
+
+	}
+
+	.test-label::after {
+		content: "";
+		position: absolute;
+
+		height: 100%;
+		width: 100%;
+		left: 0;
+		bottom: -1px;
+		border-bottom: 3px solid var(--detail);
+
+		transform: translateX(-100%);
+		transition: all 200ms ease;
+
+	}
+
+	.test-label-span {
+		position: absolute;
+		bottom: 5px;
+		left: 0px;
+
+		transition: all 200ms ease;
+	}
+
+	.test-input {
+		border: none;
+		background-color: var(--sec);
+		border: none;
+		padding-top: 20px;
+
+		outline: none;
+	}
+
+
+	/* The + selector chooses whatever is below the root selector, in this case the root is form .test-input:focus. */
+	/* This may necessitate the label being shifted below the input in the HTML document, but I dislike that structure, so we'll carry on with this for now and then I'll see if I can reverse engineer it to be less subversive to standard */
+	form .test-input:focus + .test-label .test-label-span,
+	form .test-input:valid + .test-label .test-label-span {
+		transform: translateY(-150%);
+		font-size: .75rem;
+		color: var(--detail);
+	}
+
+	form .test-input:focus + .test-label::after,
+	form .test-input:valid + .test-label::after {
+		transform: translateX(0%);
+	}
+
+
+	/* ----------------TEST CSS FOR INPUT IDEA-------------- */
 
 	.map {
 		padding: var(--r4) 0;
