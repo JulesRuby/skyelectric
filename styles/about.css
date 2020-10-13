@@ -1,0 +1,34 @@
+.page-header {
+	position: relative;
+	min-height: 50vh;
+}
+
+.page-banner {
+	overflow-y: hidden;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	top: calc(var(--contact-strip-ht) + var(--navbar-ht));
+	height: var(--page-banner-ht);
+
+	background: url(../assets/images/sky.jpg) center no-repeat var(--sec);
+}
+
+.page-banner::before {
+	position: absolute;
+	display: block;
+	content: "";
+	background-color: var(--quad);
+	background-color: #333;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: calc(100% - 15vh);
+	height: 100%;
+	opacity: 0.6;
+}
+
+.article-image {
+	max-width: calc(100% - (2 * var(--r4)));
+	margin: var(--r4);
+}
