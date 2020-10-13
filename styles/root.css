@@ -55,6 +55,8 @@ h6 {
 	font-weight: var(--wt400)
 }
 
+/* ^^^^^^^^^^ Base Styles ^^^^^^^^^^ */
+
 .page-wrapper {
 	min-height: 100vh;
 }
@@ -63,7 +65,25 @@ h6 {
 	margin-bottom: var(--r6);
 }
 
-/* ^^^^^^^^^^ Base Styles ^^^^^^^^^^ */
+.section {
+	padding: 2rem 0rem;
+	/* min-height: 100vh; */
+}
+
+.section p {
+	/* text-align: center; */
+	line-height: 1.30;
+}
+
+article {
+	/* margin: 2rem 1rem; */
+	padding: 2rem 1rem;
+	min-height: 10vh;
+}
+
+footer {
+	min-height: 10vh;
+}
 
 
 /* vvvvvvvvvv HEADER vvvvvvvvvv */
@@ -643,49 +663,6 @@ footer {
 }
 
 /* ^^^^^^^^^^ Desktop Styles ^^^^^^^^^^ */
-
-
-/* testing outlines */
-/* main {
-	outline: var(--wrap);
-}
-
-header,
-section {
-	outline: var(--section);
-}
-
-.contact-strip,
-nav,
-article,
-.hamburger {
-	outline: var(--component);
-}
-
-.service-card,
-.cert-card {
-	outline: var(--card);
-} */
-
-/* placeholder dimensions for development */
-.section {
-	padding: 2rem 0rem;
-	/* min-height: 100vh; */
-}
-
-article {
-	/* margin: 2rem 1rem; */
-	padding: 2rem 1rem;
-	min-height: 10vh;
-}
-
-footer {
-	min-height: 10vh;
-}
-
-
-
-
 
 /* Use these later? I accidentally built the menu desktop-first, again ;-; */
 

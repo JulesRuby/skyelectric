@@ -1,0 +1,21 @@
+.section {
+
+	/* outline: var(--section); */
+}
+
+.full-gallery {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-auto-rows: min-content;
+	gap: var(--r2);
+
+	/* outline: var(--component); */
+}
+
+/* body {
+	background-color: violet;
+} */
+
+.page-wrapper {
+	/* background-color: violet; */
+}
