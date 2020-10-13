@@ -79,10 +79,12 @@
   /* ---------------------KEY ELEMENT SIZES--------------------- */
 
   /* Header Contents */
-  --header-ht: 80vh;
+  --hero-header-ht: 80vh;
+  --page-header-ht: 50vh;
   --contact-strip-ht: 5vh;
   --navbar-ht: 10vh;
-  --hero-banner-ht: calc(var(--header-ht) - (var(--contact-strip-ht) + var(--navbar-ht)));
+  --hero-banner-ht: calc(var(--hero-header-ht) - (var(--contact-strip-ht) + var(--navbar-ht)));
+  --page-banner-ht: calc(var(--page-header-ht) - (var(--contact-strip-ht) + var(--navbar-ht)));
   /* --hero-banner-ht: 65vh; */
 }
 /* ---------------------------------------- Resets ---------------------------------------------------------- */

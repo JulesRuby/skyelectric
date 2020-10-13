@@ -1,5 +1,6 @@
 @import url("./variables.css");
 @import url("./utility-classes.css");
+@import url("./about.css");
 
 /* vvvvvvvvvv Basics + Resets vvvvvvvvvv */
 .vport {
@@ -56,6 +57,10 @@ h6 {
 
 .page-wrapper {
 	min-height: 100vh;
+}
+
+.section-heading {
+	margin-bottom: var(--r6);
 }
 
 /* ^^^^^^^^^^ Base Styles ^^^^^^^^^^ */
@@ -669,12 +674,17 @@ article,
 }
 
 article {
-	margin: 2rem 1rem;
+	/* margin: 2rem 1rem; */
+	padding: 2rem 1rem;
 	min-height: 10vh;
 }
 
 footer {
 	min-height: 10vh;
+}
+
+p {
+	padding: 
 }
 
 

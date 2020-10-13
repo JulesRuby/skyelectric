@@ -16,7 +16,7 @@
 	text-align: center;
 }
 
-.section > p {
+.section p {
 	padding: var(--r4);
 }
 
