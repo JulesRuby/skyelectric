@@ -664,6 +664,35 @@ footer {
 		height: calc((100vw - 2rem) / 3);
 	}
 
+
+	/* ABOUT */
+
+	.section {
+		padding: 2rem 0rem;
+	}
+
+	.section.about {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		padding: var(--r6);
+	}
+	
+	.section.about .section-heading,
+	.section.about p {
+		grid-column: 1/2;
+	}
+
+	.section.about p {
+		padding: 0 var(--r4) 0 0;
+		text-align: justify;
+	}
+
+	.section.about .section-heading,
+	.section.about button {
+		grid-column: 1/-1;
+	}
+
 	/* PROJECTS */
 
 	.projects-gallery img {
@@ -713,9 +742,7 @@ footer {
 /* vvvvvvvvvv Large Tablet Styles vvvvvvvvvv */
 
 @media screen and (min-width: 50rem) {
-	body {
-		background-color:var(--prim);
-	}
+	
 }
 
 /* ^^^^^^^^^^ Large Tablet Styles ^^^^^^^^^^ */
