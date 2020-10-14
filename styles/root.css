@@ -272,7 +272,7 @@ header h1 .accent-span:last-child {
 	letter-spacing: .1rem;
 	font-weight: var(--wt700);
 
-	background-color: var(--quat);
+	/* background-color: var(--quat); */
 	transition: 100ms;
 
 	z-index: 100;
@@ -433,7 +433,8 @@ header h1 .accent-span:last-child {
 .projects-gallery {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-around;
+	justify-content: space-evenly;
 }
 
 .projects-gallery img {
@@ -642,6 +643,7 @@ footer {
 
 
 
+
 /* vvvvvvvvvv Mobile Styles vvvvvvvvvv */
 
 @media screen and (min-width: 20rem) {
@@ -649,6 +651,8 @@ footer {
 }
 
 /* ^^^^^^^^^^ Mobile Styles ^^^^^^^^^^ */
+
+
 
 /* vvvvvvvvvv Small Tablet Styles vvvvvvvvvv */
 
@@ -739,13 +743,105 @@ footer {
 
 /* ^^^^^^^^^^ Small Tablet Styles ^^^^^^^^^^ */
 
-/* vvvvvvvvvv Large Tablet Styles vvvvvvvvvv */
 
-@media screen and (min-width: 50rem) {
-	
+
+/* vvvvvvvvvv Large Tablet Styles || Laptop MDPI Display vvvvvvvvvv */
+
+@media screen and (min-width: 64rem) {
+
+	/* VARIABLE CHANGE */
+	:root {
+		--navbar-ht: 15vh;
+	}
+
+
+	/* NAVIGATION */
+	.navbar {
+		overflow: hidden;
+	}
+
+	.nav-menu {
+		position: relative;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+
+		top: var(--contact-strip-ht);
+		top: 0;
+		right: 0;
+
+		height: var(--navbar-ht);
+		width: 100%;
+
+		letter-spacing: .11rem;
+		font-weight: var(--wt500);
+
+		/* background-color: var(--quat); */
+		transition: 100ms;
+
+		z-index: 100;
+		
+	}
+
+	.nav-menu > li {
+		margin-left : auto;
+	}
+
+	/* .nav-menu > li:first-child {
+		overflow: hidden;
+	} */
+
+	.nav-logo > img {
+		width: 15vw;
+	}
+
+	.hamburger {
+		display: none;
+	}
+
+	.navlink {
+		display: inline-block;
+
+		padding: var(--r2) var(--r4);
+		/* padding-bottom: var(--r2); */
+		/* width: 12ch; */
+
+		text-align: center;
+
+		/* outline: 2px solid white; */
+	}
+
+	/* CONTACT */
+
+	.form-map-container {
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	.contact-form-ul {
+		flex-grow: 1;
+	}
+
+	.contact-form-ul li:last-child {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+	}
+
+	iframe.map {
+		margin: 0 auto;
+		height: 100%;
+	}
+
+	.contact-form  {
+		flex-grow: 2;
+	}
+
 }
 
-/* ^^^^^^^^^^ Large Tablet Styles ^^^^^^^^^^ */
+/* ^^^^^^^^^^ Large Tablet Styles || Laptop MDPI Display ^^^^^^^^^^ */
+
+
 
 /* vvvvvvvvvv Desktop Styles vvvvvvvvvv */
 
