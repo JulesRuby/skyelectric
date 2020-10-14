@@ -380,11 +380,17 @@ header h1 .accent-span:last-child {
 
 /* vvvvvvvvvv HOME--FEATURED SERVICES vvvvvvvvvv */
 
+.tile-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 
+	justify-items: center;
+	align-items: center;
+}
 
 .service-card {
 	/* temp dimensions */
-	height: 50vw;
+	height: calc((100vw - 2rem) / 2);
 	width: 100%;
 	/* temp dimensions */
 
@@ -425,13 +431,14 @@ header h1 .accent-span:last-child {
 /* vvvvvvvvvv HOME--PROJECTS vvvvvvvvvv */
 
 .projects-gallery {
-	/* gap: 1rem; */
-	/* margin: 0; */
-	grid-auto-rows: 50vw;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
-.project-card {
-	/* nerp! */
+.projects-gallery img {
+	height: calc((100vw - 2rem) / 2);
+  width: calc((100vw - 2rem) / 2);
 }
 
 
@@ -439,6 +446,11 @@ header h1 .accent-span:last-child {
 /* ^^^^^^^^^^ HOME--PROJECTS ^^^^^^^^^^ */
 
 /* vvvvvvvvvv HOME--TESTIMONIALS vvvvvvvvvv */
+
+	.testimonial-gallery {
+		display: flex;
+		flex-direction: column;
+	}
 
 	.testimonial-card {
 		margin: 1rem;
@@ -641,7 +653,59 @@ footer {
 /* vvvvvvvvvv Small Tablet Styles vvvvvvvvvv */
 
 @media screen and (min-width: 48rem) {
+
+	/* SERVICES */
 	
+	.tile-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.service-card{
+		height: calc((100vw - 2rem) / 3);
+	}
+
+	/* PROJECTS */
+
+	.projects-gallery img {
+		/* This is dumb and hacky, but it works for now. Basically doing the calc() to accomodate JUST the available space makes the total width of the images overshoot the available space by like... 0.0187 pixels or something ((thanks, sig-figs)). Anyway, I just subtracted an extra pixel from the available space to give the same effect with nearly imperceptible difference */
+		height: calc((100vw - 2rem - 1px) / 3);
+		width: calc((100vw - 2rem - 1px) / 3);
+	}
+
+
+	/* TESTIMONIALS */
+
+	.testimonial-gallery {
+		flex-direction: row;
+	}
+
+
+	/*  CONTACT */
+
+	.form-map-container {
+		display: flex;
+		/* flex-grow: 1; */
+	}
+
+	.contact-form-ul {
+		display: flex;
+		flex-direction: column;
+
+		padding-right: var(--r4);
+		text-align: center;
+		line-height: 1.5;
+	}
+
+	.contact-form-ul li:last-child {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+	}
+
+	iframe.map {
+		margin: auto 0;
+		height: 80%;
+	}
 }
 
 /* ^^^^^^^^^^ Small Tablet Styles ^^^^^^^^^^ */
