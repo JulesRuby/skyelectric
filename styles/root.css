@@ -86,6 +86,20 @@ footer {
 	min-height: 10vh;
 }
 
+/* Scrollbar */
+
+::-webkit-scrollbar {
+
+}
+
+::-webkit-scrollbar-track {
+	
+}
+
+::-webkit-scrollbar-thumb {
+
+}
+
 
 /* vvvvvvvvvv HEADER vvvvvvvvvv */
 .hero-header {
