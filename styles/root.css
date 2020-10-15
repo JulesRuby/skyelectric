@@ -754,6 +754,10 @@ footer {
 		margin: auto 0;
 		height: 80%;
 	}
+
+	.contact-form {
+		flex-grow: 1;
+	}
 }
 
 /* ^^^^^^^^^^ Small Tablet Styles ^^^^^^^^^^ */
