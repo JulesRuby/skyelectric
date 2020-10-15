@@ -851,6 +851,16 @@ footer {
 		width: calc((100vw - 2rem - (100vw - 100%)) / 4);
 	}
 
+	/* TESTIMONIALS */
+
+	.testimonial-gallery {
+		justify-content: space-evenly;
+	}
+
+	.testimonial-card {
+		max-width: 30vw;
+	}
+
 	/* CONTACT */
 
 	.form-map-container {
