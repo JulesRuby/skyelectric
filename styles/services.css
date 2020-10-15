@@ -1,6 +1,6 @@
 .expanded-services {
 
-	background-color: var(--quat);
+	/* background-color: var(--quat); */
 	/* outline: var(--section); */
 }
 
@@ -17,4 +17,87 @@
 
 .service-article p {
 
+}
+
+.service-article {
+  position: relative;
+	margin: var(--r1) var(--r2);
+	margin-bottom: 3rem;
+	padding: 0;
+  
+  width: 80vw;
+  color: var(--prim);
+  
+	background-color: var(--quat);
+}
+
+.service-article h2 {
+  display: inline-block;
+  margin: 0;
+  padding: var(--r2) var(--r4);
+	background-color: var(--tert);
+  color: var(--prim);
+}
+
+.service-article p {
+	padding: var(--r6);
+}
+
+.service-expand {
+  overflow: hidden;
+  position: absolute;
+  
+  right: 0;
+  bottom: 0;
+  transform: translate(50%, 50%);
+  width: 5rem;
+  height: 5rem;
+  
+  background-color: var(--tert);
+  border: var(--r2) solid var(--prim);
+  border-radius: 50%;
+  
+  cursor: pointer;
+}
+
+.service-expand::before {
+  content: "";
+  position: absolute;
+  
+  bottom: 30%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  
+  transform: rotate(45deg);
+  background-color: var(--detail);
+  /* outline: .5rem solid var(--sec) .5rem solid var(--sec) .5rem solid var(--sec) .5rem solid var(--sec); */
+}
+
+.service-expand::after {
+  content: "";
+  position: absolute;
+  
+  bottom: 55%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  
+  transform: rotate(45deg);
+  background-color: var(--tert);
+}
+
+.service-expand,
+.service-expand * {
+  transition: all 200ms linear;
+}
+
+.service-expand:hover,
+.service-expand:hover::after {
+  background-color: var(--sec);
+}
+
+.service-expand:hover::before,
+.service-expand:hover::after {
+	transform: scale(1.1) rotate(45deg);
 }
