@@ -287,7 +287,7 @@ header h1 .accent-span:last-child {
 	letter-spacing: .1rem;
 	font-weight: var(--wt700);
 
-	/* background-color: var(--quat); */
+	background-color: var(--quat);
 	transition: 100ms;
 
 	z-index: 100;
@@ -851,7 +851,7 @@ footer {
 
 	.form-map-container {
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: space-around;
 	}
 
 	.contact-form-ul {
@@ -870,7 +870,8 @@ footer {
 	}
 
 	.contact-form  {
-		flex-grow: 2;
+		flex-grow: 1;
+		/* width: 80%; */
 	}
 
 }
