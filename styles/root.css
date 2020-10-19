@@ -79,7 +79,7 @@ h6 {
 article {
 	/* margin: 2rem 1rem; */
 	padding: 2rem 1rem;
-	min-height: 10vh;
+	/* min-height: 10vh; */
 }
 
 footer {
@@ -89,14 +89,17 @@ footer {
 /* Scrollbar */
 
 ::-webkit-scrollbar {
+	background-color: black;
 
 }
 
 ::-webkit-scrollbar-track {
-	
+	box-sizing: border-box;
+	background-color: black;
 }
 
 ::-webkit-scrollbar-thumb {
+	background-color: var(--tert);
 
 }
 
@@ -237,7 +240,8 @@ header h1 .accent-span:last-child {
 	background-color: var(--prim);
 	opacity: 1;
 
-	transition: all 150ms ease;
+	transition: visibility 0ms linear 0ms,
+	opacity 150ms ease 5ms;
 	z-index: 100;
 }
 
@@ -262,14 +266,17 @@ header h1 .accent-span:last-child {
 	background-color: var(--quat);
 	opacity: 1;
 
-	transition: all 150ms ease;
+	transition: visibility 0ms linear 0ms,
+							opacity 150ms ease 5ms;
 	z-index:100;
 }
 
 .scroll-hide {
-	background-color: var(--sec);
-	/* transform: translateY(-15vh); */
+	visibility: hidden;
 	opacity: 0;
+
+	transition: visibility 0ms linear 155ms,
+							opacity 150ms ease 0ms;
 }
 
 .nav-logo > img {

@@ -82,5 +82,29 @@ const menuHide = () => {
 
 menuHide();
 
-// onscroll x distance down the page, retract menu
-// onscroll x distance up the page, expand menu
+
+
+
+const setPulls = elements => {
+  const elementList = document.querySelectorAll(elements);
+  console.log(elementList);
+  
+  elementList.forEach(element => {
+    const button = element.querySelector('.service-expand');
+    const pullDown = element.querySelector('.pulldown');
+    const pdText = element.querySelector('.p');
+    const pdUl = element.querySelector('.ul');
+    
+    // button.addEventListener("click", handlePullDown(button, pullDown, pdText, pdUl));
+    button.addEventListener("click", () => {
+      //  The blur just prevents the button from maintaining focus when clicked. I only want focus to remain if it's being tabbed to.                            
+      button.blur();
+      button.classList.toggle('pull-open');
+      pullDown.classList.toggle('pull-open');
+      pdText.classList.toggle('pull-open');
+      pdUl.classList.toggle('pull-open');
+      })
+  })
+}
+
+setPulls('.service-container');
