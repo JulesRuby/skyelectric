@@ -877,6 +877,7 @@ footer {
 
 	.contact-form-ul {
 		flex-grow: 1;
+		max-width: 700px;
 	}
 
 	.contact-form-ul li:last-child {
@@ -888,10 +889,13 @@ footer {
 	iframe.map {
 		margin: 0 auto;
 		height: 100%;
+		width: 85%;
 	}
 
 	.contact-form  {
+		margin: 0 auto;
 		flex-grow: 1;
+		max-width: 800px;
 		/* width: 80%; */
 	}
 

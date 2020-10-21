@@ -28,7 +28,51 @@
 	opacity: 0.6;
 }
 
+.about {
+	padding: var(--r4);
+}
+
+.about p,
+.about ul {
+	padding: var(--r4);
+	list-style: disc;
+}
+
+.about li {
+	padding-bottom: var(--r2);
+}
+
 .article-image {
 	max-width: calc(100% - (2 * var(--r4)));
 	margin: var(--r4);
+}
+
+@media screen and (min-width: 64rem) {
+	.about {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		padding: var(--r6);
+	}
+	
+	.about p {
+		grid-column: 1/2;
+		padding: 0 var(--r4) 0 0;
+		text-align: justify;
+	}
+
+	.about ul {
+		grid-column: 1/2;
+		grid-row: 2/3;
+	}
+
+	.about .section-heading {
+		grid-column: 1/-1;
+		text-align: center;
+	}
+
+	.article-image {
+		margin: 0;
+		grid-column: 2/3;
+	}
 }
