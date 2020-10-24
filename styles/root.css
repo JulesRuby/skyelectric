@@ -1,6 +1,6 @@
 @import url("./variables.css");
 @import url("./utility-classes.css");
-@import url("./about.css");
+/* @import url("./about.css"); */
 
 /* vvvvvvvvvv Basics + Resets vvvvvvvvvv */
 .vport {
@@ -18,7 +18,8 @@ html {
 body {
 	font-size: var(--fluid-rem);
 	font-family: var(--body-family);
-	color: var(--quat);
+	color: var(--body-lbg);
+	line-height: var(--line-height);
 }
 
 img {
@@ -56,6 +57,10 @@ h6 {
 	font-weight: var(--wt400)
 }
 
+h1, h2, h3, h4, h5, h6 {
+	color: var(--gunmetal);
+}
+
 /* ^^^^^^^^^^ Base Styles ^^^^^^^^^^ */
 
 .page-wrapper {
@@ -73,7 +78,7 @@ h6 {
 
 .section p {
 	/* text-align: center; */
-	line-height: 1.30;
+	/* line-height: 1.30; */
 }
 
 article {
@@ -112,6 +117,8 @@ footer {
 	/* background: url(./assets/images/sky.jpg) center no-repeat var(--sec); */
 	/* background: url(../assets/images/sky.jpg) center no-repeat var(--sec); */
 }
+
+
 
 /* .hero-header::before {
 	position: absolute;
@@ -241,7 +248,7 @@ header h1 .accent-span:last-child {
 	opacity: 1;
 
 	transition: visibility 0ms linear 0ms,
-	opacity 150ms ease 5ms;
+							opacity 150ms ease 5ms;
 	z-index: 100;
 }
 
@@ -298,6 +305,11 @@ header h1 .accent-span:last-child {
 	transition: 100ms;
 
 	z-index: 100;
+}
+
+/* Hiding Testimonials Link until it actually exists. */
+.nav-menu li:nth-child(5) {
+	display: none;
 }
 
 	/* Expand the mobile menu */

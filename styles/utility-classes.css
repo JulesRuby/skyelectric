@@ -138,3 +138,9 @@
 .form-textarea {
 	resize: none;
 }
+
+/* container styles */
+.card {
+	border-radius: 4px;
+	box-shadow: var(--shadow-sm);
+}

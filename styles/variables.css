@@ -8,18 +8,28 @@
   --card: 3px inset aquamarine;
 	
 	/*  Colors  */
-	--prim: hsla(0, 0%, 100%, 1);
+	/* --prim: hsla(0, 0%, 100%, 1);
 	--sec: hsla(198, 63%, 38%, 1);
 	--sec-50: hsla(198, 63%, 38%, 0.5);
 	--tert: hsla(354, 71%, 44%, 1);
 	--quat:  rgba(0, 0, 0, 1);
 	--quat-50:  rgba(0, 0, 0, 0.5);
-	--detail:  rgba(250, 159, 66, 1);
+	--detail:  rgba(250, 159, 66, 1); */
 	/* --detail-20:  rgba(250, 159, 66, 0.2);
-	--detail-0:  rgba(250, 159, 66, 0); */
+  --detail-0:  rgba(250, 159, 66, 0); */
+  
+  --prim: hsla(0, 0%, 100%, 1);
+	--sec: var(--gunmetal);
+	--sec-50: var(--gunmetal50);
+	--body-lbg: var(--gunmetal-light);
+	--body-dbg: var(--gunmetal-vlight);
+	--tert: hsla(354, 71%, 44%, 1);
+	--quat:  var(--gunmetal);
+	--quat-50:  rgba(0, 0, 0, 0.5);
+	--detail:  var(--deep-saffron);
 
 
-	/* --celadon-blue: hsla(198, 63%, 38%, 1);
+	--celadon-blue: hsla(198, 63%, 38%, 1);
 	--black: hsla(0, 0%, 0%, 1);
 	--red-ncs: hsla(354, 71%, 44%, 1);
 	--white: hsla(0, 0%, 100%, 1);
@@ -29,7 +39,29 @@
 	--black: rgba(0, 0, 0, 1);
 	--red-ncs: rgba(191, 32, 47, 1);
 	--white: rgba(255, 255, 255, 1);
-	--deep-saffron: rgba(250, 159, 66, 1); */
+	--deep-saffron: rgba(250, 159, 66, 1);
+  --steel-teal: hsla(184, 30, 40, 1);
+
+  /* Green/Blues - Dark */
+  --mgeg: hsla(192, 99%, 14%, 1);
+  --gunmetal: hsla(192, 99%, 8%, 1);
+  --gunmetal50: hsla(192, 99%, 30%, 0.5);
+  --gunmetal-light: hsla(192, 30%, 40%, 1);
+  --gunmetal-vlight: hsla(192, 30%, 80%, 1);
+
+  /* Purples?? */
+  --dark-purple: hsla(323, 96%, 10%, 1);
+  --dark-sienna: hsla(2, 83%, 9%, 1);
+
+  /* Possible Oranges */
+  --persian-orange: hsla(32, 55%, 55%, 1);
+  --deep-saffron: hsla(30, 95%, 62%, 1);
+  --princeton-orange: hsla(26, 88%, 55%, 1);
+  --atomic-tangerine: hsla(24, 85%, 65%, 1);
+  --fulvous: hsla(32, 75%, 49%, 1);
+
+
+
 	
 
   /* ---------------------TYPOGRAPHY--------------------- */
@@ -63,6 +95,9 @@
   --wt800: 800;
   --wt900: 900;
 
+  /* Line-Height */
+  --line-height: 1.5;
+
 
 
   /* ---------------------SPACING--------------------- */
@@ -84,9 +119,14 @@
   --contact-strip-ht: 5vh;
   --navbar-ht: 10vh;
   --hero-banner-ht: calc(var(--hero-header-ht) - (var(--contact-strip-ht) + var(--navbar-ht)));
-  --page-banner-ht: calc(var(--page-header-ht) - (var(--contact-strip-ht) + var(--navbar-ht)));
+  --page-banner-ht: calc(var(--page-header-ht) - calc((var(--contact-strip-ht) + var(--navbar-ht))));
   /* --hero-banner-ht: 65vh; */
+
+  /* Simple Style */
+  --bshadow-sm: 2px 2px 5px -2px var(--gunmetal50);
+
 }
+
 /* ---------------------------------------- Resets ---------------------------------------------------------- */
 
 :root {
