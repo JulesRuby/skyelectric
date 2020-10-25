@@ -112,7 +112,7 @@ footer {
 /* vvvvvvvvvv HEADER vvvvvvvvvv */
 .hero-header {
 	position: relative;
-	min-height: 80vh; /** rough **/
+	min-height: 95vh; /** rough **/
 
 	/* background: url(./assets/images/sky.jpg) center no-repeat var(--sec); */
 	/* background: url(../assets/images/sky.jpg) center no-repeat var(--sec); */
@@ -535,12 +535,13 @@ header h1 .accent-span:last-child {
 /* vvvvvvvvvv HOME--CONTACT vvvvvvvvvv */
 
 	.contact-process {
+		display: none;
 		padding: var(--r4) 0;
 		height: min-content;
 	}
 
 	.form-map-container {
-		padding : var(--r4);
+		padding : var(--r4) 0;
 	}
 
 	.process-cards {
@@ -562,14 +563,57 @@ header h1 .accent-span:last-child {
 	}
 
 	.contact-form-ul {
-
-		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 		line-height: 1.5;
 	}
 
-	.contact-form-ul > li {
-		margin-bottom: var(--r3);
+	.contact-form-ul li + * {
+		margin-top: var(--r4);
 	}
+
+	.contact-form-ul span {
+		text-transform: capitalize;
+		font-weight: 700;
+	}
+
+	.contact-form-ul > li {
+		display: grid;
+		grid-template-columns: 5rem 1fr;
+		grid-template-rows: 1fr 1fr;
+		justify-content: center;
+		align-items: center;
+		gap: 0.25rem 1rem;
+		margin-right: var(--r4);
+		margin-left: var(--r4);
+		padding: var(--r3) 0;
+	}
+
+	.contact-form-ul li:last-child {
+		margin-bottom: var(--r4);
+		padding: 0;
+		grid-template-columns: 5rem 1fr;
+		justify-content: stretch;
+	}
+
+	.contact-form-ul i {
+		grid-area: 1/1/3/2;
+
+		text-align: right;
+		font-size: var(--h1-size);
+		color: var(--detail);
+	}
+
+	.map {
+		grid-area: 1/1/-1/-1;
+		padding: 0;
+		
+		width: 100%;
+		/* max-width: 100%; */
+		/* height: auto; */
+	}
+
 	
 	.contact-form {
 		/* position: relative; */
@@ -577,14 +621,14 @@ header h1 .accent-span:last-child {
 		
 		text-align: center;
 		background-color: var(--sec);
-		border-radius: 5px;
+		/* border-radius: 5px; */
 	}
 
 	/* ----------------TEST CSS FOR INPUT IDEA-------------- */
 	
 	.label-input-wrap {
 		position: relative;
-		overflow: hidden;
+		overflow-x: hidden;
 	}
 
 	.test-label {
@@ -592,7 +636,8 @@ header h1 .accent-span:last-child {
 
 		width: 100%;
 		height: 100%;
-		bottom: 0px;
+	  bottom: 0px;
+	  bottom: 0px;
 		left: 0%;
 
 		border-bottom: 1px solid black;
@@ -617,16 +662,24 @@ header h1 .accent-span:last-child {
 
 	.test-label-span {
 		position: absolute;
-		bottom: 5px;
+		top: 5px;
 		left: 0px;
 
 		transition: all 200ms ease;
 	}
 
-	.test-input {
+	/* .test-input {
 		border: none;
 		background-color: var(--sec);
 		border: none;
+		padding-top: 20px;
+
+		outline: none;
+	} */
+	.test-input {
+		border: none;
+		background-color: var(--prim);
+		border-radius: 0px;
 		padding-top: 20px;
 
 		outline: none;
@@ -649,13 +702,6 @@ header h1 .accent-span:last-child {
 
 
 	/* ----------------TEST CSS FOR INPUT IDEA-------------- */
-
-	.map {
-		padding: var(--r4) 0;
-
-		max-width: 100%;
-		height: auto;
-	}
 
 
 /* ^^^^^^^^^^ HOME--CONTACT ^^^^^^^^^^ */
@@ -751,31 +797,19 @@ footer {
 
 	.form-map-container {
 		display: flex;
-		/* flex-grow: 1; */
 	}
-
+	
 	.contact-form-ul {
-		display: flex;
-		flex-direction: column;
-
-		padding-right: var(--r4);
-		text-align: center;
+		flex-grow: 1;
 		line-height: 1.5;
 	}
 
 	.contact-form-ul li:last-child {
-		display: flex;
-		flex-direction: column;
-		flex-grow: 1;
-	}
-
-	iframe.map {
-		margin: auto 0;
-		height: 80%;
+		margin-bottom: 0;
 	}
 
 	.contact-form {
-		flex-grow: 1;
+		flex-grow: 2;
 	}
 }
 
@@ -880,10 +914,11 @@ footer {
 		max-width: 30vw;
 	}
 
+
 	/* CONTACT */
 
 	.form-map-container {
-		display: flex;
+		max-width: 1600px;
 		justify-content: space-around;
 	}
 
@@ -907,8 +942,13 @@ footer {
 	.contact-form  {
 		margin: 0 auto;
 		flex-grow: 1;
-		max-width: 800px;
-		/* width: 80%; */
+		/* max-width: 800px; */
+	}
+
+	.label-input-wrap {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 70%;
 	}
 
 }

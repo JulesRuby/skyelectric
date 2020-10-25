@@ -1,0 +1,84 @@
+body {
+	min-height: 100vh;
+}
+
+.page-header {
+	position: relative;
+	min-height: 30vh;
+}
+
+.page-banner {
+	overflow-y: hidden;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: calc(var(--contact-strip-ht) + var(--navbar-ht));
+	height: calc(var(--page-banner-ht) - 20vh);
+
+	background: var(--quat);
+}
+
+.banner-head {
+	margin-left: auto;
+	margin-right: auto;
+	color: var(--prim);
+	z-index: 1;
+}
+
+.main {
+	padding: var(--r1);
+	min-height: 100vh;
+}
+
+.swatches {
+	display:grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(5, 1fr);
+
+	min-height: 70vh;
+}
+
+.swatch {
+	width: 100%;
+
+	/* border: 2px solid darkslateblue; */
+}
+
+.swatch:nth-child(1) {
+	background: var(--prim);
+}
+.swatch:nth-child(2),
+.swatch:nth-child(2) * {
+	background: var(--sec);
+	color: var(--detail);
+}
+.swatch:nth-child(3),
+.swatch:nth-child(3) * {
+	background: var(--tert);
+	color: var(--prim);
+}
+.swatch:nth-child(4),
+.swatch:nth-child(4) * {
+	background: var(--body-lbg);
+	color: var(--quat);
+}
+.swatch:nth-child(5),
+.swatch:nth-child(5) * {
+	background: var(--detail);
+	color: var(--quat);
+}
+
+.icons {
+
+}
+
+.icon-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.icon-list-item {
+	padding: 1rem;
+	margin: .25rem .5rem;
+}

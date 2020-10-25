@@ -21,10 +21,10 @@
   --prim: hsla(0, 0%, 100%, 1);
 	--sec: var(--gunmetal);
 	--sec-50: var(--gunmetal50);
-	--body-lbg: var(--gunmetal-light);
+	--body-lbg: var(--rich-bfogra-lt);
 	--body-dbg: var(--gunmetal-vlight);
 	--tert: hsla(354, 71%, 44%, 1);
-	--quat:  var(--gunmetal);
+	--quat:  var(--rich-bfogra);
 	--quat-50:  rgba(0, 0, 0, 0.5);
 	--detail:  var(--deep-saffron);
 
@@ -48,6 +48,8 @@
   --gunmetal50: hsla(192, 99%, 30%, 0.5);
   --gunmetal-light: hsla(192, 30%, 40%, 1);
   --gunmetal-vlight: hsla(192, 30%, 80%, 1);
+  --rich-bfogra: hsla(201, 57%, 10%, 1);
+  --rich-bfogra-lt: hsla(201, 57%, 30%, 1);
 
   /* Purples?? */
   --dark-purple: hsla(323, 96%, 10%, 1);
@@ -114,7 +116,7 @@
   /* ---------------------KEY ELEMENT SIZES--------------------- */
 
   /* Header Contents */
-  --hero-header-ht: 80vh;
+  --hero-header-ht: 95vh;
   --page-header-ht: 50vh;
   --contact-strip-ht: 5vh;
   --navbar-ht: 10vh;

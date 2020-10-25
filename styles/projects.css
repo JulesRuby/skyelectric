@@ -1,6 +1,39 @@
-.section {
+.page-header {
+	position: relative;
+	min-height: 50vh;
+}
 
-	/* outline: var(--section); */
+.page-banner {
+	overflow-y: hidden;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: calc(var(--contact-strip-ht) + var(--navbar-ht));
+	height: var(--page-banner-ht);
+
+	background: url(../assets/images/sky.jpg) center no-repeat var(--sec);
+}
+
+.page-banner::before {
+	position: absolute;
+	display: block;
+	content: "";
+	background-color: var(--quad);
+	background-color: #333;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: calc(100% - 15vh);
+	height: 100%;
+	opacity: 0.6;
+}
+
+.banner-head {
+	margin-left: 10vw;
+	margin-right: auto;
+	color: var(--prim);
+	z-index: 1;
 }
 
 .full-gallery {

@@ -23,8 +23,6 @@
 .blonk {
 	display: block;
 	width: 100%;
-
-	background-color: var(--tert);
 }
 
 .button {
