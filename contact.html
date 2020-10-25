@@ -75,89 +75,81 @@
 
 			<!-- banner-image wrap: makes it easier to accomodate background-image with fixed position navigation above in the flow -->
 			<div class="page-banner">
-			<!-- CTA Need to build visual parent element for this -->
-				<!-- <div class="cta-wrap">
-					<h1>
-						<span class="accent-span">Sky Electric,</span>
-						<br>
-						Real chads wipe
-						<br>
-						<span class="accent-span">back-to-front!</span>
-					</h1>
-	
-					<button type="button" class="cta button">
-						<a href="#contact">Get Estimate</a>
-					</button>
-				</div> -->
+				<h1 class="banner-head">Contact</h1>
 			</div>
-
 		</header>
 
 		<main class="main">
 			<article class="section">
-				<h2 class="section-heading">
+				<h1 class="section-heading">
 					WHADDYA WAIT'N' FER?! SHOO UZ YER BETTHOOLE
-				</h2>
+				</h1>
 
 	
 
-			<section class="blonk form-map-container">
-				<ul class="contact-form-ul">
-					<li>
-						<strong>Service Areas:</strong>
-						<br>
-						Okotoks, Calgary, High River
-					</li>
-					<li>
-						<strong>Phone:</strong>
-						<br>
-						403-555-5555
-					</li>
-					<li>
-						<strong>E-mail:</strong>
-						<br>
-						skyelectric1101@gmail.com
-					</li>
-					<li><strong>Location:</strong><br>
-						<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2526.5972141023217!2d-113.97255753405211!3d50.70885867659216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5371978719160b2b%3A0x6577e82aca88bf19!2sOkotoks%2C%20AB%20T1S%201W1!5e0!3m2!1sen!2sca!4v1602107228733!5m2!1sen!2sca" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></li>
-				</ul>
-				<!-- <p>Okotoks, Alberta</p>
-				<p>403-555-5555</p>
-				<p>skyelectric1101@gmail.com</p> -->
-				
-				<!-- Contact Form -->
-				<form class="contact-form" action="#" method="POST">
+				<article class="blonk form-map-container">
+					<ul class="contact-form-ul">
+						<li>
+							<i class="far fa-map"></i>
+							<span>Service Areas:</span>
+							<!-- replace <br> later -->
+							Okotoks, Calgary, High River
+						</li>
+						<li>
+							<i class="far fa-clock"></i>
+							<span>Hours:</span>
+							Mon - Fri : 7:30 - 4:30
+						</li>
+						<li>
+							<i class="fas fa-mobile-alt"></i>
+							<span>Phone:</span>
+							<!-- replace <br> later -->
+							403-555-5555
+						</li>
+						<li>
+							<i class="fas fa-envelope"></i>
+							<span>E-mail:</span>
+							skyelectric1101@gmail.com
+						</li>
+						<li>
+							<!-- Embedded Google Map || The vague area in which the company exists lol -->
+							<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2526.5972141023217!2d-113.97255753405211!3d50.70885867659216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5371978719160b2b%3A0x6577e82aca88bf19!2sOkotoks%2C%20AB%20T1S%201W1!5e0!3m2!1sen!2sca!4v1602107228733!5m2!1sen!2sca" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></li>
+					</ul>
 					
-						<h3 class="form-heading">Contact Us!</h3>
+					<!-- Contact Form -->
+					<form class="contact-form" action="#" method="POST">
+						
+							<h3 class="form-heading">Contact Us!</h3>
+	
+							<div class="label-input-wrap">
+								<label class="form-label" for="name">Name:</label>
+								<input class="form-input" type="text" name="name" id="name">
+							</div>
+	
+							<div class="label-input-wrap">
+								<label class="form-label" for="name">E-mail:</label>
+								<input class="form-input" type="text" name="email" id="email">
+							</div>
+	
+							<div class="label-input-wrap">
+								<label class="form-label" for="message">Message:</label>
+								<textarea class="form-input form-textarea" name="message" id="message" cols="30" rows="10"></textarea>
+							</div>
 
-						<div class="label-input-wrap">
-							<label class="form-label" for="name">Name:</label>
-							<input class="form-input" type="text" name="name" id="name">
-						</div>
+							<div class="label-input-wrap">
+								<!-- <label class="form-label test-label" for="test">
+									<span class="test-label-span">Test Style Input:</span>
+								</label> -->
+								<input class="form-input test-input" type="text" name="test" id="test" required></input>
+								<label class="form-label test-label" for="test">
+									<span class="test-label-span">Test Style Input:</span>
+								</label>
+							</div>
 
-						<div class="label-input-wrap">
-							<label class="form-label" for="name">E-mail:</label>
-							<input class="form-input" type="text" name="email" id="email">
-						</div>
+						<button class="button" type="submit">Submit</button>
+					</form>
 
-						<div class="label-input-wrap">
-							<label class="form-label" for="message">Message:</label>
-							<textarea class="form-input form-textarea" name="message" id="message" cols="30" rows="10"></textarea>
-						</div>
-
-						<div class="label-input-wrap">
-							<!-- <label class="form-label test-label" for="test">
-								<span class="test-label-span">Test Style Input:</span>
-							</label> -->
-							<input class="form-input test-input" type="text" name="test" id="test" required></input>
-							<label class="form-label test-label" for="test">
-								<span class="test-label-span">Test Style Input:</span>
-							</label>
-						</div>
-
-					<button class="button" type="submit">Submit</button>
-				</form>
-			</section>
+				</article>
 		</main>
 
 		<footer>

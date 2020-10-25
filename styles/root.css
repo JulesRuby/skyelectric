@@ -67,6 +67,10 @@ h1, h2, h3, h4, h5, h6 {
 	min-height: 100vh;
 }
 
+.main {
+	/* padding: var(--r1); */
+}
+
 .section-heading {
 	margin-bottom: var(--r6);
 }
@@ -136,6 +140,7 @@ footer {
 
 .hero-banner {
 	overflow-y: hidden;
+	overflow: hidden;
 	position: relative;
 	display: flex;
 	justify-content: center;
@@ -585,6 +590,7 @@ header h1 .accent-span:last-child {
 		justify-content: center;
 		align-items: center;
 		gap: 0.25rem 1rem;
+
 		margin-right: var(--r4);
 		margin-left: var(--r4);
 		padding: var(--r3) 0;
@@ -616,12 +622,28 @@ header h1 .accent-span:last-child {
 
 	
 	.contact-form {
-		/* position: relative; */
 		padding: var(--r5);
 		
 		text-align: center;
 		background-color: var(--sec);
-		/* border-radius: 5px; */
+	}
+
+	.form-heading {
+		color: var(--detail);
+	}
+
+	.form-input {
+		display: block;
+		/* temp stuff */
+		padding: var(--r3);
+		width: 100%;
+		/* temp stuff */
+	
+		text-align: left;
+		background-color: var(--prim);
+		background-color: var(--quat);
+		border: 1px solid var(--detail);
+		border-radius: 0px;
 	}
 
 	/* ----------------TEST CSS FOR INPUT IDEA-------------- */
