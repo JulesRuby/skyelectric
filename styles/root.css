@@ -85,11 +85,10 @@ h1, h2, h3, h4, h5, h6 {
 	/* line-height: 1.30; */
 }
 
-.features > .read-more {
-	min-width: max-content;
-	margin-left: 50%;
-	margin-right: 50%;
+.read-more {
 
+	transform: scale(1);
+	transition: all 200ms;
 }
 
 article {
@@ -483,11 +482,27 @@ header h1 .accent-span:last-child {
 	display: none;
 }
 
+.features > .read-more {
+	min-width: max-content;
+	margin-left: 50%;
+	margin-right: 50%;
+
+}
+
 
 
 /* ^^^^^^^^^^ HOME--FEATURED SERVICES ^^^^^^^^^^ */
 
 /* vvvvvvvvvv HOME--ABOUT US vvvvvvvvvv */
+
+.about {
+	background-color: var(--quat);
+	color: var(--body-dbg);
+}
+
+.about h1 {
+	color: var(--detail);
+}
 
 .about img {
 	opacity: 0;
@@ -507,6 +522,19 @@ header h1 .accent-span:last-child {
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
+}
+
+.about .read-more {
+	background-color: var(--detail);
+	border-color: var(--detail);
+	border-radius: 0px;
+	box-shadow: 2px 3px 0px 1px var(--tert);
+}
+
+.about .read-more:hover,
+.about .read-more:focus {
+	box-shadow: 10px 10px 0px 1px var(--tert);
+	transform: scale(1.05) translate(-2px, -2px);
 }
 
 /* .about .image-wrapper::before {
