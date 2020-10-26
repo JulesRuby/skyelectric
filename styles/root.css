@@ -500,8 +500,12 @@ header h1 .accent-span:last-child {
 	color: var(--body-dbg);
 }
 
-.about h1 {
+.about .section-heading {
 	color: var(--detail);
+}
+
+.about p {
+	max-width: 60ch;
 }
 
 .about img {
@@ -511,6 +515,7 @@ header h1 .accent-span:last-child {
 .about .image-wrapper {
 	position: relative;
 	margin: var(--r4);
+	max-width: 60ch;
 
 	/* background-color: var(--tert); */
 	background: 
@@ -855,17 +860,19 @@ footer {
 		padding: var(--r6);
 	}
 	
-	.section.about .section-heading,
 	.section.about p {
 		grid-column: 1/2;
 	}
 
-	.section.about p {
+	.about p {
 		padding: 0 var(--r4) 0 0;
 		text-align: justify;
 	}
 
-	.section.about .section-heading,
+	.about header {
+		grid-area: 1/1/2/-1;
+	}
+
 	.section.about button {
 		grid-column: 1/-1;
 	}
@@ -1000,6 +1007,30 @@ footer {
 
 	.service-card{
 		height: calc((100vw - 2rem) / 6);
+	}
+
+	/* ABOUT */
+
+	.section.about {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto 1fr auto;
+		justify-content: center;
+	
+		padding: var(--r6);
+	}
+	
+	.about header {
+		grid-area: 1/1/2/2;
+	}
+	
+	.about p {
+		grid-area: 2/1/3/2;
+	}
+	
+	.about .image-wrapper {
+		grid-area: 1/2/3/3;
+		margin: 0 var(--r4);
 	}
 
 	/* PROJECTS */
