@@ -24,7 +24,7 @@
 	--body-lbg: var(--rich-bfogra-lt);
 	--body-dbg: var(--gunmetal-vlight);
 	--tert: hsla(354, 71%, 44%, 1);
-	--quat:  var(--rich-bfogra);
+	--quat:  var(--rich-bfogra-29);
 	--quat-50:  rgba(0, 0, 0, 0.5);
 	--detail:  var(--deep-saffron);
 
@@ -50,6 +50,7 @@
   --gunmetal-vlight: hsla(192, 30%, 80%, 1);
   --rich-bfogra: hsla(201, 57%, 10%, 1);
   --rich-bfogra-lt: hsla(201, 57%, 30%, 1);
+  --rich-bfogra-29: hsla(206, 61%, 8%, 1);
 
   /* Purples?? */
   --dark-purple: hsla(323, 96%, 10%, 1);
@@ -84,7 +85,8 @@
   --h2-size: calc(var(--font-mod) * var(--h3-size));
   --h1-size: calc(var(--font-mod) * var(--h2-size));
 
-	/* Font-Weight */
+  /* Font-Weight */
+  /* This is literally useless, so I'm not sure why i did it. I guess I was sleep deprived or something? */
   --wt100: 100;
   --wt200: 200;
   --wt300: 300;

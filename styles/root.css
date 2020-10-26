@@ -85,6 +85,13 @@ h1, h2, h3, h4, h5, h6 {
 	/* line-height: 1.30; */
 }
 
+.features > .read-more {
+	min-width: max-content;
+	margin-left: 50%;
+	margin-right: 50%;
+
+}
+
 article {
 	/* margin: 2rem 1rem; */
 	padding: 2rem 1rem;
@@ -419,26 +426,36 @@ header h1 .accent-span:last-child {
 
 /* vvvvvvvvvv HOME--FEATURED SERVICES vvvvvvvvvv */
 
+.features p {
+	max-width: 65ch;
+}
+
 .tile-grid {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(3, minmax(auto, 200px));
+	grid-template-columns: repeat(3, minmax(auto, 10rem));
+	/* grid-template-columns: repeat(3, 1fr); */
 
 	justify-items: center;
+	justify-content: center;
 	align-items: center;
 }
 
 .service-card {
+	padding: var(--r4) var(--r2);
 	/* temp dimensions */
-	height: calc((100vw - 2rem) / 2);
+	height: calc((100vw - 2rem) / 3);
+	max-height: 200px;
+	max-height: 10rem;
+	
 	width: 100%;
+	max-width: 200px; 
+	max-width: 10rem; 
 	/* temp dimensions */
+	line-height: 1.25;
 
-	border: solid 2px var(--prim);
-}
-
-.service-card h3 {
-	/* h3 hierarchy but h4 sizing */
-	font-size: var(--h4-size);
+	/* outline: solid 2px var(--quat); */
 }
 
 .service-card,
@@ -449,12 +466,21 @@ header h1 .accent-span:last-child {
 
 .service-card > img, 
 .cert-card > img {
-	/* margin: auto; */
-	max-width: 50%;
+	margin: auto;
+	max-width: 40%;
+}
+
+.service-card h6 {
+	margin: auto;
+	font-weight: 600;
 }
 
 .cert-card h4 {
 	font-size: var(--h6-size);
+}
+
+.credentials {
+	display: none;
 }
 
 
@@ -463,6 +489,34 @@ header h1 .accent-span:last-child {
 
 /* vvvvvvvvvv HOME--ABOUT US vvvvvvvvvv */
 
+.about img {
+	opacity: 0;
+}
+
+.about .image-wrapper {
+	position: relative;
+	margin: var(--r4);
+
+	/* background-color: var(--tert); */
+	background: 
+	url(../assets/images/aboutsky.jpg)
+	var(--quat);
+
+
+	background-blend-mode: luminosity;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+/* .about .image-wrapper::before {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, rgba(121,9,22,0.5) 0%, rgba(121,9,22,0.5) 100%);
+	background-blend-mode: luminosity;
+} */
 
 
 /* ^^^^^^^^^^ HOME--ABOUT US ^^^^^^^^^^ */
@@ -760,17 +814,6 @@ footer {
 
 @media screen and (min-width: 48rem) {
 
-	/* SERVICES */
-	
-	.tile-grid {
-		grid-template-columns: repeat(3, 1fr);
-	}
-
-	.service-card{
-		height: calc((100vw - 2rem) / 3);
-	}
-
-
 	/* ABOUT */
 
 	.section {
@@ -904,8 +947,27 @@ footer {
 
 	/* SERVICES */
 
-	.tile-grid {
-		grid-template-columns: repeat(6, 1fr);
+	.features {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.features header {
+		width: 100%;
+	}
+
+	.features p {
+		width: 50%;
+		max-width: 50ch;
+		text-align: justify;
+
+	}
+
+	.feat-service-gallery {
+		padding: var(--r4) var(--r4);
+		max-width: 50%;
+		max-width: max-content;
 	}
 
 	.service-card{
@@ -913,10 +975,6 @@ footer {
 	}
 
 	/* PROJECTS */
-
-	.projects-gallery {
-
-	}
 
 	.projects-gallery img {
 		/* Wow, if only chrome would get it's shit together so I didn't have to account for the scrollbar? I guess FF has spoiled me with handling things like this automatically.*/
