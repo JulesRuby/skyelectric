@@ -425,6 +425,29 @@ header h1 .accent-span:last-child {
 
 /* vvvvvvvvvv HOME--FEATURED SERVICES vvvvvvvvvv */
 
+/* .features {
+	background: rgb(121,9,22);
+	background: radial-gradient(
+		circle at bottom center,
+		rgba(121,9,22,1) 25%,
+		rgba(255,179,0,1) 25%,
+		rgba(255,179,0,1) 100%);
+
+	} */
+.features {
+	background: radial-gradient(
+		circle at bottom center,
+		var(--tert-l) 25%,
+		var(--princeton-orange-l) 25%,
+		var(--princeton-orange-l) 55%,
+		var(--detail-l) 55%,
+		var(--detail-l) 100%);
+}
+
+.features {
+	/* background: var(--detail); */
+}
+
 .features p {
 	max-width: 65ch;
 }
@@ -482,13 +505,22 @@ header h1 .accent-span:last-child {
 	display: none;
 }
 
-.features > .read-more {
+.features .read-more {
 	min-width: max-content;
 	margin-left: 50%;
 	margin-right: 50%;
 
+	background-color: var(--detail);
+	border-color: var(--detail);
+	border-radius: 0px;
+	box-shadow: 2px 3px 0px 1px var(--tert);
 }
 
+.features .read-more:hover,
+.features .read-more:focus {
+	box-shadow: 10px 10px 0px 1px var(--tert);
+	transform: scale(1.05) translate(-2px, -2px);
+}
 
 
 /* ^^^^^^^^^^ HOME--FEATURED SERVICES ^^^^^^^^^^ */
@@ -602,15 +634,41 @@ header h1 .accent-span:last-child {
 	/* width: 100%; */
 }
 
+.projects .read-more {
+	background-color: var(--detail);
+	border-color: var(--detail);
+	border-radius: 0px;
+	box-shadow: 2px 3px 0px 1px var(--tert);
+}
+
+.projects .read-more:hover,
+.projects .read-more:focus {
+	box-shadow: 10px 10px 0px 1px var(--tert);
+	transform: scale(1.05) translate(-2px, -2px);
+}
+
 
 
 /* ^^^^^^^^^^ HOME--PROJECTS ^^^^^^^^^^ */
 
 /* vvvvvvvvvv HOME--TESTIMONIALS vvvvvvvvvv */
 
+	.testimonials {
+		background: var(--quat);
+	}
+
+	.testimonials .section-heading {
+		color: var(--detail);
+	}
+
 	.testimonial-gallery {
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
+		align-items: space-between;
+
+		background: hsla(0deg, 0%, 100%, 0.5);
+		box-shadow: 2px 4px 5px 2px hsla(0deg, 0%, 0%, 0.5);
 	}
 
 	.testimonial-card {
@@ -913,10 +971,21 @@ footer {
 
 	/* PROJECTS */
 
+	.projects-gallery {
+		flex-wrap: nowrap;
+		/* height: 30rem; */
+	}
+
+	.projects .image-wrapper {
+		height: 30rem;
+	}
+
 	.projects-gallery img {
 		/* This is dumb and hacky, but it works for now. Basically doing the calc() to accomodate JUST the available space makes the total width of the images overshoot the available space by like... 0.0187 pixels or something ((thanks, sig-figs)). Anyway, I just subtracted an extra pixel from the available space to give the same effect with nearly imperceptible difference */
-		height: calc((100vw - 2rem - 1px) / 3);
-		width: calc((100vw - 2rem - 1px) / 3);
+		/* height: calc((100vw - 2rem - 1px) / 3);
+		width: calc((100vw - 2rem - 1px) / 3); */
+		object-fit: cover;
+		height: 30rem;
 	}
 
 
@@ -1024,6 +1093,7 @@ footer {
 
 	.features header {
 		width: 100%;
+		text-align: center;
 	}
 
 	.features p {
@@ -1071,10 +1141,10 @@ footer {
 
 	.projects-gallery img {
 		/* Wow, if only chrome would get it's shit together so I didn't have to account for the scrollbar? I guess FF has spoiled me with handling things like this automatically.*/
-		height: calc((100vw - 2rem - 17px) / 4);
+		/* height: calc((100vw - 2rem - 17px) / 4); */
 		/* The code below does not actually work for height, because the % unit accounts for the height % and not the width, maybe I'll try to customize the scrollbar width and attach it to a custom property so I don't need to use the 17px that seems to be standard? Plus I get to make a cool bar */
 		/* height: calc((100vw - 2rem - (100vw - 100%)) / 4); */
-		width: calc((100vw - 2rem - (100vw - 100%)) / 4);
+		/* width: calc((100vw - 2rem - (100vw - 100%)) / 4); */
 	}
 
 	/* TESTIMONIALS */
