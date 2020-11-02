@@ -38,9 +38,17 @@
 
 .main {
 	padding: var(--r1);
+
+	background: radial-gradient(
+		circle at bottom center,
+		var(--tert-l) 25%,
+		var(--princeton-orange-l) 25%,
+		var(--princeton-orange-l) 55%,
+		var(--detail-l) 55%,
+		var(--detail-l) 100%);
 }
 
-.about {
+.about-page {
 	display: grid;
 	grid-template-columns: 1fr;
 	justify-items: center;
@@ -49,30 +57,96 @@
 	gap: var(--r6);
 	padding: var(--r4);
 
-	background: var(--prim);
+	/* background: var(--prim); */
 
-	border-radius: 4px;
+	/* border-radius: 4px; */
 }
 
-.about .section-heading,
-.about .sub-heading {
+.about-page .section-heading,
+.about-page .sub-heading {
 	/* margin-top: var(--r6); */
 	width: 100%;
 	text-align: center;
 }
 
-.about p,
-.about ul {
+.about-page p,
+.about-page ul {
 	/* padding: var(--r4); */
-	list-style: disc;
+	/* list-style: disc; */
 }
 
-.about ul {
-	padding-left: var(--r6);
+.about-page li {
+	/* padding-bottom: var(--r2); */
 }
 
-.about li {
-	padding-bottom: var(--r2);
+.ethos-list {
+	list-style-position: inside;
+	counter-reset: services;
+}
+
+.ethos-list > * + * {
+	margin-top: var(--r4);
+}
+
+.ethos-item {
+	overflow: hidden;
+	position: relative;
+	padding: var(--r7);
+	padding-left: 8rem;
+
+	counter-increment: services;
+
+	background-color: var(--quat);
+}
+
+.ethos-item::before {
+	position: absolute;
+	content: "0" counter(services) " ";
+
+	display: flex;
+	align-items: center;
+
+	top: 0;
+	bottom: 0;
+	left: 0;
+
+	font-size: 7rem;
+	line-height: 1;
+	color: var(--detail);
+
+	z-index: 0;
+}
+
+.ethos-item p {
+	position: relative;
+}
+
+.ethos-item::after {
+	position: absolute;
+	display: block;
+	content: "";
+	margin-bottom: 0.25rem;
+
+	right: 0;
+	bottom: 0;
+	left: 0;
+	
+	font-size: var(--h1-size);
+	line-height: 1;
+	text-align: center;
+	color: var(--bod-dbg);
+}
+
+.ethos-item:nth-child(1)::after {
+	content: "Big";
+}
+
+.ethos-item:nth-child(2)::after {
+	content: "Ol'";
+}
+
+.ethos-item:nth-child(3)::after {
+	content: "Pee-pee";
 }
 
 .article-image {
@@ -91,7 +165,7 @@
 		padding-right: var(--r4);
 	}
 
-	.about {
+	.about-page {
 		grid-template-columns: 1fr 1fr;
 	}
 

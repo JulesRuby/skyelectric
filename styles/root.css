@@ -444,12 +444,9 @@ header h1 .accent-span:last-child {
 		var(--detail-l) 100%);
 }
 
-.features {
-	/* background: var(--detail); */
-}
-
 .features p {
 	max-width: 65ch;
+	background: hsla(0deg, 0%, 100%, 0.2);
 }
 
 .tile-grid {
@@ -462,6 +459,9 @@ header h1 .accent-span:last-child {
 	justify-items: center;
 	justify-content: center;
 	align-items: center;
+
+	background: hsla(0deg, 0%, 0%, 0.2);
+	background: hsla(0deg, 0%, 0%, 0.2);
 }
 
 .service-card {
@@ -804,11 +804,19 @@ header h1 .accent-span:last-child {
 		padding: var(--r5);
 		
 		text-align: center;
-		background-color: var(--sec);
+		background-color: var(--quat);
 	}
 
 	.form-heading {
 		color: var(--detail);
+	}
+
+	.label-input-wrap {
+		box-shadow: 3px 3px 5px 3px var(--quat); 
+	}
+
+	.form-label {
+		color: var(--body-dbg);
 	}
 
 	.form-input {
@@ -819,10 +827,23 @@ header h1 .accent-span:last-child {
 		/* temp stuff */
 	
 		text-align: left;
-		background-color: var(--prim);
-		background-color: var(--quat);
-		border: 1px solid var(--detail);
+		color: var(--quat);
+		background-color: var(--detail-l);
+		/* border: 1px solid var(--detail); */
 		border-radius: 0px;
+	}
+
+	.contact-form .read-more {
+		background-color: var(--detail);
+		border-color: var(--detail);
+		border-radius: 0px;
+		box-shadow: 2px 3px 0px 1px var(--tert);
+	}
+	
+	.contact-form .read-more:hover,
+	.contact-form .read-more:focus {
+		box-shadow: 10px 10px 0px 1px var(--tert);
+		transform: scale(1.05) translate(-2px, -2px);
 	}
 
 	/* ----------------TEST CSS FOR INPUT IDEA-------------- */
