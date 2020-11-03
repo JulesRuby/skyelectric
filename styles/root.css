@@ -542,12 +542,15 @@ header h1 .accent-span:last-child {
 
 .about img {
 	opacity: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .about .image-wrapper {
 	position: relative;
 	margin: var(--r4);
 	max-width: 60ch;
+	max-height: 40ch;
 
 	/* background-color: var(--tert); */
 	background: 
@@ -1136,7 +1139,7 @@ footer {
 
 	/* ABOUT */
 
-	.section.about {
+	.about {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto 1fr auto;
