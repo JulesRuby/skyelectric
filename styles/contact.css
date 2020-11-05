@@ -39,3 +39,16 @@
 .main {
 	padding: var(--r1);
 }
+
+.contact-form .read-more {
+	background-color: var(--detail);
+	border-color: var(--detail);
+	border-radius: 0px;
+	box-shadow: 2px 3px 0px 1px var(--tert);
+}
+
+.contact-form .read-more:hover,
+.contact-form .read-more:focus {
+	box-shadow: 10px 10px 0px 1px var(--tert);
+	transform: scale(1.05) translate(-2px, -2px);
+}
