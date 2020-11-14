@@ -753,7 +753,7 @@ header h1 .accent-span:last-child {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		line-height: 1.5;
+		/* line-height: 1.5; */
 	}
 
 	.contact-form-ul li + * {
@@ -982,7 +982,6 @@ footer {
 
 	.about p {
 		padding: 0 var(--r4) 0 0;
-		text-align: justify;
 	}
 
 	.about header {
@@ -1123,7 +1122,6 @@ footer {
 	.features p {
 		width: 50%;
 		max-width: 50ch;
-		text-align: justify;
 
 	}
 

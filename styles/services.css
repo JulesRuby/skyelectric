@@ -36,183 +36,188 @@
 	z-index: 1;
 }
 
-.main {
-	padding: var(--r1);
+.main {}
+
+.main > * + * {
+	margin-top: 5rem;
 }
 
-.expanded-services {
-  padding: 0 var(--r7);
+.main p {
+	padding: var(--r4);
+	padding-right: 0;
+	max-width: 65ch;
 }
 
-.service-container {
-  /*   overflow: hidden; */
-  /*   overflow-x: visible; */
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin: var(--r5) 0;
-    margin-bottom: 3rem;
-    width: 100%;
-  }
-  
-  .service-article {
-    position: relative;
-    padding: 0;
-    
-    color: var(--prim);
-    background-color: var(--quat);
-    
-    transition: all 300ms ease;
-  }
-  
-  .service-container > .service-article:first-child {
-    box-shadow: 0px 4px 6px -3px var(--detail);
-    z-index: 1;
-  }
-  
-  .service-article h2 {
-    display: inline-block;
-    margin: 0;
-    padding: var(--r2) var(--r4);
-    background-color: var(--tert);
-    color: var(--prim);
-  }
-  
-  .service-article p {
-    padding: var(--r6);
-  }
-  
-  .service-expand {
-    overflow: hidden;
-    position: absolute;
-    
-    right: 0;
-    bottom: 0;
-    transform: translate(50%, 50%);
-    width: 5rem;
-    height: 5rem;
-    
-    background-color: var(--tert);
-    border: var(--r2) solid var(--prim);
-    border-radius: 50%;
-    
-    transform-origin: center center;
-    cursor: pointer;
-    z-index: 1;
-  }
-  
-  .service-expand::before {
-    content: "";
-    position: absolute;
-    
-    bottom: 30%;
-    left: 25%;
-    width: 50%;
-    height: 50%;
-    
-    transform: rotate(45deg);
-    
-  /*   background-color: var(--detail); */
-    border-right: 1rem solid var(--detail);
-    border-bottom: 1rem solid var(--detail);
-  /*   outline: .5rem solid var(--sec) .5rem solid var(--sec) .5rem solid var(--sec) .5rem solid var(--sec); */
-  }
-  
-  .service-expand::after {
-    display: none;
-    content: "";
-    position: absolute;
-    
-    bottom: 55%;
-    left: 25%;
-    width: 50%;
-    height: 50%;
-    
-    transform: rotate(45deg);
-    background-color: var(--tert);
-    background-color: var(--quat);
-  }
-  
-  .service-expand.pull-open {
-    transform: translate(50%, 50%) rotate(180deg);
-    transform-origin: center center;
-  }
-  
-  .service-expand,
-  .service-expand::before,
-  .service-expand::after {
-    transition: all 200ms ease;
-  }
-  
-  .service-expand:hover,
-  .service-expand:hover::after,
-  .service-expand:focus,
-  .service-expand:focus::after{
-    background-color: var(--sec);
-    outline: 0;
-  }
-  
-  .service-expand:hover::before,
-  .service-expand:focus::before{
-    transform: scale(1.1) rotate(45deg);
-  }
-  
-  .pulldown {
-    overflow: hidden;
-    position: relative;
-    width: calc(100% - .2rem);
-    margin-left: auto;
-    /* height: 0; */
-    /*   transform: translateY(-100%); */
-    max-height: 0;
-    transition: all 150ms ease;
-  }
-  
-  .pulldown.pull-open {
-  /*  Not going to worry about the max-height for now, as this will be a static site, I can probably get away with explicitly coding it and move on to the next piece. Since I can't animate max-height with very implicit units *SIGH* */
-    max-height: 100vh;
-  }
-  
-  /* .pulldown *, */
-  .pulldown .p,
-  .pulldown .ul {
-  /*   position: absolute; */
-    transform: translateY(-300%);
-    transition: all 150ms ease;
-  }
-  
-  /* .pulldown *.pull-open, */
-  .pulldown .p.pull-open,
-  .pulldown .ul.pull-open {
-  /*   position: relative; */
-    transform: translateY(0%);
-    
-  }
-  
-  .pulldown ul {
-    padding-bottom: var(--r6);
-    padding-left: 3.5rem;
-    padding-right: var(--r6);
-    list-style-type: circle;
-  }
-  
-  .pulldown li {
-    padding-bottom: var(--r3);
-  }
-  
-  .pulldown li::marker {
-    color: var(--detail);
-  }
+.page-intro {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	margin-top: 5rem;
+	padding: 0 var(--r4);
+}
+
+.head-body-wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.intro-header {
+	position: relative;
+	padding: var(--r4) var(--r6);
+	margin: 0 var(--r4);
+}
+
+.intro-header::before,
+.intro-header::after {
+	position: absolute;
+	content: "";
+	height: 140%;
+	height: 100%;
+	width: 10%;
+	border: .5rem solid var(--detail);
+
+	top: -20%;
+	top: 0;
+	bottom: -20%;
+	bottom: 0;
+}
+
+.intro-header::before {
+	left: -2rem;
+	left: 0;
+	border-right: unset;
+}
+
+.intro-header::after {
+	right: -2rem;
+	right: 0;
+	border-left: unset;
+}
+
+.intro-heading {
+	line-height: 1;
+	font-size: var(--h5-size);
+}
+
+p.heading-subscript {
+	margin-top: 0.5rem;
+	padding: 0;
+
+	font-size: var(--h3-size);
+	font-weight: 600;
+	line-height: 1;
+	color: var(--quat);
+}
+
+.page-intro > p {
+	margin-top: 2rem;
+}
+
+.page-intro .image-wrapper {
+	display: flex;
+	flex-grow: 1;
+	padding-left: var(--r4);
+	
+	max-width: 65ch;
+} 
+
+.page-intro img {
+	flex-grow: 1;
+}
+
+.service-info {}
+
+.service-info > * + * {
+	margin-top: 5rem;
+}
+
+.service {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	min-height: 60vh;
+	width: 100%;
+}
+
+.service * + * {
+	margin-top: var(--r6);
+}
+
+.container {
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+	/* justify-content: center; */
+	align-items: center;
+
+	margin-top: 0;
+	min-height: 50%;
+}
+
+.container > * {
+	margin-top: var(--r6);
+}
+
+.primary {}
+
+.service-header {
+	padding: 0 var(--r4);
+}
+
+.service-title {
+	text-align: center;
+}
+
+.service p,
+.feature-list {
+	max-width: 60ch;
+}
+
+.service p {
+	padding: var(--r4);
+}
+
+.service > .image-wrapper {
+	display: none;
+}
+
+.secondary {
+	background-color: var(--quat);
+}
+
+.secondary h2 {
+	width: 100%;
+
+	text-align: center;
+	color: var(--detail);
+}
+
+.feature-list {
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 3.5rem;
+
+	list-style: disc;
+	color: var(--body-dbg);
+}
+
+.feature-list * + * {
+	margin-top: var(--r4);
+}
+
+.feature-list-item {
+	flex-basis: 100%;
+}
+
+.feature-list-item::marker {
+	color: var(--detail);
+}
 
   @media screen and (min-width: 48rem) {
 
-    .main {
-      padding-left: var(--r4);
-      padding-right: var(--r4);
-    }
-  
-    .section-heading + p {
-      text-align: justify;
-    }
+
   
   }

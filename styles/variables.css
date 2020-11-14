@@ -26,6 +26,7 @@
 	--body-dbg: var(--gunmetal-vlight);
 	--tert: hsla(354, 71%, 44%, 1);
 	--tert-l: hsla(354, 71%, 44%, 0.5);
+	--tert-20: hsla(354, 71%, 44%, 0.2);
 	--quat:  var(--rich-bfogra-29);
 	--quat-50:  rgba(0, 0, 0, 0.5);
 	--detail-alt:  var(--princeton-orange-l);
@@ -119,7 +120,7 @@
   --wt900: 900;
 
   /* Line-Height */
-  --line-height: 1.5;
+  --line-height: 1.75;
 
 
 
