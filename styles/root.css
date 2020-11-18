@@ -59,6 +59,7 @@ h6 {
 
 h1, h2, h3, h4, h5, h6 {
 	color: var(--gunmetal);
+	line-height: 1.25;
 }
 
 /* ^^^^^^^^^^ Base Styles ^^^^^^^^^^ */
@@ -218,6 +219,10 @@ footer {
 	/* z-index: -1; */
 }
 
+.cta-wrap span {
+	display: block;
+}
+
 .cta-wrap h1,
 .cta-wrap button {
 	position: relative;
@@ -232,10 +237,10 @@ footer {
 
 header .accent-span {
 	color: var(--detail);
-
 }
+
 header h1 .accent-span:last-child {
-	font-style: italic;
+	/* font-style: italic; */
 }
 
 .cta {
@@ -477,7 +482,8 @@ header h1 .accent-span:last-child {
 	/* temp dimensions */
 	line-height: 1.25;
 
-	/* outline: solid 2px var(--quat); */
+	background-color: var(--tert);
+	transform: rotate3d(0, 0, 1, 0deg);
 }
 
 .service-card,
@@ -490,6 +496,14 @@ header h1 .accent-span:last-child {
 .cert-card > img {
 	margin: auto;
 	max-width: 40%;
+}
+
+.service-card:hover img {
+	transition: all 500ms linear; 
+}
+
+.service-card:hover img {
+	transform: rotate3d(0, 1, 0, 360deg);
 }
 
 .service-card h6 {

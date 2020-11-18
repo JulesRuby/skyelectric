@@ -142,3 +142,9 @@
 	border-radius: 4px;
 	box-shadow: var(--shadow-sm);
 }
+
+
+.dark-palette {
+	color: var(--body-dbg);
+	background-color: var(--quat);
+}
