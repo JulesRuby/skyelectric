@@ -6,9 +6,13 @@
 .page-banner {
 	overflow-y: hidden;
 	position: relative;
-	display: flex;
-	justify-content: center;
+	display: grid;
+	grid-template-columns: auto minmax(auto, 130ch) auto;
 	align-items: center;
+	justify-items: center;
+
+	padding: 0 1rem;
+
 	top: calc(var(--contact-strip-ht) + var(--navbar-ht));
 	height: var(--page-banner-ht);
 
@@ -29,11 +33,26 @@
 	opacity: 0.6;
 }
 
-.banner-head {
-	margin-left: 10vw;
-	margin-right: auto;
-	color: var(--prim);
+.page-banner .wrapper {
+	grid-column-start: 2;
+	padding-left: 1rem;
+	width: 100%;
+	
 	z-index: 1;
+}
+
+.banner-heading {
+	max-width: 25ch;
+	font-size: var(--h5-size);
+	font-weight: 500;
+
+	color: var(--detail);
+}
+
+.banner-sub-heading {
+	max-width: 25ch;
+	font-size: var(--h3-size);
+	color: var(--prim);
 }
 
 .main {}
@@ -99,6 +118,7 @@
 .intro-heading {
 	line-height: 1;
 	font-size: var(--h5-size);
+	font-weight: 500;
 }
 
 p.heading-subscript {
