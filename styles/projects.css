@@ -3,12 +3,17 @@
 	min-height: 50vh;
 }
 
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 .page-banner {
 	overflow-y: hidden;
 	position: relative;
-	display: flex;
-	justify-content: center;
+	display: grid;
+	grid-template-columns: auto minmax(auto, 130ch) auto;
 	align-items: center;
+	justify-items: center;
+
+	padding: 0 1rem;
+
 	top: calc(var(--contact-strip-ht) + var(--navbar-ht));
 	height: var(--page-banner-ht);
 
@@ -29,14 +34,31 @@
 	opacity: 0.6;
 }
 
-.banner-head {
-	margin-left: 10vw;
-	margin-right: auto;
-	color: var(--prim);
+.page-banner .wrapper {
+	grid-column-start: 2;
+	padding-left: 1rem;
+	width: 100%;
+	
 	z-index: 1;
 }
 
-.full-gallery {
+.banner-heading {
+	max-width: 25ch;
+	font-size: var(--h5-size);
+	font-weight: 500;
+
+	color: var(--detail);
+}
+
+.banner-sub-heading {
+	max-width: 25ch;
+	font-size: var(--h3-size);
+	color: var(--prim);
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* .full-gallery {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-auto-rows: min-content;
@@ -52,14 +74,130 @@
 }
 
 .full-gallery img {
-	object-fit: fill;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
 	object-position: 50% 50%;
+} */
+
+.close {
+	background-color: none;
+	color: var(--detail);
+
+}
+
+.full-gallery {
+	width: 100%;
+	max-width: 130ch;
+}
+
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 100px);
+	grid-auto-rows: 100px;
+	grid-auto-flow: dense;
+}
+
+.frame {
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 1;
+	grid-template-rows: 1;
+}
+
+.frame img {
+	grid-area: 1/1/-1/-1;
+
+	width: 100%;
+	height: 100%;
+
+	object-position: 50% 50%;
+	object-fit: cover;
+}
+
+.frame-overlay {
+	position: relative;
+	display: grid;
+	grid-area: 1/1/-1/-1;
+	justify-items: center;
+	align-items: center;
+
+	background-color: var(--tert-l);
+
+	transform: translateY(100%);
+	transition: all 200ms linear;
+}
+
+.frame:hover .frame-overlay,
+.frame:focus .frame-overlay{
+	transform: translateY(0%);
+}
+
+.frame-overlay button {
+	padding: 0.25rem 0.75rem;
+
+	color: var(--prim);
+	background-color: var(--prim);
+	background-color:	unset;
+
+	border: 3px solid var(--prim);
+	border-radius: 4px;
+}
+
+.frame.r2 {
+	grid-row: span 2;
+}
+
+.frame.r3 {
+	grid-row: span 3;
+}
+
+.frame.r4 {
+	grid-row: span 4;
+}
+
+.frame.c2 {
+	grid-column: span 2;
+}
+
+.frame.c3 {
+	grid-column: span 3;
+}
+
+.frame.c4 {
+	grid-column: span 4;
+}
+
+.box-overlay {
+	position: fixed;
+	display: none;
+	background-color: var(--rich-bfogra-50);
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	z-index: 5;
+}
+
+.overlay.open {
+	display: grid;
+}
+
+.overlay figure {
+	background-color: var(--prim);
+	width: 75%;
+	padding: 1rem;
+}
+
+.overlay img {
+	width: 100%;
 }
 
 
-/* MEDIA QUERIES YAAAAAAY */
 
-@media screen and (min-width: 48rem) {
+
+/* @media screen and (min-width: 48rem) {
 	.full-gallery {
 		grid-template-columns: repeat(3, 1fr);
 	}
@@ -78,12 +216,8 @@
 
 @media screen and (min-width: 90rem) {
 	.full-gallery {
-		/* Let's come back to this, I'm wasting too much time playing around with it. */
-		/* grid-template-columns: repeat(auto-fit, minmax(20%, 200px));
-		grid-template-columns: repeat(auto-fill, minmax(100px, 12%)); */
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		grid-template-rows: min-content;
-		/* grid-auto-rows: calc(100vw / 5); */
 		justify-items: center;
 		align-items: stretch;
 	}
@@ -91,4 +225,4 @@
 
 @media screen and (min-width: 48rem) {
 
-}
+} */
