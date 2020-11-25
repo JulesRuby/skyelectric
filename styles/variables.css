@@ -155,5 +155,6 @@
 
 :root {
   font-size: var(--fluid-rem);
+  /* font-size: 16px; */
   /* This is declaring that the root font-size of the document is the calculated --fluid-rem value. this actually causes the rem of the document to remain fluid based on the actual size of the viewport, which will reduce the amount of actual typography styling delcarations down the road. Also this allows me to create a lot of scaling measurements on page elements by referencing rems if I like, and also allows the use of v-units to be a more cohesive experience */
 }

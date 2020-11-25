@@ -11,11 +11,13 @@
 	<link rel="manifest" href="./site.webmanifest">
 	<link rel="stylesheet" href="./styles/destyle.css">
 	<link rel="stylesheet" href="./styles/root.css">
+	<link rel="stylesheet" href="./styles/consolidation.css">
 </head>
 <body>
 	<!-- Page Wrapper (struggling to decide if this is necessary?) -->
 	<div class="page-wrapper">
-		<!-- Header | to contain: vertical layered nav(logo/home-link + business contact strip + site navigation) -->
+		
+		<!-- HEADER + NAVIGATION -->
 		<header id="header" class="hero-header">
 			<!-- Business contact info -->
 			<div class="contact-strip">
@@ -72,74 +74,116 @@
 			
 			<!-- banner-image wrap: makes it easier to accomodate background-image with fixed position navigation above in the flow -->
 			<div class="hero-banner">
-			<!-- CTA Need to build visual parent element for this -->
-				<div class="cta-wrap">
+				<div class="uvp-container">
 					<h1>
-						<span class="accent-span">Sky Electric,</span>
-						<span>Real chads wipe</span>
-						<span class="accent-span">back-to-front!</span>
+						<span class="font-size-h5 font-wt-500">Okotoks Residential and Commercial Electrician</span>
+						<span class="accent-span font-wt-700">Energy Saving Electrical Solutions</span>
 					</h1>
-	
-					<button type="button" class="cta button">
-						<a href="#contact">Get Estimate</a>
-					</button>
+					<h3>
+						<span class="font-size-body font-wt-400">Servicing Okotoks, Calgary, High River areas. Sky Electric is there to provide you reliable electrical systems that save you money on bills and give you peace of mind!</span>
+					</h3>
+					
+					<div class="cta-container">
+						<button type="button" class="cta primary button">
+							<a href="#contact">Request Service</a>
+						</button>
+						<button type="button" class="cta secondary button">
+							<a href="projects.html">Our Work</a>
+						</button>
+					</div>
 				</div>
 			</div>
 
 		</header>
 
-		<!-- Featured Services, box/strip touting featured services and cards containing excerpt and links to href=page#section -->
+		<!-- MAIN CONTENT -->
 		<main class="main">
 			
-			<section class="section features">
-				<header>
-					<h1 class="section-heading">
-						Featured Services
-					</h1>
-				</header>
-	
-				<p>I'm baby direct trade health goth lo-fi pug kitsch normcore mustache snackwave echo park iPhone meditation unicorn squid. Meh occupy organic, next level cold-pressed vaporware tacos air plant snackwave. Sriracha cornhole banh mi, single-origin coffee art party chambray drinking vinegar street art cred truffaut blue bottle trust fund tote bag. Master cleanse VHS helvetica organic ugh cornhole pop-up +1 knausgaard. Marfa subway tile cliche pop-up ennui kombucha waistcoat, freegan poutine organic. Hexagon PBR&B waistcoat vaporware vape fanny pack.
 
-					Dummy text? More like dummy thicc text, amirite?</p>
+
+			<!-- FEATURE SERVICES / WHAT WE OFFER -->
+			<section class="page-intro features watermarked">
+				<header class="">
+					<h2 class="">
+						What we <span class="accent-span">offer</span>
+					</h2>
+				</header>
+
+				<div class="head-body-wrap">
+
+					<!-- <header class="">
+						<h2 class="">
+							What we <span class="accent-span">offer</span>
+						</h2>
+					</header> -->
+		
+					<p>
+						We specialize in both residential and commercial electrical work. Whether the project is a new construction
+					</p>	
+				</div>
+				
+				<div class="head-body-wrap">
+					<article class="feat-service-gallery tile-grid">
+
+						<div class="service-card flex-col-cen">
+							<img src="./assets/images/zap.png" alt="zap">
+							<h6>Renovations</h6>
+						</div>
+
+						<div class="service-card flex-col-cen">
+							<img src="./assets/images/zap.png" alt="zap">
+							<h6>Retrofitting</h6>
+						</div>
+
+						<div class="service-card flex-col-cen">
+							<img src="./assets/images/zap.png" alt="zap">
+							<h6>AV Media</h6>
+						</div>
+
+						<div class="service-card flex-col-cen">
+							<img src="./assets/images/zap.png" alt="zap">
+							<h6>Home Automation</h6>
+						</div>
+
+						<div class="service-card flex-col-cen">
+							<img src="./assets/images/zap.png" alt="zap">
+							<h6>Panel Installation</h6>
+						</div>
+
+						<div class="service-card flex-col-cen">
+							<img src="./assets/images/zap.png" alt="zap">
+							<h6>Solar Panels</h6>
+						</div>
+					</article>
+				</div>
 	
-				<!-- Mobile-flexible card gallery -->
-				<article class="blonk feat-service-gallery tile-grid">
-					<div class="service-card flex-col-cen">
-						<img src="./assets/images/zap.png" alt="zap">
-						<h6>Renovations</h6>
-						
-					</div>
-					<div class="service-card flex-col-cen">
-						<img src="./assets/images/zap.png" alt="zap">
-						<h6>Retrofitting</h6>
-						
-					</div>
-					<div class="service-card flex-col-cen">
-						<img src="./assets/images/zap.png" alt="zap">
-						<h6>AV Media</h6>
-						
-					</div>
-					<div class="service-card flex-col-cen">
-						<img src="./assets/images/zap.png" alt="zap">
-						<h6>Home Automation</h6>
-						
-					</div>
-					<div class="service-card flex-col-cen">
-						<img src="./assets/images/zap.png" alt="zap">
-						<h6>Panel Installation</h6>
-						
-					</div>
-					<div class="service-card flex-col-cen">
-						<img src="./assets/images/zap.png" alt="zap">
-						<h6>Solar Panels</h6>
-						
-					</div>
-				</article>
+				<button class="button read-more" type="button"><a href="services.html">Learn More</a></button>
+			</section>
+
+
+
+			<!-- ABOUT / WHY US -->
+			<section class="page-intro about watermarked">
+				<header class="">
+					<h2 class="">
+						What we <span class="accent-span">offer</span>
+					</h2>
+				</header>
+				<div class="head-body-wrap">
 	
-				<!-- Certifications/Associations -->
-				<!-- Horizontal bar displaying icons/images of these things. I feel like it's best to keep these high up? This is flexible though, we'll workshop it if we need to -->
+					<ul class="custom-ul">
+						<li>Friendly, reliable and informative service</li>
+						<li>Clear communication</li>
+						<li>Emphasize energy saving solutions</li>
+						<li>10+ years of experience</li>
+						<li>Competitive pricing</li>
+						<li>No job too small!</li>
+					</ul>
+				</div>
+
+				<!-- Licensing / Certificate : Hidden for now -->
+				<!-- Probably should make this as a UL to simplicity -->
 				<article class="blonk credentials flex-row-aro">
-					<!-- Just going to do some divs for this for now, but I might consider looking for something like <ul><li> or even see if there is a more semantically friendly option? -->
 						<div class="cert-card flex-col-eve">
 							<img src="./assets/images/award.png" alt="get ya buttz out!">
 							<h4>CPR/AED</h4>
@@ -161,68 +205,49 @@
 							<h4>Copper Bandit</h4>
 						</div>
 				</article>
-	
-				<button class="button read-more" type="button"><a href="#header">Learn More</a></button>
-			</section>
-			
-			<!-- Small about section leading into another page that we'll talk more about the company, I guess? This one is tough -->
-			<section class="section about">
-				<header>
-					<h1 class="section-heading">
-						About Sky Electric
-					</h1>
-				</header>
-	
-				<p>
-					Sky Electric is an Okotoks based electrical contractor, servicing the Okotoks, High River, and Calgary areas. Created by Cody Muri, a Master Electrician with 10+ years of experience etched across work. Offering services in residential, commerical, retrofitting, renovations, AV systems and home automation, Sky Electric is well equipped to handle a myriad of client needs with confidence. 
-				</p>
-
-				<div class="image-wrapper">
-					<img src="./assets/images/aboutsky.jpg" height="300" width="200" alt="Yas, bitch">
-				</div>
 				
-				<button class="button read-more" type="button"><a href="#header">Learn More</a></button>
+				<button class="button read-more" type="button"><a href="about.html">Learn More</a></button>
 			</section>
-	
-			<!-- Projects / "Our Work" Something about how we invented lighting and Tesla paid money to eat our ancestors' asses-->
-			<section class="section projects">
-				<header>
-					<h1 class="section-heading">
-						Our Electrical Work
-					</h1>
-				</header>
-				<!-- <p>
-					Taiyaki pour-over craft beer flexitarian 3 wolf moon etsy leggings meggings. Asymmetrical ugh XOXO, wolf edison bulb shabby chic vinyl slow-carb tumeric jean shorts sriracha narwhal biodiesel hammock. Mustache put a bird on it farm-to-table cloud bread pug butcher.
-				</p> -->
 
-				<!-- Maybe I can do away with this minor gallery and simply include a singular photo of the work beside the content and leave it at the invitation to view the gallery -->
-				<article class="blonk projects-gallery">
-					<!-- <img src="./assets/images/gallery1.jpg" width="300" height="200" alt="placeholder image">
-					<img src="./assets/images/gallery1.jpg" width="300" height="200" alt="placeholder image">
-					<img src="./assets/images/gallery1.jpg" width="300" height="200" alt="placeholder image">
-					<img src="./assets/images/gallery1.jpg" width="300" height="200" alt="placeholder image"> -->
-					<div class="image-wrapper"><img src="./assets/images/gallery1.jpg" width="300" height="200" alt="placeholder image"></div>
-					<div class="image-wrapper"><img src="./assets/images/gallery4.jpg" width="300" height="200" alt="placeholder image"></div>
-					<div class="image-wrapper"><img src="./assets/images/gallery7.jpg" width="300" height="200" alt="placeholder image"></div>
-					<div class="image-wrapper"><img src="./assets/images/gallery12.jpg" width="300" height="200" alt="placeholder image"></div>
+
+	
+			<!-- PROJECTS / OUR WORK -->
+			<section class="page-intro projects watermarked">
+				<header class="">
+					<h2 class="">
+						<span class="accent-span">Our</span> Work
+					</h2>
+				</header>
+				
+				<article class="projects-gallery">
+
+					<div class="bg-quadrant"></div>
+					<div class="bg-quadrant"></div>
+					<div class="bg-quadrant"></div>
+					<div class="bg-quadrant"></div>
+
+					<button class="button read-more" type="button"><a href="projects.html">View Gallery</a></button>
 				</article>
+			</section>
+
 
 	
-				<button class="button read-more" type="button"><a href="#header">View Gallery</a></button>
-			</section>
-	
-			<!-- Testimonials This one is going to be caught in the pipline for a while I think. We'll add it in when we can generate some content for it -->
-			<section class="section testimonials">
-				<header>
-					<h1 class="section-heading">
-						What People Are Saying
-					</h1>
+			<!-- TESTIMONIALS / WHAT PEOPLE ARE SAYING -->
+			<!-- This one is kinda of back-burnered -->
+			<section class="page-intro testimonials watermarked">
+				<header class="">
+					<h2 class="">
+						What People 
+						<span class="accent-span">Say</span>
+					</h2>
 				</header>
-				
-				<!-- Work on the actual cards later when I have actual reviews to post and when I actually know how to use the reviews from google/FB -->
+
+				<!-- Complete more work on cards when testimonials are within my grasp -->
 				<article class="blonk testimonial-gallery">
 					<div class="testimonial-card">
+
 						<img src="./assets/images/SkyElectric.png" alt="face?">
+
 						<div class="star-bar flex-row-aro">
 							<img width="30" height="30" src="./assets/svg/star.svg" alt="star">
 							<img width="30" height="30" src="./assets/svg/star.svg" alt="star">
@@ -230,6 +255,7 @@
 							<img width="30" height="30" src="./assets/svg/star.svg" alt="star">
 							<img width="30" height="30" src="./assets/svg/star.svg" alt="star">
 						</div>
+
 						<p class="excerpt">
 							"Cody did a great job showing me how to throw rocks at the neighbours dog, and make an electrical fire look like an accident. Thanks, Cody!"
 							<br>
@@ -237,8 +263,9 @@
 						</p>
 					</div>
 
-					<div class="testimonial-card">
+					<!-- <div class="testimonial-card">
 						<img src="./assets/images/SkyElectric.png" alt="face?">
+
 						<div class="star-bar flex-row-aro">
 							<img width="30" height="30" src="./assets/svg/star.svg" alt="star">
 							<img width="30" height="30" src="./assets/svg/star.svg" alt="star">
@@ -246,20 +273,26 @@
 							<img width="30" height="30" src="./assets/svg/star.svg" alt="star">
 							<img width="30" height="30" src="./assets/svg/star.svg" alt="star">
 						</div>
+
 						<p class="excerpt">
 							"Cody skateboarded through my picture window, then told me it was because he thought it was one of those themed doors that are supposed to look like a window. He installed automated blinds over the window to keep the squirrels and 5G out though!"
 							<br>
 							<span class="customer"> - Some Dinkus</span>
 						</p>
-					</div>
-
+					</div> -->
 				</article>
 			</section>
-	<!-- Section Include as useful of apporximation of location as I am allowed to include as well as a contact form -->
-			<!-- Might also be worth it to include to flow process of getting in touch with the company as well? -->
-			<section id="contact" class="section contact">
-				<h2 class="section-heading">Get in Touch!</h2>
-				
+	
+
+
+			<!-- CONTACT -->
+			<section id="contact" class="section contact watermarked">
+				<header class="">
+					<h2 class=""> 
+						<span class="accent-span">Contact Us</span>
+						Today!
+					</h2>
+				</header>
 				<!-- Grab Phone > Order Pizza > Phone Dead! > Call Electrician -->
 				<article class="blonk contact-process flex-row-aro">
 					<div class="process-cards flex-row-eve">
@@ -309,7 +342,7 @@
 					<!-- Contact Form -->
 					<form class="contact-form" action="#" method="POST">
 						
-							<h3 class="form-heading">Contact Us!</h3>
+							<h3 class="form-heading">Quick E-mail Form</h3>
 	
 							<div class="label-input-wrap">
 								<label class="form-label" for="name">Name:</label>
@@ -336,11 +369,14 @@
 								</label>
 							</div> -->
 
-						<button class="button read-more" type="submit">Submit</button>
+						<button class="button submit" type="submit">Submit</button>
 					</form>
 
 				</article>
 			</section>
+
+
+
 		</main>
 		
 		<!-- Footer Maybe this should include a bunch of sitemap junk, just to bone up the SEO... if that's even how it works? -->

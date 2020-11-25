@@ -3,6 +3,8 @@ node_modules/
 package.json
 package-lock.json
 
+index-previous.html
+root-previous.css
 services-old.html
 services-old.css
 services-oldv2.html
