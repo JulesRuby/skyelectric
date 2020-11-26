@@ -870,7 +870,8 @@ header h1 .accent-span:last-child {
 
 /* vvvvvvvvvv HOME--TESTIMONIALS vvvvvvvvvv */
 
-	.testimonials {
+	.page-intro.testimonials {
+		display: none;
 		--watermark: "Testimonials";
 		background: var(--quat);
 	}

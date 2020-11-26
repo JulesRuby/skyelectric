@@ -215,6 +215,7 @@ p.heading-subscript {
 }
 
 .full-gallery {
+	padding: 2.5rem 0;
 	width: 100%;
 	max-width: 130ch;
 }
