@@ -260,6 +260,9 @@ p.heading-subscript {
 
 	min-height: 60vh;
 	width: 100%;
+
+	/* Make sure hashlink anchors offest the height of the top nav when scrolling to element */
+	scroll-margin-top: var(--topbar-ht);
 }
 
 .service * + * {

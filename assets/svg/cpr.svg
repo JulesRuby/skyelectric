@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 270">
+  <defs>
+    <style>
+      .cls-1 {
+        fill:  hsla(206, 61%, 8%, 1);
+      }
+
+      .cls-2, .cls-3 {
+        fill: hsla(30, 95%, 62%, 1);
+        stroke:  hsla(206, 61%, 8%, 1);
+        stroke-linejoin: round;
+        stroke-width: 3px;
+      }
+
+      .cls-3 {
+        stroke-linecap: round;
+      }
+    </style>
+  </defs>
+  <title>cpr</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="CPR">
+      <g>
+        <circle class="cls-1" cx="135" cy="135" r="135"/>
+        <circle class="cls-2" cx="218.02" cy="178.5" r="24"/>
+        <rect class="cls-2" x="39.35" y="168" width="151.33" height="34.5" rx="17.25"/>
+        <polygon class="cls-2" points="92.01 82.5 160 82.5 144.69 164.74 106.19 164.74 92.01 82.5"/>
+        <path class="cls-3" d="M142.11,117.35l-8.35,43.84a8.27,8.27,0,0,0-.12.85H115.09a6.5,6.5,0,0,0,0,13h26.38c7.88,0,12.65-2.61,13.87-9l13.23-69.43c1.22-6.41-2.64-12.73-8.58-14h-11.3"/>
+        <path class="cls-3" d="M109.09,116l7.52,40.33a8.27,8.27,0,0,1,.12.85h18.56a6.5,6.5,0,0,1,0,13H108.9c-7.88,0-12.65-2.61-13.87-9L83.44,96.55c-1.23-6.41,2.63-12.73,8.57-14h12.18"/>
+        <circle class="cls-2" cx="126" cy="79" r="26.67"/>
+      </g>
+    </g>
+  </g>
+</svg>

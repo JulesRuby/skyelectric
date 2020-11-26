@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 270">
+  <defs>
+    <style>
+      .cls-1 {
+        fill:  hsla(206, 61%, 8%, 1);
+      }
+
+      .cls-2 {
+        fill: hsla(30, 95%, 62%, 1);
+      }
+    </style>
+  </defs>
+  <title>firstaid</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="CPR">
+      <g>
+        <circle class="cls-1" cx="135" cy="135" r="135"/>
+        <path class="cls-2" d="M194.51,68.52h-19a7.27,7.27,0,0,1-7.25,7.25h-66.5a7.27,7.27,0,0,1-7.25-7.25h-19A22.4,22.4,0,0,0,53.16,90.85v88.3a22.4,22.4,0,0,0,22.33,22.33h119a22.4,22.4,0,0,0,22.33-22.33V90.85A22.4,22.4,0,0,0,194.51,68.52Zm-26.26,32h-66.5a7.25,7.25,0,0,1,0-14.5h66.5a7.25,7.25,0,0,1,0,14.5Z"/>
+        <g>
+          <rect class="cls-1" x="125" y="113.67" width="20" height="62.67"/>
+          <rect class="cls-1" x="125" y="113.67" width="20" height="62.67" transform="translate(280 10) rotate(90)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

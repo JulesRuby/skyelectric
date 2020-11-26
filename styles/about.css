@@ -137,6 +137,7 @@
 	display: inline-block;
 	padding: var(--r4) var(--r6);
 	margin: 0 var(--r4);
+	max-width: 60ch;
 }
 
 .intro-header::before,
@@ -185,18 +186,60 @@ p.heading-subscript {
 	margin-top: 2rem;
 }
 
-.head-body-wrap > ul {
+/* .page-intro ul > * + * {
+	margin-top: var(--r4);
+} */
+
+
+/* .cert-ul {
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
 	justify-content: space-evenly;
+	align-self: center;
+
 	flex-grow: 1;
-	list-style-type: disc;
-	padding: var(--r4) 0 var(--r4) 2.5rem;
+	width: 100%;
+	
+} */
+
+.head-body-wrap.row {
+	/* flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	*/align-items: center;
 }
 
-.page-intro ul > * + * {
-	margin-top: var(--r4);
+.cert-item {
+	display: flex;
+
+	max-width: 7ch;
+	max-height: 7ch;
+
+	width: 100%;
+
+	margin: 1rem;
 }
+
+.cert-item img {
+	min-width: 100%;
+	min-height: 100%;
+}
+
+/* .cert-item:nth-child(1) {
+	--cert-bg: url("/assets/svg/wcb.svg");
+}
+.cert-item:nth-child(2) {
+	--cert-bg: url("/assets/svg/firstaid.svg");
+}
+.cert-item:nth-child(3) {
+	--cert-bg: url("/assets/svg/cpr.svg");
+}
+.cert-item:nth-child(4) {
+	--cert-bg: url("/assets/svg/aed.svg");
+}
+.cert-item:nth-child(5) {
+	--cert-bg: url("/assets/svg/solar.svg");
+} */
 
 .page-intro img {
 	flex-grow: 1;
