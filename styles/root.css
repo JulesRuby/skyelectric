@@ -543,6 +543,7 @@ header h1 .accent-span:last-child {
 	border-radius: 3px;
 
 	transform: rotate3d(0, 0, 1, 0deg);
+	box-shadow: 3px 3px 8px 0px hsla(0deg, 0%, 50%, 0.15);
 }
 
 .service-card,
@@ -625,7 +626,7 @@ header h1 .accent-span:last-child {
 	width:100%;
 	height: 100%;
 
-	background-image: url("../assets/images/gallery/gallery3.jpg");
+	background-image: url("../assets/images/gallery/skygallery-7.jpg");
 	background-repeat: no-repeat;
 	background-position: 50% 0;
 	background-size: cover;
@@ -783,42 +784,27 @@ header h1 .accent-span:last-child {
 	min-height: 10rem;
 
 
-	background: var(--bg-image), url("../assets/images/gallery/gallery3.jpg");
+	background: var(--bg-image);
 	background-size: cover;
 	background-position: center;
-	background-color: var(--detail);
-	background-blend-mode: overlay;
-	background-blend-mode: screen;
-	background-blend-mode: multiply;
-	background-blend-mode: lighten;
-	background-blend-mode: darken;
-	background-blend-mode: soft-light;
-	background-blend-mode: hard-light;
-	background-blend-mode: color-dodge;
-	background-blend-mode: color-burn;
-	background-blend-mode: saturation;
-	background-blend-mode: exclusion;
-	background-blend-mode: difference;
-	background-blend-mode: color;
+	background-color: var(--detail-l);
 	background-blend-mode: luminosity;
-
-	opacity: 0.65;
 }
 
 .bg-quadrant:nth-child(1) {
-	--bg-image: url("../assets/images/gallery/gallery3.jpg");
+	--bg-image: url("../assets/images/gallery/skygallery-8.jpg");
 }
 
 .bg-quadrant:nth-child(2) {
-	--bg-image: url("");
+	--bg-image: url("../assets/images/gallery/skygallery-2.jpg");
 }
 
 .bg-quadrant:nth-child(3) {
-	--bg-image: url("");
+	--bg-image: url("../assets/images/gallery/skygallery-16.jpg");
 }
 
 .bg-quadrant:nth-child(4) {
-	--bg-image: url("");
+	--bg-image: url("../assets/images/gallery/skygallery-12.jpg");
 }
 
 .projects .image-wrapper {
@@ -1061,7 +1047,7 @@ header h1 .accent-span:last-child {
 }
 
 .label-input-wrap {
-	box-shadow: 3px 3px 5px 3px var(--quat); 
+	/* box-shadow: 3px 3px 5px 3px var(--prim);  */
 }
 
 .form-label {
@@ -1078,8 +1064,11 @@ header h1 .accent-span:last-child {
 	text-align: left;
 	color: var(--quat);
 	background-color: var(--detail-l);
-	/* border: 1px solid var(--detail); */
-	border-radius: 0px;
+	/* border-radius: 0px; */
+}
+
+.form-input:focus {
+	border: 2px solid var(--body-dbg);
 }
 
 button.submit {
@@ -1352,35 +1341,6 @@ footer {
 		text-align: center;
 	}
 
-	/* SERVICES */
-
-	/* .features {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-	} */
-
-	.features header {
-		/* width: 100%;
-		text-align: center; */
-	}
-
-	.features p {
-		/* width: 50%; */
-		/* max-width: 50ch; */
-
-	}
-
-	.feat-service-gallery {
-		/* margin-left: var(--r4);
-		padding: var(--r4) var(--r4);
-		max-width: 50%;
-		max-width: max-content; */
-	}
-
-	/* .service-card{
-		height: calc((100vw - 2rem) / 6);
-	} */
 
 	/* ABOUT */
 
@@ -1408,13 +1368,6 @@ footer {
 
 	/* PROJECTS */
 
-	.projects-gallery img {
-		/* Wow, if only chrome would get it's shit together so I didn't have to account for the scrollbar? I guess FF has spoiled me with handling things like this automatically.*/
-		/* height: calc((100vw - 2rem - 17px) / 4); */
-		/* The code below does not actually work for height, because the % unit accounts for the height % and not the width, maybe I'll try to customize the scrollbar width and attach it to a custom property so I don't need to use the 17px that seems to be standard? Plus I get to make a cool bar */
-		/* height: calc((100vw - 2rem - (100vw - 100%)) / 4); */
-		/* width: calc((100vw - 2rem - (100vw - 100%)) / 4); */
-	}
 
 	/* TESTIMONIALS */
 
@@ -1430,7 +1383,7 @@ footer {
 	/* CONTACT */
 
 	.form-map-container {
-		max-width: 1600px;
+		/* max-width: 1600px; */
 		justify-content: space-around;
 	}
 
@@ -1464,79 +1417,3 @@ footer {
 	}
 
 }
-
-/* ^^^^^^^^^^ Large Tablet Styles || Laptop MDPI Display ^^^^^^^^^^ */
-
-
-
-/* vvvvvvvvvv Desktop Styles vvvvvvvvvv */
-
-@media screen and (min-width: 90rem) {
-	
-}
-
-/* ^^^^^^^^^^ Desktop Styles ^^^^^^^^^^ */
-
-/* Use these later? I accidentally built the menu desktop-first, again ;-; */
-
-/* .nav-menu {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-
-	background-color: var(--quat);
-}
-
-.nav-menu > li {
-	margin : 0 auto
-}
-
-.hamburger {
-	padding: .1rem .2rem;
-	width: 3.2rem;
-	height: 3rem;
-
-	border: 1px solid var(--quat);
-	border-radius: 2px;
-	background-color:var(--quat);
-
-	box-shadow: 1px 1px 0px 0px darkgoldenrod,
-							2px 2px 0px 0px darkgoldenrod;
-}
-
-.hamburger > span {
-	display: block;
-
-	width: 100%;
-	height: 4px;
-
-	border-radius: 1px;
-	color: var(--prim);
-	background-color: var(--prim);
-}
-
-.navlink {
-	display: inline-block;
-
-	padding: 1rem;
-	width: 12ch;
-
-	text-align: center;
-
-	color: var(--prim);
-	background-color: var(--sec);
-}
-
-.nav-menu > li:first-child {
-	margin: 0 auto 0 0;
-}
-
-
-.nav-menu > li:first-child > .navlink {
-	height: 10vh;
-	width: 10vw;
-
-	align-self: flex-end;
-
-	background-color:var(--tert);
-} */
