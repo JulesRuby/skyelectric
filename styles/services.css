@@ -269,28 +269,28 @@ p.heading-subscript {
 
 /* service section underlays */
 #renovation {
-	--underlay-url: url(/assets/images/renovation-pexels-mark-mccammon-med.jpg);
+	--underlay-url: url(../assets/images/renovation-pexels-mark-mccammon-med.jpg);
 }
 
 #retrofitting {
-	--underlay-url: url(/assets/images/services-pexels-erik-mclean-small.jpg);
+	--underlay-url: url(../assets/images/services-pexels-erik-mclean-small.jpg);
 }
 
 #panel {
-	--underlay-url: url(/assets/images/panel-pexels-pixabay-small.jpg);
+	--underlay-url: url(../assets/images/panel-pexels-pixabay-small.jpg);
 }
 
 #automation {
-	--underlay-url: url(/assets/images/automation-pexels-john-tekeridis-small.jpg);
-	--underlay-url: url(/assets/images/brain.jpg);
+	--underlay-url: url(../assets/images/automation-pexels-john-tekeridis-small.jpg);
+	--underlay-url: url(../assets/images/brain.jpg);
 }
 
 #avmedia {
-	--underlay-url: url(/assets/images/avmedia-pexels-felipe-hueb-small.jpg);
+	--underlay-url: url(../assets/images/avmedia-pexels-felipe-hueb-small.jpg);
 }
 
 #solar {
-	--underlay-url: url(/assets/images/solar-pexels-kelly-lacy-small.jpg);
+	--underlay-url: url(../assets/images/solar-pexels-kelly-lacy-small.jpg);
 }
 
 .service * + * {
