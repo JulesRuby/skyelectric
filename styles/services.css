@@ -16,15 +16,16 @@
 	top: calc(var(--contact-strip-ht) + var(--navbar-ht));
 	height: var(--page-banner-ht);
 
-	background: url(../assets/images/sky.jpg) center no-repeat var(--sec);
+	background: var(--page-banner-img) center no-repeat;
+	background-size: cover;
+	--page-banner-img: url(../assets/images/services-pexels-erik-mclean-med.jpg);
 }
 
 .page-banner::before {
 	position: absolute;
 	display: block;
 	content: "";
-	background-color: var(--quad);
-	background-color: #333;
+	background-color: var(--quat);
 	bottom: 0;
 	left: 0;
 	width: 100%;
@@ -254,6 +255,7 @@ p.heading-subscript {
 }
 
 .service {
+	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -263,6 +265,32 @@ p.heading-subscript {
 
 	/* Make sure hashlink anchors offest the height of the top nav when scrolling to element */
 	scroll-margin-top: var(--topbar-ht);
+}
+
+/* service section underlays */
+#renovation {
+	--underlay-url: url(/assets/images/renovation-pexels-mark-mccammon-med.jpg);
+}
+
+#retrofitting {
+	--underlay-url: url(/assets/images/services-pexels-erik-mclean-small.jpg);
+}
+
+#panel {
+	--underlay-url: url(/assets/images/panel-pexels-pixabay-small.jpg);
+}
+
+#automation {
+	--underlay-url: url(/assets/images/automation-pexels-john-tekeridis-small.jpg);
+	--underlay-url: url(/assets/images/brain.jpg);
+}
+
+#avmedia {
+	--underlay-url: url(/assets/images/avmedia-pexels-felipe-hueb-small.jpg);
+}
+
+#solar {
+	--underlay-url: url(/assets/images/solar-pexels-kelly-lacy-small.jpg);
 }
 
 .service * + * {

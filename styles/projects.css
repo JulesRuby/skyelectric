@@ -17,15 +17,17 @@
 	top: calc(var(--contact-strip-ht) + var(--navbar-ht));
 	height: var(--page-banner-ht);
 
-	background: url(../assets/images/sky.jpg) center no-repeat var(--sec);
+	background: var(--page-banner-img) center no-repeat;
+	background-size: cover;
+	--page-banner-img: url(../assets/images/gallery/skygallery-2.jpg);
 }
 
 .page-banner::before {
 	position: absolute;
 	display: block;
 	content: "";
-	background-color: var(--quad);
-	background-color: #333;
+	background-color: var(--quat);
+	/* background-color: #333; */
 	bottom: 0;
 	left: 0;
 	width: 100%;

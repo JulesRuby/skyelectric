@@ -12,4 +12,8 @@ Certainly it was evident long before the project began that this was going to be
 
 - Mobile-first development
   - exp
-- 
+
+
+
+
+## BLEEEHHHHHH I'VE CAUGHT LOLLYGAGGER SYNDROME FILL THE REST OF THIS OUT LATER

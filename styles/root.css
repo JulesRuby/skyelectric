@@ -280,22 +280,30 @@ footer {
 	text-align: center;
 }
 
-.cta.primary a {
-	color: var(--quat);
-	background-color: var(--detail);
-	/* background: linear-gradient(135deg, rgba(100,187,45,1) 0%, rgba(100,187,45,1) 0%, rgba(253,187,45,1) 50%, rgba(253,187,45,1) 100%); */
-	border-radius: 2rem;
-
+.cta a {
 	transition: all 200ms
 }
 
+.cta.primary a {
+	color: var(--detail);
+	background-color: transparent;
+	/* background: linear-gradient(135deg, rgba(100,187,45,1) 0%, rgba(100,187,45,1) 0%, rgba(253,187,45,1) 50%, rgba(253,187,45,1) 100%); */
+	border: 0.2rem solid var(--detail);
+	border-radius: 2rem;
+}
+
 .cta.primary:hover a {
-	filter: brightness(110%);
+	background-color: var(--detail);
+	color: var(--quat);
+	border-color: var(--prim);
 }
 
 .cta.secondary a {
+	color: var(--prim);
+}
+
+.cta.secondary:hover a {
 	color: var(--detail);
-	/* background-color: var(--detail); */
 }
 
 .cta.secondary {}
@@ -340,6 +348,10 @@ header h1 .accent-span:last-child {
 
 .contact-link {
 	padding: 1rem;
+}
+
+.contact-link > i {
+	padding-right: 1rem;
 }
 
 .navbar {
@@ -634,6 +646,30 @@ header h1 .accent-span:last-child {
 
 	z-index: 0;
 }
+
+/* Try this as a sort of utility??? */
+.bg-img-underlay::after {
+	position: absolute;
+	content: "";
+	display: block;
+
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	width:100%;
+	height: 100%;
+
+	background-image: var(--underlay-url);
+	background-repeat: no-repeat;
+	background-position: 50% 0;
+	background-size: cover;
+	opacity: 0.1;
+
+	z-index: 0;
+}
+/*  */
 
 .about.watermarked::before {
 	color: var(--body-dbg);
