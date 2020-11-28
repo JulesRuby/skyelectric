@@ -140,8 +140,8 @@
   /* Header Contents */
   --hero-header-ht: 95vh;
   --page-header-ht: 50vh;
-  --contact-strip-ht: 5vh;
-  --navbar-ht: 10vh;
+  --contact-strip-ht: 7.5vh;
+  --navbar-ht: 7.5vh;
   --topbar-ht: calc(var(--contact-strip-ht) + var(--navbar-ht));
   --hero-banner-ht: calc(var(--hero-header-ht) - (var(--contact-strip-ht) + var(--navbar-ht)));
   --page-banner-ht: calc(var(--page-header-ht) - calc((var(--contact-strip-ht) + var(--navbar-ht))));

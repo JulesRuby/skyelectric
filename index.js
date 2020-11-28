@@ -72,8 +72,9 @@ chooseActive(navLinks);
 
 // ----MOBILE NAV ONSCROLL WITHDRAW
 // Select the nav elements to shift
-const mobileMenu = document.querySelector('.navbar');
-const contactBar = document.querySelector('.contact-strip');
+const topBar = document.querySelector('.top-bar');
+// const mobileMenu = document.querySelector('.navbar');
+// const contactBar = document.querySelector('.contact-strip');
 let lastScrollPosition = window.pageYOffset;
 // create window scroll event listener4
 const menuHide = () => {
@@ -90,15 +91,17 @@ const menuHide = () => {
 		}
 
 		if( scrollDistance >= 200 ) {
-			mobileMenu.classList.add('scroll-hide');
-			contactBar.classList.add('scroll-hide');
+			topBar.classList.add('scroll-hide');
+			// mobileMenu.classList.add('scroll-hide');
+			// contactBar.classList.add('scroll-hide');
 			lastScrollPosition = currentScrollPosition;
 		}
 		// debugger;
 		if ( parseFloat(scrollDistance) <= (-200) ) {
 			// console.log('WHEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE');
-			mobileMenu.classList.remove('scroll-hide');
-			contactBar.classList.remove('scroll-hide');
+			topBar.classList.remove('scroll-hide');
+			// mobileMenu.classList.remove('scroll-hide');
+			// contactBar.classList.remove('scroll-hide');
 			lastScrollPosition = currentScrollPosition;
 		}
 

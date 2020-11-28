@@ -155,7 +155,8 @@ footer {
 	position: relative;
 	display: flex;
 	justify-content: center;
-	top: calc(var(--contact-strip-ht) + var(--navbar-ht));
+	/* top: calc(var(--contact-strip-ht) + var(--navbar-ht)); */
+	top: 15vh;
 	height: var(--hero-banner-ht);
 
 	background: url(../assets/images/patrick-tomass-homehero-unsplash-placeholder.jpg) center no-repeat var(--sec);
@@ -321,7 +322,10 @@ header h1 .accent-span:last-child {
 /* ^^^^^^^^^^ HEADER ^^^^^^^^^^ */
 
 /* vvvvvvvvvv NAVIGATION vvvvvvvvvv */
-.navlink {
+
+/* OLD */
+
+/* .navlink {
 	text-transform: uppercase;
 }
 
@@ -398,6 +402,238 @@ header h1 .accent-span:last-child {
 	z-index: 100;
 }
 
+
+.nav-menu li:nth-child(5) {
+	display: none;
+}
+
+
+.expanded {
+	right: 0;
+}
+
+.navlink {
+	position: relative;
+	display: block;
+
+	padding: 1.5rem;
+
+	text-align: center;
+	color: var(--prim);
+
+	transition: 200ms; 
+}
+
+
+.navlink::after {
+	position: absolute;
+	content: "";
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+
+	height: 0.2rem;
+	width: 100%;
+
+	opacity: 0;
+
+	background: var(--detail);
+	background: linear-gradient(90deg, rgba(250,159,66,0) 0%, rgba(250,159,66,0.2) 30%, rgba(250,159,66,1) 50%, rgba(250,159,66,0.2) 70%, rgba(250,159,66,0) 100%);
+
+	transition: opacity 100ms ease-in;
+}
+
+
+.navlink:hover {
+	position: relative;
+}
+
+.navlink:hover::after {
+	opacity: 1;
+}
+
+.active-link {
+	color: var(--detail);
+}
+
+.active-link::after {
+	opacity: 1;
+}
+
+.hamburger {
+	position: relative;
+	margin-right: .5rem;
+	
+	width: 3rem;
+	height: 3rem;
+
+	border-radius: 2px;
+	background-color:var(--quat);
+}
+
+.hamburger > span {
+	position: relative;
+	display: block;
+	
+	width: 100%;
+	height: 4px;
+
+	border-radius: 1px;
+	color: var(--prim);
+	background-color: var(--prim);
+	opacity: 1;
+
+	transition: 150ms;
+}
+
+
+.hamburger.open > span {
+	position: absolute;
+}
+
+.hamburger.open > span:nth-child(1) {
+	transform: rotate(45deg);
+	transform-origin: center center;
+}
+
+.hamburger.open > span:nth-child(2) {
+	opacity: 0;
+}
+
+.hamburger.open > span:nth-child(3) {
+	transform: rotate(-45deg);
+	transform-origin: center center;
+} */
+
+
+
+/* NEW */
+
+.top-bar {
+	overflow: hidden;
+	position: fixed;
+
+	/* display: flex;
+	flex-direction: column;
+	flex-wrap: wrap; */
+
+	display: grid;
+	grid-template-columns: 2fr 8fr;
+	grid-template-columns: 20% 10% 70%;
+	grid-template-rows: 1fr 1fr;
+
+
+	top: 0;
+	left: 0;
+	right: 0;
+
+	height: 15vh;
+	/* width: 100vw; */
+
+	z-index: 100;
+}
+
+.nav-logo {
+	padding: 1rem;
+	/* padding-left: 0; */
+	padding-right: calc(1rem + 25%);
+	width: 100%;
+	height: 100%;
+
+	grid-area: 1/1/3/3;
+
+	background-color: var(--tert);
+	clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+
+.nav-logo > img {
+	width: 100%;
+	height: 100%;
+}
+
+.contact-strip {
+	/* position: fixed; */
+	display: flex;
+	grid-area: 1/2/2/4;
+	/* right: 0;
+	left: 0; */
+	height: var(--navbar-ht);
+	height: 100%;
+	background-color: var(--prim);
+	opacity: 1;
+
+	transition: visibility 0ms linear 0ms,
+							opacity 150ms ease 5ms;
+	/* z-index: 100; */
+}
+
+.contact-list {
+	display: flex;
+	flex-grow: 1;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.contact-link {
+	padding: 1rem;
+}
+
+.contact-link > i {
+	padding-right: 1rem;
+}
+
+.contact-strip,
+.navbar {
+	/* This is a little janky, essentially calculated padding-left to take up the same portion of space as the padding-right from the .nav-logo */
+	/* probably a better way to do this, and I mean other than using the calc() function. We'll cross that bridge later as I don't feel the optimization is immediately important until I fully commit to this idea and deploy. */
+	padding-left: 10.7142%;
+}
+
+.navbar {
+	/* position: fixed; */
+	width: 100%;
+	height: 100%;
+
+	grid-area: 2/2/2/4;
+	/* top: var(--navbar-ht);
+	height: var(--navbar-ht); */
+
+	justify-content: flex-end;
+	align-items: center;
+	background-color: var(--quat);
+	opacity: 1;
+
+	transition: visibility 0ms linear 0ms,
+							opacity 150ms ease 5ms;
+	/* z-index:100; */
+}
+
+.scroll-hide {
+	visibility: hidden;
+	opacity: 0;
+
+	transition: visibility 0ms linear 155ms,
+							opacity 150ms ease 0ms;
+}
+
+.nav-menu {
+	position: fixed;
+	top: calc(var(--contact-strip-ht) + var(--navbar-ht));
+	/* top: 15vh; */
+	right: -100%;
+
+	height: 100%;
+	width: calc(100% - var(--navbar-ht));
+
+	/* letter-spacing: .1rem; */
+	/* font-weight: var(--wt700); */
+
+	background-color: var(--quat);
+	transition: 100ms;
+
+	/* z-index: 100; */
+}
+
 /* Hiding Testimonials Link until it actually exists. */
 .nav-menu li:nth-child(5) {
 	display: none;
@@ -412,9 +648,10 @@ header h1 .accent-span:last-child {
 	position: relative;
 	display: block;
 
-	padding: 1.5rem;
+	padding: 0.75rem 1rem;
 
 	text-align: center;
+	text-transform: uppercase;
 	color: var(--prim);
 
 	transition: 200ms; /** No transition in mobile **/
@@ -500,6 +737,27 @@ header h1 .accent-span:last-child {
 	transform: rotate(-45deg);
 	transform-origin: center center;
 }
+
+	/* Hamburger Open/Close state + transition */
+.hamburger.open > span {
+	position: absolute;
+}
+
+.hamburger.open > span:nth-child(1) {
+	transform: rotate(45deg);
+	transform-origin: center center;
+}
+
+.hamburger.open > span:nth-child(2) {
+	opacity: 0;
+}
+
+.hamburger.open > span:nth-child(3) {
+	transform: rotate(-45deg);
+	transform-origin: center center;
+}
+
+
 
 /* ^^^^^^^^^^ NAVIGATION ^^^^^^^^^^ */
 
@@ -1321,12 +1579,16 @@ footer {
 
 	/* VARIABLE CHANGE */
 	:root {
-		--navbar-ht: 15vh;
+		/* --navbar-ht: 15vh; */
 	}
 
 
 	/* NAVIGATION */
-	.navbar {
+
+	/* OLD */
+
+
+	/* .navbar {
 		overflow: hidden;
 	}
 
@@ -1346,7 +1608,7 @@ footer {
 		letter-spacing: .11rem;
 		font-weight: var(--wt500);
 
-		/* background-color: var(--quat); */
+
 		transition: 100ms;
 
 		z-index: 100;
@@ -1357,9 +1619,6 @@ footer {
 		margin-left : auto;
 	}
 
-	/* .nav-menu > li:first-child {
-		overflow: hidden;
-	} */
 
 	.nav-logo > img {
 		width: 15vw;
@@ -1373,10 +1632,62 @@ footer {
 		display: inline-block;
 
 		padding: var(--r2) var(--r4);
-		/* width: 12ch; */
+
+		text-align: center;
+	} */
+
+
+	/* NEW */
+
+
+	.navbar {
+		overflow: hidden;
+	}
+
+	.nav-menu {
+		position: static;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+
+		/* height: var(--navbar-ht); */
+		width: 100%;
+
+		/* letter-spacing: .11rem; */
+		/* font-weight: var(--wt500); */
+
+		/* background-color: var(--quat); */
+		transition: 100ms;
+
+		z-index: unset;
+		
+	}
+
+	.nav-menu > li {
+		/* margin-left : auto; */
+	}
+
+	/* .nav-menu > li:first-child {
+		overflow: hidden;
+	} */
+
+	.nav-logo > img {
+		/* width: 15vw; */
+	}
+
+	.hamburger {
+		display: none;
+	}
+
+	.navlink {
+		display: inline-block;
+
+		padding: var(--r2) var(--r4);
+		width: 13ch;
 
 		text-align: center;
 	}
+
 
 
 	/* ABOUT */
