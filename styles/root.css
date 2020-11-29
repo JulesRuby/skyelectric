@@ -132,7 +132,7 @@ footer {
 	/* top: 15vh; */
 	height: var(--hero-banner-ht);
 
-	background: url(../assets/images/patrick-tomass-homehero-unsplash-placeholder.jpg) center no-repeat var(--sec);
+	background: url(../assets/images/patrick-tomass-homehero-unsplash-placeholder.jpg) center no-repeat var(--quat);
 	background-size: cover;
 }
 
@@ -140,8 +140,8 @@ footer {
 	position: absolute;
 	display: block;
 	content: "";
-	background-color: var(--quad);
-	background-color: #333;
+	background-color: var(--quat);
+
 	bottom: 0;
 	left: 0;
 	width: 100%;
