@@ -60,7 +60,7 @@
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 .main {
-	padding: var(--r1);
+	/* padding: var(--r1); */
 	margin-left: auto;
 	margin-right: auto;
 	/* padding: 0 var(--r4); */

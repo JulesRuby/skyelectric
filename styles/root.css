@@ -20,7 +20,7 @@ body {
 	font-family: var(--body-family);
 	color: var(--body-lbg);
 	line-height: var(--line-height);
-	background-color: var(--rich-bfogra-50);
+	/* background-color: var(--rich-bfogra-50); */
 }
 
 img {
@@ -317,19 +317,17 @@ header .accent-span {
 }
 
 .contact-strip {
-	/* position: fixed; */
 	display: flex;
 	grid-area: 1/2/2/4;
-	/* right: 0;
-	left: 0; */
+	
 	height: var(--navbar-ht);
 	height: 100%;
-	background-color: var(--prim);
-	opacity: 1;
 
+	background-color: var(--prim);
+
+	opacity: 1;
 	transition: visibility 0ms linear 0ms,
 							opacity 150ms ease 5ms;
-	/* z-index: 100; */
 }
 
 .contact-list {
@@ -424,12 +422,18 @@ header .accent-span {
 	display: block;
 
 	padding: 0.75rem 1rem;
+	padding: 1.25rem;
+	font-weight: 500;
+	letter-spacing: .11rem;
 
 	text-align: center;
 	text-transform: uppercase;
 	color: var(--prim);
 
-	transition: 200ms; /** No transition in mobile **/
+	/* border-top: 2px solid hsla(0deg, 0%, 0%, 0.1); */
+	border-bottom: 2px outset hsla(0deg, 0%, 50%, 0.3);
+
+	/* transition: 200ms; */
 }
 
 	/* Using pseudo elements to capture an underline effect for :hover && :active states*/
@@ -449,15 +453,6 @@ header .accent-span {
 	background: linear-gradient(90deg, rgba(250,159,66,0) 0%, rgba(250,159,66,0.2) 30%, rgba(250,159,66,1) 50%, rgba(250,159,66,0.2) 70%, rgba(250,159,66,0) 100%);
 
 	transition: opacity 100ms ease-in;
-}
-
-	/* --The hover effect will be rerserved for desktops, but I am using it here to help me visualize things. */
-.navlink:hover {
-	position: relative;
-}
-
-.navlink:hover::after {
-	opacity: 1;
 }
 
 .active-link {
@@ -797,17 +792,12 @@ header .accent-span {
 	transform: scale(1.05) translate(-2px, -2px);
 }
 
-/* .about .image-wrapper::before {
-	position: absolute;
-	content: "";
-	width: 100%;
-	height: 100%;
-	background: linear-gradient(90deg, rgba(121,9,22,0.5) 0%, rgba(121,9,22,0.5) 100%);
-	background-blend-mode: luminosity;
-} */
-
-
 /* ^^^^^^^^^^ HOME--ABOUT US ^^^^^^^^^^ */
+
+
+
+
+
 
 /* vvvvvvvvvv HOME--PROJECTS vvvvvvvvvv */
 
@@ -818,12 +808,8 @@ header .accent-span {
 .page-intro.projects {
 	padding-left: 0;
 	padding-right: 0;
-
-	/* background: url('../assets/images/gallery/gallery11.jpg'); */
-	/* background-color: var(--quat); */
 	
 	background-size: cover;
-	/* background-blend-mode: ; */
 }
 
 .projects-gallery {
@@ -836,17 +822,6 @@ header .accent-span {
 	width: 100%;
 	min-height: 60vh;
 }
-
-/* .projects-gallery {
-	display: grid;
-	justify-content: center;
-	align-items: stretch;
-
-	grid-template-columns: repeat(auto-fit, minmax(60ch, 1fr));
-	grid-auto-rows: minmax(50%, 40ch);
-
-	width: 100%;
-} */
 
 .projects-gallery > .bg-quadrant {
 	display: block;
@@ -885,33 +860,31 @@ header .accent-span {
 	overflow: hidden;
 	display: flex;
 	flex: 1 1 100%;
+
 	height: 7.5rem;
+
 	background-color: var(--quat);
-	/* outline: 1px dashed var(--prim); */
 }
 
 .projects .image-wrapper::before {
 	position: absolute;
 	content: "";
+
 	width: 100%;
 	height: 100%;
 
 	background-color: var(--quat);
 	opacity: 0.5;
-	/* z-index: 1; */
 }
 
 .projects-gallery img {
-	/* display: inline; */
 	object-fit: cover;
 	object-position: 50% 50%;
 	object-position: 50% 75%;
-	/* height: calc((100vw - 2rem) / 2); */
+
 	height: 7.5rem;
-	/* max-height: 10rem; */
-	/* width: calc((100vw - 2rem) / 2); */
+
 	width: 100%;
-	/* width: 100%; */
 }
 
 .projects .read-more {
@@ -937,9 +910,11 @@ header .accent-span {
 	transform: scale(1.05) translate(-2px, calc(-50% - 5px));
 }
 
-
-
 /* ^^^^^^^^^^ HOME--PROJECTS ^^^^^^^^^^ */
+
+
+
+
 
 /* vvvvvvvvvv HOME--TESTIMONIALS vvvvvvvvvv */
 
@@ -954,7 +929,6 @@ header .accent-span {
 	}
 
 	.testimonials.watermarked::before {
-		/* content: "Testimonials"; */
 		color: var(--body-dbg);
 	}
 
@@ -967,9 +941,6 @@ header .accent-span {
 		flex-direction: column;
 		justify-content: center;
 		align-items: space-between;
-
-		/* background: hsla(0deg, 0%, 100%, 0.5); */
-		/* box-shadow: 2px 4px 5px 2px hsla(0deg, 0%, 0%, 0.5); */
 	}
 
 	.testimonial-card {
@@ -977,7 +948,6 @@ header .accent-span {
 		padding-top: 2rem;
 		background-color: var(--prim);
 
-		/* border: 1px solid var(--quat); */
 		border-radius: 4px;
 		box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.3);
 	}
@@ -986,7 +956,6 @@ header .accent-span {
 		margin: 0 auto 2rem auto;
 		clip-path: circle(50% at 50% 50%);
 		width: 25%;
-		/* border-radius: 50%; */
 	}
 
 	.star-bar {
@@ -1002,11 +971,9 @@ header .accent-span {
 		fill: var(--detail);
 	}
 	.excerpt {
-		/* test dimensions */
 		margin: 1rem;
 		padding: 1rem;
 		min-height: 10rem;
-		/* test dimensions */
 	}
 
 	.customer {
@@ -1016,6 +983,10 @@ header .accent-span {
 	}
  
 /* ^^^^^^^^^^ HOME--TESTIMONIALS ^^^^^^^^^^ */
+
+
+
+
 
 /* vvvvvvvvvv HOME--CONTACT vvvvvvvvvv */
 
@@ -1059,7 +1030,6 @@ header .accent-span {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	/* line-height: 1.5; */
 }
 
 .contact-form-ul li + * {
@@ -1104,8 +1074,6 @@ header .accent-span {
 	padding: 0;
 	
 	width: 100%;
-	/* max-width: 100%; */
-	/* height: auto; */
 }
 
 
@@ -1248,6 +1216,11 @@ button.submit:focus {
 
 /* ^^^^^^^^^^ HOME--CONTACT ^^^^^^^^^^ */
 
+
+
+
+
+
 /* vvvvvvvvvv HOME--FOOTER vvvvvvvvvv */
 
 footer {
@@ -1263,16 +1236,6 @@ footer {
 
 /* ^^^^^^^^^^ HOME--FOOTER ^^^^^^^^^^ */
 
-
-
-
-/* vvvvvvvvvv Mobile Styles vvvvvvvvvv */
-
-@media screen and (min-width: 20rem) {
-
-}
-
-/* ^^^^^^^^^^ Mobile Styles ^^^^^^^^^^ */
 
 
 
@@ -1308,23 +1271,6 @@ footer {
 	.section.about button {
 		grid-column: 1/-1;
 	}
-
-	/* PROJECTS */
-
-	/* .projects-gallery {
-		flex-wrap: nowrap;
-		height: 30rem;
-	}
-
-	.projects .image-wrapper {
-		height: 30rem;
-	}
-
-	.projects-gallery img {
-
-		object-fit: cover;
-		height: 30rem;
-	} */
 
 
 	/* TESTIMONIALS */
@@ -1362,68 +1308,10 @@ footer {
 
 @media screen and (min-width: 64rem) {
 
-	/* VARIABLE CHANGE */
-	:root {
-		/* --navbar-ht: 15vh; */
+	.contact-link:hover,
+	.contact-link:focus {
+		color: var(--detail);	
 	}
-
-
-	/* NAVIGATION */
-
-	/* OLD */
-
-
-	/* .navbar {
-		overflow: hidden;
-	}
-
-	.nav-menu {
-		position: relative;
-		display: flex;
-		justify-content: flex-end;
-		align-items: center;
-
-		top: var(--contact-strip-ht);
-		top: 0;
-		right: 0;
-
-		height: var(--navbar-ht);
-		width: 100%;
-
-		letter-spacing: .11rem;
-		font-weight: var(--wt500);
-
-
-		transition: 100ms;
-
-		z-index: 100;
-		
-	}
-
-	.nav-menu > li {
-		margin-left : auto;
-	}
-
-
-	.nav-logo > img {
-		width: 15vw;
-	}
-
-	.hamburger {
-		display: none;
-	}
-
-	.navlink {
-		display: inline-block;
-
-		padding: var(--r2) var(--r4);
-
-		text-align: center;
-	} */
-
-
-	/* NEW */
-
 
 	.navbar {
 		overflow: hidden;
@@ -1435,29 +1323,10 @@ footer {
 		justify-content: flex-end;
 		align-items: center;
 
-		/* height: var(--navbar-ht); */
 		width: 100%;
 
-		/* letter-spacing: .11rem; */
-		/* font-weight: var(--wt500); */
-
-		/* background-color: var(--quat); */
 		transition: 100ms;
-
 		z-index: unset;
-		
-	}
-
-	.nav-menu > li {
-		/* margin-left : auto; */
-	}
-
-	/* .nav-menu > li:first-child {
-		overflow: hidden;
-	} */
-
-	.nav-logo > img {
-		/* width: 15vw; */
 	}
 
 	.hamburger {
@@ -1471,6 +1340,22 @@ footer {
 		width: 13ch;
 
 		text-align: center;
+		font-weight: 400;
+		letter-spacing: unset;
+
+		border-bottom: 0;
+
+		transition: all 200ms linear;
+	}
+
+	.navlink:hover,
+	.navlink:focus {
+		position: relative;
+	}
+	
+	.navlink:hover::after,	 
+	.navlink:focus::after {
+		opacity: 1;
 	}
 
 

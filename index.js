@@ -55,11 +55,11 @@ toggleMenu('.hamburger', '.nav-menu');
 // console.log(navLinks);
 const navLinks = document.querySelectorAll('.navlink');
 const chooseActive = navLinks => {
-	// const navLinks = document.querySelectorAll('.navlink');
 	// get the current url pathway
 	const currentPath = document.location.pathname;
 	// remove active class from all links
 	navLinks.forEach(link => {
+
 		link.classList.remove('active-link');
 		if (link.pathname === currentPath) {
 			link.classList.add('active-link');
