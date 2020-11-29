@@ -156,8 +156,8 @@ footer {
 	position: relative;
 	display: flex;
 	justify-content: center;
-	/* top: calc(var(--contact-strip-ht) + var(--navbar-ht)); */
-	top: 15vh;
+	top: calc(var(--contact-strip-ht) + var(--navbar-ht));
+	/* top: 15vh; */
 	height: var(--hero-banner-ht);
 
 	background: url(../assets/images/patrick-tomass-homehero-unsplash-placeholder.jpg) center no-repeat var(--sec);
@@ -525,7 +525,8 @@ header h1 .accent-span:last-child {
 	right: 0;
 
 	margin: 0 auto;
-	height: 15vh;
+	height: 8rem;
+	/* height: 15vh; */
 	max-width: 130ch;
 
 	z-index: 100;
@@ -693,11 +694,14 @@ header h1 .accent-span:last-child {
 
 .hamburger {
 	position: relative;
-	margin-right: .5rem;
+	margin-right: 1rem;
+	padding: 0.25rem;
+	justify-content: space-around;
 	
-	width: 3rem;
-	height: 3rem;
+	width: 4rem;
+	height: 3.5rem;
 
+	border: .1rem solid var(--prim);
 	border-radius: 2px;
 	background-color:var(--quat);
 }
@@ -707,7 +711,8 @@ header h1 .accent-span:last-child {
 	display: block;
 	
 	width: 100%;
-	height: 4px;
+	width: 3.4rem;
+	height: .3rem;
 
 	border-radius: 1px;
 	color: var(--prim);

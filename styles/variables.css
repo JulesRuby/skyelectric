@@ -141,7 +141,9 @@
   --hero-header-ht: 95vh;
   --page-header-ht: 50vh;
   --contact-strip-ht: 7.5vh;
+  --contact-strip-ht: 4rem;
   --navbar-ht: 7.5vh;
+  --navbar-ht: 4rem;
   --topbar-ht: calc(var(--contact-strip-ht) + var(--navbar-ht));
   --hero-banner-ht: calc(var(--hero-header-ht) - (var(--contact-strip-ht) + var(--navbar-ht)));
   --page-banner-ht: calc(var(--page-header-ht) - calc((var(--contact-strip-ht) + var(--navbar-ht))));
