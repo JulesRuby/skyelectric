@@ -574,11 +574,21 @@ header h1 .accent-span:last-child {
 }
 
 .contact-link {
-	padding: 1rem;
+	display: inline-flex;
+	justify-content: center;
+	align-items: flex-end;
+
+	margin-right: 1rem;
+	padding: 0.5rem;
+	width: 3.5rem;
+	height: 3.5rem;
+
+	text-align: center;
 }
 
 .contact-link > i {
-	padding-right: 1rem;
+	/* padding-right: 1rem; */
+	font-size: 2.5rem;
 }
 
 .contact-strip,
