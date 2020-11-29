@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .main {
 	overflow: auto;
-	/* padding: var(--r1); */
+	padding: var(--r7) 0;
 	background-color: var(--prim);
 }
 

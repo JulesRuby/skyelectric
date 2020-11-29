@@ -61,7 +61,7 @@
 .main {
 	margin-left: auto;
 	margin-right: auto;
-	padding: 0 var(--r4);
+	/* padding: 0 var(--r4); */
 	max-width: 1024px;
 	max-width: 64rem;
 	max-width: 130ch;
