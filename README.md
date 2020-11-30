@@ -31,4 +31,38 @@ I've done some research on design systems and it seems like the proper (easiest 
     - **DESIGN INFORMS DEVELOPMENT, DEVELOPMENT INFORMS DESIGN** : this should be the sort of ebb and flow of the design/dev process. Having clear guides to begins with will keep a standardized coding process, and the process of coding, will then allow me to identify needs/weaknesses/revisions in the system if they don't work.
 
 
+
+## Changes to Make
+
+- Optimize images for web
+  - resize and compress images
+  - create different configurations for device widths and use a srcset
+  - explore options for serving images from somewhere else? Not certain of the most performant way of doing this
+
+- Re-implement gallery overlay view for gallery
+  - Also implement categorized gallery once more images of work are available
+
+- Refactor and consolidate CSS stylesheets to remove imports and DRY the code out
+
+- Hook up contact form through host, and find the best use case for quick-call and quick-email
+
+- Choose new font-family or at least choose a heading font family
+
+- Workshop Top nav layout, it's a bit awkward at lower device size
+  - also create an overlay effect when the mobile menu is open, disabling site scrolling and causing a menu close when tapping off the menu itself
+
+- Style the services list to look a bit better... the sections are just kind of there and inconsistently sized, with weird separation between them
+
+- Put extra site map stuff in the footer section
+  - maybe the partnered with Lutron thing? That still needs to go somewhere
+
+- Add the rest of the certifications styling, the list is currently awkward and without meaningful label
+
+- In the contact sections, I need to make the e-mail and phone icons clickable for the quick-contact methods
+
+- Make the Feature Services cards pop a bit more, they're underwhelming at the moment
+
+- Make the Our Work CTA have a bit more visual command
+
+
 ## All I got for now, add more later.
