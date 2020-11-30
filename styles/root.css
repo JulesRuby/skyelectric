@@ -1092,7 +1092,9 @@ header .accent-span {
 	color: var(--detail);
 }
 
-.label-input-wrap {
+.contact-form .label-input-wrap:nth-child(3) {
+	height: 0;
+	visibility: hidden;
 }
 
 .form-label {
