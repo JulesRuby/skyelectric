@@ -299,9 +299,8 @@ header .accent-span {
 }
 
 .nav-logo {
-	padding: 1rem;
-	/* padding-left: 0; */
-	padding-right: calc(1rem + 25%);
+	padding: 1rem 0.25rem;
+	padding-right: 25%;
 	width: 100%;
 	height: 100%;
 
@@ -337,12 +336,16 @@ header .accent-span {
 	align-items: center;
 }
 
+.contact-list > li {
+	margin-right: 1rem;
+}
+
 .contact-link {
 	display: inline-flex;
 	justify-content: center;
-	align-items: flex-end;
+	align-items: center;
 
-	margin-right: 1rem;
+	/* margin-right: 1rem; */
 	padding: 0.5rem;
 	width: 3.5rem;
 	height: 3.5rem;
@@ -352,7 +355,7 @@ header .accent-span {
 
 .contact-link > i {
 	/* padding-right: 1rem; */
-	font-size: 2.5rem;
+	font-size: 1.75rem;
 }
 
 .contact-strip,
@@ -496,6 +499,7 @@ header .accent-span {
 	/* Hamburger Open/Close state + transition */
 .hamburger.open > span {
 	position: absolute;
+	background-color: var(--detail);
 }
 
 .hamburger.open > span:nth-child(1) {
