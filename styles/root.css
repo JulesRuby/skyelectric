@@ -1092,7 +1092,8 @@ header .accent-span {
 	color: var(--detail);
 }
 
-.contact-form .label-input-wrap:nth-child(3) {
+.contact-form .label-input-wrap:nth-of-type(2) {
+	margin: 0;
 	height: 0;
 	visibility: hidden;
 }
@@ -1123,6 +1124,11 @@ header .accent-span {
 	no-repeat linear-gradient(225deg, var(--body-dbg) 0rem 0.5rem, transparent 0.5rem),
 	no-repeat linear-gradient(315deg, var(--body-dbg) 0rem 0.5rem, transparent 0.5rem),
 	linear-gradient(to right, var(--detail-l) 0%, var(--detail-l) 100%);
+}
+
+.captcha-shell {
+	display: flex;
+	justify-content: center;
 }
 
 button.submit {
