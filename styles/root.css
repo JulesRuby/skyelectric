@@ -844,19 +844,19 @@ header .accent-span {
 }
 
 .bg-quadrant:nth-child(1) {
-	--bg-image: url("../assets/images/gallery/skygallery-8.jpg");
+	--bg-image: url("../assets/images/gallery/skygallery-w1000-1.jpg");
 }
 
 .bg-quadrant:nth-child(2) {
-	--bg-image: url("../assets/images/gallery/skygallery-2.jpg");
+	--bg-image: url("../assets/images/gallery/skygallery-w1000-7.jpg");
 }
 
 .bg-quadrant:nth-child(3) {
-	--bg-image: url("../assets/images/gallery/skygallery-16.jpg");
+	--bg-image: url("../assets/images/gallery/skygallery-w1000-11.jpg");
 }
 
 .bg-quadrant:nth-child(4) {
-	--bg-image: url("../assets/images/gallery/skygallery-12.jpg");
+	--bg-image: url("../assets/images/gallery/skygallery-w1000-12.jpg");
 }
 
 .projects .image-wrapper {
