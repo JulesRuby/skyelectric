@@ -5,7 +5,7 @@
 // 		let output = window.innerWidth;
 // 		console.log(output);
 // 		console.log(vport);
-		
+
 // 		return vport.innerText = output;
 // 	})
 // } else {
@@ -21,9 +21,9 @@ const toggleMenu = (hamburgerEl, menuEl) => {
 		hamburger.addEventListener('click', () => {
 			menu.classList.toggle('expanded');
 			hamburger.classList.toggle('open');
-		})
+		});
 	}
-}
+};
 
 toggleMenu('.hamburger', '.nav-menu');
 
@@ -54,19 +54,17 @@ toggleMenu('.hamburger', '.nav-menu');
 // const navLinks = document.querySelectorAll('.navlink');
 // console.log(navLinks);
 const navLinks = document.querySelectorAll('.navlink');
-const chooseActive = navLinks => {
+const chooseActive = (navLinks) => {
 	// get the current url pathway
 	const currentPath = document.location.pathname;
 	// remove active class from all links
-	navLinks.forEach(link => {
-
+	navLinks.forEach((link) => {
 		link.classList.remove('active-link');
 		if (link.pathname === currentPath) {
 			link.classList.add('active-link');
 		}
 	});
-
-}
+};
 
 chooseActive(navLinks);
 
@@ -86,46 +84,45 @@ const menuHide = () => {
 		// console.log('difference: ' + scrollDistance);
 		// console.log('difference: ' + parseFloat(scrollDistance));
 		// deal with inertia scroll
-		if (currentScrollPosition < 0 || (scrollDistance < 200 && scrollDistance > -200)) {
+		if (
+			currentScrollPosition < 0 ||
+			(scrollDistance < 200 && scrollDistance > -200)
+		) {
 			return;
 		}
 
-		if( scrollDistance >= 200 ) {
+		if (scrollDistance >= 200) {
 			topBar.classList.add('scroll-hide');
 			// mobileMenu.classList.add('scroll-hide');
 			// contactBar.classList.add('scroll-hide');
 			lastScrollPosition = currentScrollPosition;
 		}
-		// debugger;
-		if ( parseFloat(scrollDistance) <= (-200) ) {
+
+		if (parseFloat(scrollDistance) <= -200) {
 			// console.log('WHEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE');
 			topBar.classList.remove('scroll-hide');
 			// mobileMenu.classList.remove('scroll-hide');
 			// contactBar.classList.remove('scroll-hide');
 			lastScrollPosition = currentScrollPosition;
 		}
-
-	})
-}
+	});
+};
 
 menuHide();
-
-
-
 
 // const setPulls = elements => {
 //   const elementList = document.querySelectorAll(elements);
 //   // console.log(elementList);
-  
+
 //   elementList.forEach(element => {
 //     const button = element.querySelector('.service-expand');
 //     const pullDown = element.querySelector('.pulldown');
 //     const pdText = element.querySelector('.p');
 //     const pdUl = element.querySelector('.ul');
-    
+
 //     // button.addEventListener("click", handlePullDown(button, pullDown, pdText, pdUl));
 //     button.addEventListener("click", () => {
-//       //  The blur just prevents the button from maintaining focus when clicked. I only want focus to remain if it's being tabbed to.                            
+//       //  The blur just prevents the button from maintaining focus when clicked. I only want focus to remain if it's being tabbed to.
 //       button.blur();
 //       button.classList.toggle('pull-open');
 //       pullDown.classList.toggle('pull-open');
