@@ -90,6 +90,7 @@
 
 .main p {
 	padding: var(--r4);
+	margin-top: var(--r4);
 	padding-right: 0;
 	max-width: 65ch;
 }
