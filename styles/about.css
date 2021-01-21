@@ -5,7 +5,7 @@
 }
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 .page-banner {
-	overflow-y: hidden;
+	/* overflow-y: hidden;
 	position: relative;
 	display: grid;
 	grid-template-columns: auto minmax(auto, 130ch) auto;
@@ -18,14 +18,14 @@
 	height: var(--page-banner-ht);
 
 	background: var(--page-banner-img) center right no-repeat;
-	background-size: cover;
+	background-size: cover; */
 	--page-banner-img: url(../assets/images/gallery/skygallery-7.jpg);
 }
 
-.page-banner::before {
+/* .page-banner::before {
 	position: absolute;
 	display: block;
-	content: "";
+	content: '';
 	background-color: var(--quat);
 	bottom: 0;
 	left: 0;
@@ -33,36 +33,35 @@
 	height: calc(100% - 15vh);
 	height: 100%;
 	opacity: 0.6;
-}
+} */
 
-.page-banner .wrapper {
+/* .page-banner .wrapper {
 	grid-column-start: 2;
 	padding-left: 1rem;
 	width: 100%;
 	
 	z-index: 1;
-}
+} */
 
-.banner-heading {
+/* .banner-heading {
 	max-width: 25ch;
 	font-size: var(--h5-size);
 	font-weight: 500;
 
 	color: var(--detail);
-}
+} */
 
-.banner-sub-heading {
+/* .banner-sub-heading {
 	max-width: 25ch;
 	font-size: var(--h3-size);
 	color: var(--prim);
-}
+} */
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
-.main {
+/* .main {
 	margin-left: auto;
 	margin-right: auto;
-	/* padding: 0 var(--r4); */
 	max-width: 1024px;
 	max-width: 64rem;
 	max-width: 130ch;
@@ -74,9 +73,8 @@
 
 .main p {
 	padding: var(--r4);
-	/* padding-right: 0; */
 	max-width: 65ch;
-}
+} */
 
 .page-intro {
 	display: flex;
@@ -91,7 +89,7 @@
 }
 
 .head-body-wrap,
-.page-intro .image-wrapper{
+.page-intro .image-wrapper {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -146,11 +144,11 @@
 .intro-header::before,
 .intro-header::after {
 	position: absolute;
-	content: "";
+	content: '';
 	height: 140%;
 	height: 100%;
 	width: 10%;
-	border: .5rem solid var(--detail);
+	border: 0.5rem solid var(--detail);
 
 	top: -20%;
 	top: 0;
@@ -193,7 +191,6 @@ p.heading-subscript {
 	margin-top: var(--r4);
 } */
 
-
 /* .cert-ul {
 	display: flex;
 	flex-wrap: wrap;
@@ -209,7 +206,8 @@ p.heading-subscript {
 	/* flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	*/align-items: center;
+	*/
+	align-items: center;
 }
 
 .cert-item {
@@ -280,7 +278,7 @@ p.heading-subscript {
 
 .philosophy-item::before {
 	position: absolute;
-	content: "0" counter(services) " ";
+	content: '0' counter(services) ' ';
 
 	top: 0;
 	bottom: 0;
@@ -307,11 +305,11 @@ p.heading-subscript {
 .philosophy-item::after {
 	position: absolute;
 	display: block;
-	content: "";
+	content: '';
 
 	top: 3rem;
 	left: 4rem;
-	
+
 	font-size: 7rem;
 	font-size: 11vmin;
 	line-height: calc(1 / 1.2);
@@ -321,14 +319,13 @@ p.heading-subscript {
 }
 
 .philosophy-item:nth-child(1)::after {
-	content: "Communication";
+	content: 'Communication';
 }
 
 .philosophy-item:nth-child(2)::after {
-	content: "Pride";
+	content: 'Pride';
 }
 
 .philosophy-item:nth-child(3)::after {
-	content: "Respect";
+	content: 'Respect';
 }
-

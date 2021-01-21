@@ -4,7 +4,6 @@
 /* I feel this is normally bass ackwards, but this entire thing has been a bit of a shifting curve learning experience, I'm fundamentally doing this in the wrong order this time, I think. */
 /* One thing I can say for certain now, is that I have a polished interest in design systems, as a result */
 
-
 /* Let's keep two major compartments for now, between sub-pages and homepages styling, which later we can merge together as much as possible */
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
@@ -13,19 +12,11 @@
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
-
-
-
-
-
-
-
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
 																																		SUBPAGES
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
 
 /* ------------------------------------------------ Hero / Banner ------------------------------------------------------- */
 
@@ -44,13 +35,13 @@
 
 	background: var(--page-banner-img) center no-repeat;
 	background-size: cover;
-	--page-banner-img: url("../assets/images/contact-pavan-trikutam-unsplash.jpg");
+	--page-banner-img: url('../assets/images/contact-pavan-trikutam-unsplash.jpg');
 }
 
 .page-banner::before {
 	position: absolute;
 	display: block;
-	content: "";
+	content: '';
 	background-color: var(--quat);
 	bottom: 0;
 	left: 0;
@@ -64,7 +55,7 @@
 	grid-column-start: 2;
 	padding-left: 1rem;
 	width: 100%;
-	
+
 	z-index: 1;
 }
 
@@ -81,7 +72,6 @@
 	font-size: var(--h3-size);
 	color: var(--prim);
 }
-
 
 /* ------------------------------------------------ Main ------------------------------------------------------- */
 
@@ -103,9 +93,6 @@
 	padding-right: 0;
 	max-width: 65ch;
 }
-
-
-
 
 /* ------------------------------------------------ Section Stylings ------------------------------------------------------- */
 
@@ -193,7 +180,7 @@
 
 .watermarked::before {
 	position: absolute;
-	content: "Our Work";
+	content: 'Our Work';
 	content: var(--watermark, inherit);
 
 	/* height: 100%; */
@@ -221,11 +208,11 @@
 .intro-header::before,
 .intro-header::after {
 	position: absolute;
-	content: "";
+	content: '';
 	height: 140%;
 	height: 100%;
 	width: 10%;
-	border: .5rem solid var(--detail);
+	border: 0.5rem solid var(--detail);
 
 	top: -20%;
 	top: 0;
