@@ -20,6 +20,12 @@
 
 /* ------------------------------------------------ Hero / Banner ------------------------------------------------------- */
 
+.page-header {
+	position: relative;
+	min-height: 50vh;
+	background: var(--quat);
+}
+
 .page-banner {
 	overflow-y: hidden;
 	position: relative;

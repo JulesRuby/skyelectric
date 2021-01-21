@@ -1,14 +1,6 @@
-.page-header {
-	position: relative;
-	min-height: 50vh;
-	background: var(--quat);
-}
-
 .page-banner {
 	--page-banner-img: url(../assets/images/services-pexels-erik-mclean-med.jpg);
 }
-
-
 
 .main > * + * {
 	margin-top: 5rem;
