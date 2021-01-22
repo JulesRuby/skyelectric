@@ -56,7 +56,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: var(--gunmetal);
+	color: var(--sec);
 	line-height: 1.25;
 }
 
@@ -623,7 +623,7 @@ header .accent-span {
 	height: 100%;
 
 	/* need to get a better sized image file for this */
-	background-image: url('../assets/images/gallery/skygallery-7.jpg');
+	background-image: url('../assets/images/gallery/skygallery-w1000-6.jpg');
 	background-repeat: no-repeat;
 	background-position: 50% 0;
 	background-size: cover;
