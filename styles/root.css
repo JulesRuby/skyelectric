@@ -588,6 +588,7 @@ header .accent-span {
 	display: none;
 }
 
+/* READMORE - REDUCE */
 .features .read-more {
 	min-width: max-content;
 
@@ -633,6 +634,7 @@ header .accent-span {
 	width: 100%;
 	height: 100%;
 
+	/* need to get a better sized image file for this */
 	background-image: url('../assets/images/gallery/skygallery-7.jpg');
 	background-repeat: no-repeat;
 	background-position: 50% 0;
@@ -708,33 +710,32 @@ header .accent-span {
 	height: 2rem;
 	width: 2rem;
 
-	background-image: url();
 	background-image: url('../assets/svg/bolt.svg');
 	background-size: contain;
 	background-repeat: no-repeat;
 }
 
-.about img {
+/* .about img {
 	opacity: 0;
 	width: 100%;
 	height: 100%;
-}
+} */
 
-.about .image-wrapper {
+/* .about .image-wrapper {
 	position: relative;
 	margin: var(--r4);
 	max-width: 60ch;
 	max-height: 40ch;
 
-	/* background-color: var(--tert); */
 	background: url(../assets/images/aboutsky.jpg) var(--quat);
 
 	background-blend-mode: luminosity;
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
-}
+} */
 
+/* READMORE - REDUCE */
 .about .read-more {
 	margin-left: 50%;
 	margin-right: 50%;
@@ -746,6 +747,7 @@ header .accent-span {
 	box-shadow: 2px 3px 0px 1px var(--tert);
 }
 
+/*move to desktop*/
 .about .read-more:hover,
 .about .read-more:focus {
 	box-shadow: 10px 10px 0px 1px var(--tert);
@@ -763,8 +765,6 @@ header .accent-span {
 .page-intro.projects {
 	padding-left: 0;
 	padding-right: 0;
-
-	background-size: cover;
 }
 
 .projects-gallery {
@@ -809,7 +809,7 @@ header .accent-span {
 	--bg-image: url('../assets/images/gallery/skygallery-w1000-12.jpg');
 }
 
-.projects .image-wrapper {
+/* .projects .image-wrapper {
 	position: relative;
 	overflow: hidden;
 	display: flex;
@@ -839,8 +839,9 @@ header .accent-span {
 	height: 7.5rem;
 
 	width: 100%;
-}
+} */
 
+/* READMORE - REDUCE */
 .projects .read-more {
 	position: absolute;
 
@@ -858,6 +859,7 @@ header .accent-span {
 	z-index: 1;
 }
 
+/*move to desktop*/
 .projects .read-more:hover,
 .projects .read-more:focus {
 	box-shadow: 10px 10px 0px 1px var(--tert);
@@ -865,74 +867,6 @@ header .accent-span {
 }
 
 /* ^^^^^^^^^^ HOME--PROJECTS ^^^^^^^^^^ */
-
-/* vvvvvvvvvv HOME--TESTIMONIALS vvvvvvvvvv */
-
-.page-intro.testimonials {
-	display: none;
-	--watermark: 'Testimonials';
-	background: var(--quat);
-}
-
-.testimonials h2 {
-	color: var(--body-dbg);
-}
-
-.testimonials.watermarked::before {
-	color: var(--body-dbg);
-}
-
-.testimonials .section-heading {
-	color: var(--detail);
-}
-
-.testimonial-gallery {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: space-between;
-}
-
-.testimonial-card {
-	margin: 1rem;
-	padding-top: 2rem;
-	background-color: var(--prim);
-
-	border-radius: 4px;
-	box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
-}
-
-.testimonial-card > img {
-	margin: 0 auto 2rem auto;
-	clip-path: circle(50% at 50% 50%);
-	width: 25%;
-}
-
-.star-bar {
-	margin: 1rem;
-	padding: 1rem;
-	height: 4rem;
-
-	border-radius: 5px;
-	box-shadow: 1px 2px 5px -1px rgba(0, 0, 0, 0.2);
-}
-
-.star-bar img {
-	fill: var(--detail);
-}
-.excerpt {
-	margin: 1rem;
-	padding: 1rem;
-	min-height: 10rem;
-}
-
-.customer {
-	display: block;
-	padding-top: 1rem;
-	font-style: italic;
-}
-
-/* ^^^^^^^^^^ HOME--TESTIMONIALS ^^^^^^^^^^ */
 
 /* vvvvvvvvvv HOME--CONTACT vvvvvvvvvv */
 
@@ -952,19 +886,6 @@ header .accent-span {
 
 .form-map-container {
 	padding: var(--r4) 0;
-}
-
-.process-cards {
-	/* temp dimensions */
-	justify-content: center;
-	align-items: center;
-	width: 5rem;
-	height: 5rem;
-	/* temp dimensions */
-
-	color: var(--detail);
-	background-color: var(--sec);
-	border-radius: 50%;
 }
 
 .process-cards p {
