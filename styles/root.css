@@ -82,6 +82,16 @@ h6 {
 
 .read-more,
 .submit {
+	margin-left: auto;
+	margin-right: auto;
+
+	min-width: max-content;
+
+	background-color: var(--detail);
+	border-color: var(--detail);
+	border-radius: 0px;
+	box-shadow: 2px 3px 0px 1px var(--tert);
+
 	transform: scale(1);
 	transition: all 200ms linear;
 }
@@ -227,10 +237,6 @@ footer {
 	text-align: center;
 }
 
-.cta a {
-	transition: all 200ms l;
-}
-
 .cta.primary a {
 	color: var(--detail);
 	background-color: transparent;
@@ -368,7 +374,7 @@ header .accent-span {
 	visibility: hidden;
 	opacity: 0;
 
-	transition: visibility 0ms linear 155ms, opacity 150ms ease 0ms; 
+	transition: visibility 0ms linear 155ms, opacity 150ms ease 0ms;
 }
 
 .nav-menu {
@@ -403,7 +409,6 @@ header .accent-span {
 	text-transform: uppercase;
 	color: var(--prim);
 
-	/* border-top: 2px solid hsla(0deg, 0%, 0%, 0.1); */
 	border-bottom: 2px outset hsla(0deg, 0%, 50%, 0.3);
 
 	/* transition: 200ms; */
@@ -566,11 +571,7 @@ header .accent-span {
 	max-width: 40%;
 }
 
-.service-card:hover img {
-	transition: all 500ms linear; /*move to desktop*/
-}
 
-/*move to desktop*/
 .service-card:hover img {
 	transform: rotate3d(0, 1, 0, 360deg);
 }
@@ -584,26 +585,10 @@ header .accent-span {
 	font-size: var(--h6-size);
 }
 
-.credentials {
+/* .credentials {
 	display: none;
-}
+} */
 
-/* READMORE - REDUCE */
-.features .read-more {
-	min-width: max-content;
-
-	background-color: var(--detail);
-	border-color: var(--detail);
-	border-radius: 0px;
-	box-shadow: 2px 3px 0px 1px var(--tert);
-}
-
-/*move to desktop*/
-.features .read-more:hover,
-.features .read-more:focus {
-	box-shadow: 10px 10px 0px 1px var(--tert);
-	transform: scale(1.05) translate(-2px, -2px);
-}
 
 /* ^^^^^^^^^^ HOME--FEATURED SERVICES ^^^^^^^^^^ */
 
@@ -612,6 +597,9 @@ header .accent-span {
 .about {
 	position: relative;
 	--watermark: 'Sky Electric';
+
+	flex-direction: column;
+	align-items: center;
 
 	background-color: var(--quat);
 	color: var(--body-dbg);
@@ -680,14 +668,6 @@ header .accent-span {
 	color: var(--body-dbg);
 }
 
-/* .about .section-heading {
-	color: var(--detail);
-}
-
-.about p {
-	max-width: 60ch;
-} */
-
 /* .about ul, */
 .custom-ul {
 	padding-left: 1rem;
@@ -713,45 +693,6 @@ header .accent-span {
 	background-image: url('../assets/svg/bolt.svg');
 	background-size: contain;
 	background-repeat: no-repeat;
-}
-
-/* .about img {
-	opacity: 0;
-	width: 100%;
-	height: 100%;
-} */
-
-/* .about .image-wrapper {
-	position: relative;
-	margin: var(--r4);
-	max-width: 60ch;
-	max-height: 40ch;
-
-	background: url(../assets/images/aboutsky.jpg) var(--quat);
-
-	background-blend-mode: luminosity;
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-} */
-
-/* READMORE - REDUCE */
-.about .read-more {
-	margin-left: 50%;
-	margin-right: 50%;
-	min-width: max-content;
-
-	background-color: var(--detail);
-	border-color: var(--detail);
-	border-radius: 0px;
-	box-shadow: 2px 3px 0px 1px var(--tert);
-}
-
-/*move to desktop*/
-.about .read-more:hover,
-.about .read-more:focus {
-	box-shadow: 10px 10px 0px 1px var(--tert);
-	transform: scale(1.05) translate(-2px, -2px);
 }
 
 /* ^^^^^^^^^^ HOME--ABOUT US ^^^^^^^^^^ */
@@ -809,62 +750,20 @@ header .accent-span {
 	--bg-image: url('../assets/images/gallery/skygallery-w1000-12.jpg');
 }
 
-/* .projects .image-wrapper {
-	position: relative;
-	overflow: hidden;
-	display: flex;
-	flex: 1 1 100%;
-
-	height: 7.5rem;
-
-	background-color: var(--quat);
-}
-
-.projects .image-wrapper::before {
-	position: absolute;
-	content: '';
-
-	width: 100%;
-	height: 100%;
-
-	background-color: var(--quat);
-	opacity: 0.5;
-}
-
-.projects-gallery img {
-	object-fit: cover;
-	object-position: 50% 50%;
-	object-position: 50% 75%;
-
-	height: 7.5rem;
-
-	width: 100%;
-} */
-
-/* READMORE - REDUCE */
+/* Read-more needs to be treated quite differently here, because it's being position in the center and requires different colors */
 .projects .read-more {
 	position: absolute;
-
-	margin: 0;
-
 	top: 50%;
 	transform: scale(1) translate(0%, -50%);
 
-	background-color: var(--detail);
+	margin: 0;
+
 	background-color: var(--quat);
 	color: var(--detail);
-	border-radius: 0px;
-	box-shadow: 2px 3px 0px 1px var(--tert);
 
 	z-index: 1;
 }
 
-/*move to desktop*/
-.projects .read-more:hover,
-.projects .read-more:focus {
-	box-shadow: 10px 10px 0px 1px var(--tert);
-	transform: scale(1.05) translate(-2px, calc(-50% - 5px));
-}
 
 /* ^^^^^^^^^^ HOME--PROJECTS ^^^^^^^^^^ */
 
@@ -996,95 +895,15 @@ header .accent-span {
 	justify-content: center;
 }
 
-button.submit {
+.submit {
 	padding: var(--r3) var(--r4);
-
-	background-color: var(--detail);
-	border-color: var(--detail);
-	border-radius: 0px;
-	box-shadow: 2px 3px 0px 1px var(--tert);
 }
 
-button.submit:hover,
-button.submit:focus {
-	box-shadow: 10px 10px 0px 1px var(--tert);
-	transform: scale(1.05) translate(-2px, -2px);
-}
-
-/* ----------------TEST CSS FOR INPUT IDEA-------------- */
 
 .label-input-wrap {
 	position: relative;
 	overflow-x: hidden;
 }
-
-.test-label {
-	position: absolute;
-
-	width: 100%;
-	height: 100%;
-	bottom: 0px;
-	bottom: 0px;
-	left: 0%;
-
-	border-bottom: 1px solid black;
-	pointer-events: none;
-}
-
-.test-label::after {
-	content: '';
-	position: absolute;
-
-	height: 100%;
-	width: 100%;
-	left: 0;
-	bottom: -1px;
-	border-bottom: 3px solid var(--detail);
-
-	transform: translateX(-100%);
-	transition: all 200ms ease;
-}
-
-.test-label-span {
-	position: absolute;
-	top: 5px;
-	left: 0px;
-
-	transition: all 200ms ease;
-}
-
-/* .test-input {
-		border: none;
-		background-color: var(--sec);
-		border: none;
-		padding-top: 20px;
-
-		outline: none;
-	} */
-.test-input {
-	border: none;
-	background-color: var(--prim);
-	border-radius: 0px;
-	padding-top: 20px;
-
-	outline: none;
-}
-
-/* The + selector chooses whatever is below the root selector, in this case the root is form .test-input:focus. */
-/* This may necessitate the label being shifted below the input in the HTML document, but I dislike that structure, so we'll carry on with this for now and then I'll see if I can reverse engineer it to be less subversive to standard */
-form .test-input:focus + .test-label .test-label-span,
-form .test-input:valid + .test-label .test-label-span {
-	transform: translateY(-150%);
-	font-size: 0.75rem;
-	color: var(--detail);
-}
-
-form .test-input:focus + .test-label::after,
-form .test-input:valid + .test-label::after {
-	transform: translateX(0%);
-}
-
-/* ----------------TEST CSS FOR INPUT IDEA-------------- */
 
 /* ^^^^^^^^^^ HOME--CONTACT ^^^^^^^^^^ */
 
@@ -1105,6 +924,27 @@ footer {
 /* vvvvvvvvvv Small Tablet Styles vvvvvvvvvv */
 
 @media screen and (min-width: 48rem) {
+	.cta a {
+		transition: all 200ms linear;
+	}
+
+	.service-card:hover img {
+		transition: all 500ms linear;
+	}
+
+	.read-more:hover,
+	.submit:hover,
+	.read-more:focus, 
+	.submit:focus {
+		box-shadow: 10px 10px 0px 1px var(--tert);
+		transform: scale(1.05) translate(-2px, -2px);
+	}
+
+	.projects .read-more:hover,
+	.projects .read-more:focus {
+		transform: scale(1.05) translate(-2px, calc(-50% - 2px));
+	}
+
 	/* ABOUT */
 
 	.section {
@@ -1132,12 +972,6 @@ footer {
 
 	.section.about button {
 		grid-column: 1/-1;
-	}
-
-	/* TESTIMONIALS */
-
-	.testimonial-gallery {
-		flex-direction: row;
 	}
 
 	/*  CONTACT */
@@ -1239,22 +1073,9 @@ footer {
 		margin: 0 var(--r4);
 	}
 
-	/* PROJECTS */
-
-	/* TESTIMONIALS */
-
-	.testimonial-gallery {
-		justify-content: space-evenly;
-	}
-
-	.testimonial-card {
-		max-width: 30vw;
-	}
-
 	/* CONTACT */
 
 	.form-map-container {
-		/* max-width: 1600px; */
 		justify-content: space-around;
 	}
 
