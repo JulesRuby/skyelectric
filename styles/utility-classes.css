@@ -42,7 +42,7 @@
 
 .button a {
 	display: block;
-	padding: .75rem 1rem;
+	padding: var(--r3) var(--r4);
 }
 /* ---------LAYOUTS---------- */
 /* Basic Flex Row Container */
@@ -197,3 +197,4 @@
 .font-wt-800 {
 	font-weight: 800;
 }
+
