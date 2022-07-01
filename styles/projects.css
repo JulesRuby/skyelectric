@@ -52,13 +52,15 @@
 }
 
 .frame {
+	position: relative;
 	overflow: hidden;
 	display: grid;
-	grid-template-columns: 1;
-	grid-template-rows: 1;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
 }
 
 .frame img {
+	position: absolute;
 	grid-area: 1/1/-1/-1;
 
 	width: 100%;
