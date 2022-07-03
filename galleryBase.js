@@ -3,6 +3,7 @@ const boxOverlay = document.querySelector('.box-overlay');
 const focusImage = boxOverlay.querySelector('img');
 const closeButton = boxOverlay.querySelector('.close-button');
 
+
 // Create element with image with column and row arguments, and generating a random image number
 // const createElement = ([c, r]) => {
 // 	return `
@@ -14,17 +15,27 @@ const closeButton = boxOverlay.querySelector('.close-button');
 // 		</div>
 // 	`;
 // };
-
-const createElement = index => {
+const createElement = ([c, r]) => {
 	return `
-		<div class="frame">
-			<img src="./assets/images/gallery/skygallery-${index}.jpg">
+		<div class="frame c${c} r${r}">
+			<img src="./assets/images/gallery/skygallery-${c}.jpg">
 			<div class="frame-overlay">
 				<button> View </button>
 			</div>
 		</div>
 	`;
 };
+
+// const createElement = index => {
+// 	return `
+// 		<div class="frame">
+// 			<img src="./assets/images/gallery/skygallery-${index}.jpg">
+// 			<div class="frame-overlay">
+// 				<button> View </button>
+// 			</div>
+// 		</div>
+// 	`;
+// };
 
 // random number function accepting an argument to limit the max range
 const randomNum = upperLimit => {
@@ -45,41 +56,51 @@ const closeOverlay = () => {
 };
 
 // create an array of 50 arrays, which have two randomly generated numbers. These represent the aspect ratios of the gallery space
+// const aspectRatioArray = Array.from({ length: 29 }, () => [
+// 	randomNum(2),
+// 	randomNum(2),
+// ]).concat([
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// 	[1, 1],
+// ]);
 const aspectRatioArray = Array.from({ length: 29 }, () => [
-	randomNum(2),
-	randomNum(2),
-]).concat([
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
+	randomNum(1),
+	randomNum(1),
 ]);
+
+const testingMap = aspectRatioArray.map((el, index) => {
+	el, index;
+});
+
 // console.log(aspectRatioArray);
+console.log({ testingMap });
 
 const someNumber = 29;
 
@@ -88,12 +109,12 @@ const someNumber = 29;
 // then .join('') it to make the whole thing s a string
 // const html = aspectRatioArray.map(createElement).join('');
 const html = aspectRatioArray.map(createElement).join('');
-// console.log(html);
+console.log(html);
 
 let stupidThing = [];
 
 for (let i = 1; i < someNumber; i++) {
-	stupidThing.map(createElement(i)).join('');
+	stupidThing = stupidThing.map(createElement(i)).join('');
 }
 
 console.log(stupidThing);
