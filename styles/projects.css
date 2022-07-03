@@ -2,17 +2,48 @@
 	--page-banner-img: url(../assets/images/gallery/skygallery-2.jpg);
 }
 
-
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 .main {
 	padding: 0 var(--r4);
 }
 
-.close {
-	background-color: none;
-	color: var(--detail);
+.close-button {
+	/* background-color: black; */
+	/* color: var(--detail); */
 
+	width: 3.5rem;
+	height: 3.5rem;
+	padding: 1rem;
+	position: relative;
+	margin-left: auto;
+}
+
+.close-button:hover::before,
+.close-button:hover::after {
+	background-color: var(--tert);
+}
+
+.close-button::before,
+.close-button::after {
+	content: '';
+	position: absolute;
+
+	background-color: var(--sec);
+	width: calc(100% - 2rem);
+	height: 3px;
+
+	transform: translate(-50%, -50%) rotate(45deg);
+
+	top: 50%;
+	left: 50%;
+	z-index: 1;
+
+	transition: background-color 100ms ease-out;
+}
+
+.close-button::before {
+	transform: translate(-50%, -50%) rotate(315deg);
 }
 
 .full-gallery {
@@ -70,7 +101,7 @@
 	object-fit: cover;
 }
 
-/* .frame-overlay {
+.frame-overlay {
 	position: relative;
 	display: grid;
 	grid-area: 1/1/-1/-1;
@@ -78,24 +109,34 @@
 	align-items: center;
 
 	background-color: var(--tert-l);
+	background-color: var(--rich-bfogra-50);
 
-	transform: translateY(100%);
+	opacity: 0;
+	/* transform: translateY(100%); */
 	transition: all 200ms linear;
-} */
-
-.frame:hover .frame-overlay {
-	transform: translateY(0%);
 }
 
-.frame-overlay button {
+.frame:hover .frame-overlay {
+	opacity: 1;
+	/* transform: translateY(0%); */
+}
+
+.view {
 	padding: 0.25rem 0.75rem;
 
 	color: var(--prim);
 	background-color: var(--prim);
-	background-color:	unset;
+	background-color: unset;
 
 	border: 3px solid var(--prim);
 	border-radius: 4px;
+
+	transition: all 100ms linear;
+}
+
+.view:hover {
+	border-color: var(--detail);
+	color: var(--detail);
 }
 
 /* .frame.r2 {
@@ -124,7 +165,7 @@
 
 .box-overlay {
 	position: fixed;
-	display: none;
+	display: grid;
 	justify-items: center;
 	align-items: center;
 
@@ -133,28 +174,62 @@
 	bottom: 0;
 	left: 0;
 
-	background-color: var(--rich-bfogra-50);
+	height: 100%;
+	width: 100%;
+
+	background-color: var(--overlay-bg);
 
 	z-index: 150;
+	cursor: pointer;
+
+	visibility: hidden;
+	opacity: 0;
+
+	transition: opacity 200ms linear, visibility 0ms linear 201ms;
 }
+
+/* .box-overlay */
 
 .box-overlay.open {
 	display: grid;
+
+	visibility: visible;
+	opacity: 1;
+
+	transition: opacity 200ms linear 1ms, visibility 0ms linear 0ms;
 }
 
 .box-overlay-inner {
+	display: flex;
+	flex-direction: column;
 	background-color: var(--prim);
-	width: 75%;
-	padding: 1rem;
+	width: 90%;
+	padding: 0 0 1rem 0;
+	height: 90%;
+
+	cursor: default;
 }
 
-.overlay img {
+.image-wrapper {
+	position: relative;
+	height: 100%;
+	margin: 0 1rem;
+	/* overflow: hidden; */
+}
+
+.modal-image {
 	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	position: absolute;
+	object-fit: contain;
+	opacity: 0;
+	transition: opacity 300ms ease-in;
 }
 
-
-
-
+.modal-image.loaded {
+	opacity: 1;
+}
 /* @media screen and (min-width: 48rem) {
 	.full-gallery {
 		grid-template-columns: repeat(3, 1fr);
@@ -184,3 +259,14 @@
 @media screen and (min-width: 48rem) {
 
 } */
+
+@media (max-aspect-ratio: 5/6) {
+	.box-overlay-inner {
+		height: 95%;
+		width: 95%;
+	}
+
+	.image-wrapper {
+		margin: 0;
+	}
+}
