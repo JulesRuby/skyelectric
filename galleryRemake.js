@@ -59,12 +59,12 @@ const closeOverlay = e => {
 
 const galleryFragment = new DocumentFragment();
 
-const testImageDrive = createElementSafe('test');
+// const testImageDrive = createElementSafe('test');
 
-testImageDrive.querySelector('gallery.image').src =
-	'https://drive.google.com/file/d/1hl5QPxaLLIqBvjd5uc6IUCHwOAuSJozH/view?usp=drive_link';
+// testImageDrive.querySelector('gallery.image').src =
+// 	'https://drive.google.com/file/d/1hl5QPxaLLIqBvjd5uc6IUCHwOAuSJozH/view?usp=drive_link';
 
-galleryFragment.appendChild(testImageDrive);
+// galleryFragment.appendChild(testImageDrive);
 
 for (let i = 1; i <= galleryLength; i++) {
 	galleryFragment.appendChild(createElementSafe(i));
