@@ -13,59 +13,28 @@ const createElement = ([c, r]) => {
 			</div>
 		</div>
 	`;
-};
+}
 
 // random number function accepting an argument to limit the max range
 const randomNum = upperLimit => {
 	return Math.floor(Math.random() * upperLimit) + 1;
-};
+}
 
 // handle the click event for any of the picture frames
 //allows us to set the focusImage to the src of parent image frame on click
 const handleClick = e => {
-	console.log(e.target);
 	const imageSrc = e.currentTarget.querySelector('img').src;
 	focusImage.src = imageSrc;
 	boxOverlay.classList.add('open');
-};
+}
 
 const closeOverlay = () => {
 	console.log('butts');
-	boxOverlay.classList.remove('open');
-};
+	boxOverlay.classList.remove('open')
+}
 
 // create an array of 50 arrays, which have two randomly generated numbers. These represent the aspect ratios of the gallery space
-const aspectRatioArray = Array.from({ length: 50 }, () => [
-	randomNum(2),
-	randomNum(2),
-]).concat([
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-	[1, 1],
-]);
+const aspectRatioArray = Array.from({ length: 50 }, () => [randomNum(2), randomNum(2)]).concat([[1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1]]);
 // console.log(aspectRatioArray);
 
 // create a variable map each set of numbers in aspectRatioArray, passed into the createElement function as the arguments
@@ -79,6 +48,6 @@ gallery.innerHTML = html;
 
 const frames = document.querySelectorAll('.frame');
 
-frames.forEach(frame => frame.addEventListener('click', handleClick));
+frames.forEach(frame => frame.addEventListener('click', handleClick))
 
 closeButton.addEventListener('click', closeOverlay);
