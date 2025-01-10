@@ -62,7 +62,7 @@ const galleryFragment = new DocumentFragment();
 const testImageDrive = createElementSafe('test');
 console.log({ testImageDrive });
 
-testImageDrive.querySelector('gallery-image').src =
+testImageDrive.firstChild.src =
 	'https://drive.google.com/file/d/1hl5QPxaLLIqBvjd5uc6IUCHwOAuSJozH/view?usp=drive_link';
 
 galleryFragment.appendChild(testImageDrive);
