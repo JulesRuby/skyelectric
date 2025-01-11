@@ -67,8 +67,8 @@ console.log({ testImageDrive });
 // testImageDrive.firstChild.src =
 // 	'https://skyelectric.ca/.netlify/images?url=https://drive.google.com/thumbnail?id=1hl5QPxaLLIqBvjd5uc6IUCHwOAuSJozH&sz=s4000&w=700&h=700';
 testImageDrive.firstChild.src =
-	'https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/1hl5QPxaLLIqBvjd5uc6IUCHwOAuSJozH';
-	// https://mysitename.netlify.app/.netlify/images?url=https://my-images.com/owl.jpeg
+	'https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/1hl5QPxaLLIqBvjd5uc6IUCHwOAuSJozH&w=500&h=700';
+// https://mysitename.netlify.app/.netlify/images?url=https://my-images.com/owl.jpeg
 
 galleryFragment.appendChild(testImageDrive);
 
