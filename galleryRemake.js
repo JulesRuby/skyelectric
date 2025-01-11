@@ -62,8 +62,11 @@ const galleryFragment = new DocumentFragment();
 const testImageDrive = createElementSafe('test');
 console.log({ testImageDrive });
 
+// testImageDrive.firstChild.src =
+// 	'https://drive.google.com/thumbnail?id=1hl5QPxaLLIqBvjd5uc6IUCHwOAuSJozH&sz=s4000';
 testImageDrive.firstChild.src =
-	'https://drive.google.com/file/d/1hl5QPxaLLIqBvjd5uc6IUCHwOAuSJozH/view?usp=drive_link';
+	'https://skyelectric.ca/.netlify/images?url=https://drive.google.com/thumbnail?id=1hl5QPxaLLIqBvjd5uc6IUCHwOAuSJozH&sz=s4000&w=700&h=700';
+	// https://mysitename.netlify.app/.netlify/images?url=https://my-images.com/owl.jpeg
 
 galleryFragment.appendChild(testImageDrive);
 
