@@ -1,2 +1,2 @@
 [images]
-  remote_images = ["https://drive.google.com/thumbnail?id=*"]
+  remote_images = ["https://lh3.googleusercontent.com/d/.*"]
