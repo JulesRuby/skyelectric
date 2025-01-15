@@ -33,6 +33,10 @@ const populateGallery = metaData => {
 	const createElementSafe = index => {
 		const frame = document.createElement('div');
 		const image = new Image();
+		const overlay = document.createElement('div');
+		const button = document.createElement('button');
+
+		frame.classList.add('frame');
 		image.classList.add('gallery-image');
 		image.src = `./assets/images/gallery/skygallery-${index}.jpg`;
 		overlay.classList.add('frame-overlay');
@@ -41,6 +45,32 @@ const populateGallery = metaData => {
 		overlay.appendChild(button);
 		frame.append(image, overlay);
 
+		return frame;
+	};
+
+	const createFrameFromMetadata = data => {
+		const frame = document.createElement('div');
+		frame.classList.add('frame');
+		// console.log({ frame });
+
+		const image = new Image();
+		image.classList.add('gallery-image');
+		image.src = `https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/${data.id}&w=500&h=700`;
+		// console.log({ image });
+
+		const overlay = document.createElement('div');
+		overlay.classList.add('frame-overlay');
+		// console.log({ overlay });
+
+		const button = document.createElement('button');
+		button.classList.add('view');
+		button.textContent = 'View';
+		// console.log({ button });
+
+		overlay.appendChild(button);
+		frame.append(image, overlay);
+
+		// galleryFragment.appendChild(frame);
 		return frame;
 	};
 
@@ -67,31 +97,31 @@ const populateGallery = metaData => {
 	const galleryFragment = new DocumentFragment();
 
 	metaData.forEach(entry => {
-		const frame = document.createElement('div');
-		frame.classList.add('frame');
-		// console.log({ frame });
+		// const frame = document.createElement('div');
+		// frame.classList.add('frame');
+		// // console.log({ frame });
 
-		const image = new Image();
-		image.classList.add('gallery-image');
-		image.src = `https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/${entry.id}&w=500&h=700`;
-		// console.log({ image });
+		// const image = new Image();
+		// image.classList.add('gallery-image');
+		// image.src = `https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/${entry.id}&w=500&h=700`;
+		// // console.log({ image });
 
-		const overlay = document.createElement('div');
-		overlay.classList.add('frame-overlay');
-		// console.log({ overlay });
+		// const overlay = document.createElement('div');
+		// overlay.classList.add('frame-overlay');
+		// // console.log({ overlay });
 
-		const button = document.createElement('button');
-		button.classList.add('view');
-		button.textContent = 'View';
-		// console.log({ button });
+		// const button = document.createElement('button');
+		// button.classList.add('view');
+		// button.textContent = 'View';
+		// // console.log({ button });
 
-		overlay.appendChild(button);
-		frame.append(image, overlay);
+		// overlay.appendChild(button);
+		// frame.append(image, overlay);
 
-		galleryFragment.appendChild(frame);
+		galleryFragment.appendChild(createFrameFromMetadata(entry));
 	});
 
-	galleryFragment.appendChild(testImageDrive);
+	// galleryFragment.appendChild(testImageDrive);
 
 	for (let i = 1; i <= galleryLength; i++) {
 		galleryFragment.appendChild(createElementSafe(i));
