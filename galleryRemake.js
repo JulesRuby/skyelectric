@@ -97,8 +97,7 @@ const populateGallery = metaData => {
 		galleryFragment.appendChild(createElementSafe(i));
 	}
 
-	console.log({ galleryFragment });
-
+	// console.log({ galleryFragment });
 	gallery.append(galleryFragment);
 
 	const frames = document.querySelectorAll('.frame');
