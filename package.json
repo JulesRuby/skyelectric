@@ -1,0 +1,19 @@
+{
+	"name": "skyelectric",
+	"version": "1.0.0",
+	"description": "This is basically a website made for an new electrical contracting company. It's been a pretty interesting learning experience in terms of trying to efficiently design and develop something with business in mind. Trying to make something that appears visually compelling, but keeping the design work on the pragmatic side of things. At the I'm mostly striving for MVP at this point, but the idea is to get it deployed and functional for the client, and eventually scaling up the features and practicing SEO a bit.",
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"googleapis": "^144.0.0"
+	},
+	"devDependencies": {
+		"dotenv": "^16.4.7"
+	}
+}

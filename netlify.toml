@@ -1,2 +1,5 @@
 [images]
   remote_images = ["https://lh3.googleusercontent.com/d/.*"]
+
+[[plugins]]
+  package = "/plugins/netlify-plugin-generate-gallery-data"
