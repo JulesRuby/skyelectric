@@ -18,14 +18,21 @@ const fetchGalleryMetadata = async () => {
 	}
 };
 
-const createFrameFromMetadata = data => {
+const createFrameFromMetadata = (data, idx) => {
 	const frame = document.createElement('div');
 	frame.classList.add('frame');
 	// console.log({ frame });
 
 	const image = new Image();
 	image.classList.add('gallery-image');
-	image.src = `https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/${data.id}&w=500&h=700`;
+
+	// TODO find a better way to go about this part, this is temporary
+	if (idx > 3) {
+		image.src = `./assets/images/SkyElectric-Lazy-Placeholder.jpg`;
+		image.dataset.src = `https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/${data.id}&w=500&h=700`;
+	} else {
+		image.src = `https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/${data.id}&w=500&h=700`;
+	}
 	// console.log({ image });
 
 	const overlay = document.createElement('div');
@@ -70,7 +77,7 @@ const populateGallery = metaData => {
 	const focusImage = boxOverlay.querySelector('img');
 	const closeButton = boxOverlay.querySelector('.close-button');
 
-	const galleryLength = 29;
+	// const galleryLength = 29;
 
 	focusImage.onload = () => {
 		focusImage.classList.add('loaded');
@@ -84,7 +91,9 @@ const populateGallery = metaData => {
 
 		frame.classList.add('frame');
 		image.classList.add('gallery-image');
-		image.src = `./assets/images/gallery/skygallery-${index}.jpg`;
+
+		image.dataset.src = `./assets/images/gallery/skygallery-${index}.jpg`;
+		image.src = `./assets/images/SkyElectric-Lazy-Placeholder.jpg`;
 		overlay.classList.add('frame-overlay');
 		button.classList.add('view');
 		button.textContent = 'View';
@@ -142,7 +151,7 @@ const populateGallery = metaData => {
 
 	const galleryFragment = new DocumentFragment();
 
-	metaData.forEach(entry => {
+	metaData.forEach((entry, idx) => {
 		// const frame = document.createElement('div');
 		// frame.classList.add('frame');
 		// // console.log({ frame });
@@ -164,16 +173,50 @@ const populateGallery = metaData => {
 		// overlay.appendChild(button);
 		// frame.append(image, overlay);
 
-		galleryFragment.appendChild(createFrameFromMetadata(entry));
+		galleryFragment.appendChild(createFrameFromMetadata(entry, idx));
 	});
 
 	// galleryFragment.appendChild(testImageDrive);
 
-	for (let i = 1; i <= galleryLength; i++) {
-		galleryFragment.appendChild(createElementSafe(i));
-	}
+	// console.log(galleryFragment);
 
-	// console.log({ galleryFragment });
+	// FIXME this is commented out while I test the new solution. If it works, this can go
+	// for (let i = 1; i <= galleryLength; i++) {
+	// 	galleryFragment.appendChild(createElementSafe(i));
+	// }
+
+	// console.log(galleryFragment.childNodes);
+
+	const observerOptions = {
+		root: null,
+		rootMargin: '400px',
+		threshold: 0.1,
+	};
+
+	// console.log(IntersectionObserverEntry);
+	// console.log({ IntersectionObserverEntry });
+
+	const lazyObserver = new IntersectionObserver(entries => {
+		console.log({ observerOptions });
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				// console.log(entry.target);
+				// console.log(entry.target.firstChild);
+				// console.log(entry.target.firstChild.src);
+				// console.log(entry.target.firstChild.dataset.src);
+				// console.log(entry.isIntersecting);
+				// console.log(entry.boundingClientRect);
+				entry.target.firstChild.src = entry.target.firstChild.dataset.src;
+				lazyObserver.unobserve(entry.target);
+			}
+		});
+	}, observerOptions);
+
+	galleryFragment.childNodes.forEach((node, idx) => {
+		if (idx > 3) {
+			lazyObserver.observe(node);
+		}
+	});
 	gallery.append(galleryFragment);
 
 	const frames = document.querySelectorAll('.frame');
