@@ -18,6 +18,52 @@ const fetchGalleryMetadata = async () => {
 	}
 };
 
+const createFrameFromMetadata = data => {
+	const frame = document.createElement('div');
+	frame.classList.add('frame');
+	// console.log({ frame });
+
+	const image = new Image();
+	image.classList.add('gallery-image');
+	image.src = `https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/${data.id}&w=500&h=700`;
+	// console.log({ image });
+
+	const overlay = document.createElement('div');
+	overlay.classList.add('frame-overlay');
+	// console.log({ overlay });
+
+	const button = document.createElement('button');
+	button.classList.add('view');
+	button.textContent = 'View';
+	// console.log({ button });
+
+	overlay.appendChild(button);
+	frame.append(image, overlay);
+
+	// galleryFragment.appendChild(frame);
+	return frame;
+};
+
+const handleClick = (e, focusImage, boxOverlay) => {
+	const imageSrc = e.currentTarget.querySelector('img').src;
+	focusImage.src = imageSrc;
+	boxOverlay.classList.add('open');
+};
+
+const closeOverlay = (e, focusImage, boxOverlay) => {
+	// const regexp = /(^[\w\s?]box-overlay[\s?\w]+$)|(^close-button+$)/g;
+	const regexp =
+		/(^(?:\w*?\s+?)*?box-overlay(?:\s+?\w*?)*?)$|(^(?:\w*?\s+?)*?close-button(?:\s+?\w*?)*?)$/g;
+
+	if (!e.target.classList.value.match(regexp)) {
+		e.stopPropagation();
+	} else {
+		boxOverlay.classList.remove('open');
+		focusImage.classList.remove('loaded');
+		e.stopPropagation();
+	}
+};
+
 const populateGallery = metaData => {
 	const gallery = document.querySelector('.gallery');
 	const boxOverlay = document.querySelector('.box-overlay');
@@ -48,51 +94,51 @@ const populateGallery = metaData => {
 		return frame;
 	};
 
-	const createFrameFromMetadata = data => {
-		const frame = document.createElement('div');
-		frame.classList.add('frame');
-		// console.log({ frame });
+	// const createFrameFromMetadata = data => {
+	// 	const frame = document.createElement('div');
+	// 	frame.classList.add('frame');
+	// 	// console.log({ frame });
 
-		const image = new Image();
-		image.classList.add('gallery-image');
-		image.src = `https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/${data.id}&w=500&h=700`;
-		// console.log({ image });
+	// 	const image = new Image();
+	// 	image.classList.add('gallery-image');
+	// 	image.src = `https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/${data.id}&w=500&h=700`;
+	// 	// console.log({ image });
 
-		const overlay = document.createElement('div');
-		overlay.classList.add('frame-overlay');
-		// console.log({ overlay });
+	// 	const overlay = document.createElement('div');
+	// 	overlay.classList.add('frame-overlay');
+	// 	// console.log({ overlay });
 
-		const button = document.createElement('button');
-		button.classList.add('view');
-		button.textContent = 'View';
-		// console.log({ button });
+	// 	const button = document.createElement('button');
+	// 	button.classList.add('view');
+	// 	button.textContent = 'View';
+	// 	// console.log({ button });
 
-		overlay.appendChild(button);
-		frame.append(image, overlay);
+	// 	overlay.appendChild(button);
+	// 	frame.append(image, overlay);
 
-		// galleryFragment.appendChild(frame);
-		return frame;
-	};
+	// 	// galleryFragment.appendChild(frame);
+	// 	return frame;
+	// };
 
-	const handleClick = e => {
-		const imageSrc = e.currentTarget.querySelector('img').src;
-		focusImage.src = imageSrc;
-		boxOverlay.classList.add('open');
-	};
+	// const handleClick = e => {
+	// 	const imageSrc = e.currentTarget.querySelector('img').src;
+	// 	focusImage.src = imageSrc;
+	// 	boxOverlay.classList.add('open');
+	// };
 
-	const closeOverlay = e => {
-		// const regexp = /(^[\w\s?]box-overlay[\s?\w]+$)|(^close-button+$)/g;
-		const regexp =
-			/(^(?:\w*?\s+?)*?box-overlay(?:\s+?\w*?)*?)$|(^(?:\w*?\s+?)*?close-button(?:\s+?\w*?)*?)$/g;
+	// const closeOverlay = e => {
+	// 	// const regexp = /(^[\w\s?]box-overlay[\s?\w]+$)|(^close-button+$)/g;
+	// 	const regexp =
+	// 		/(^(?:\w*?\s+?)*?box-overlay(?:\s+?\w*?)*?)$|(^(?:\w*?\s+?)*?close-button(?:\s+?\w*?)*?)$/g;
 
-		if (!e.target.classList.value.match(regexp)) {
-			e.stopPropagation();
-		} else {
-			boxOverlay.classList.remove('open');
-			focusImage.classList.remove('loaded');
-			e.stopPropagation();
-		}
-	};
+	// 	if (!e.target.classList.value.match(regexp)) {
+	// 		e.stopPropagation();
+	// 	} else {
+	// 		boxOverlay.classList.remove('open');
+	// 		focusImage.classList.remove('loaded');
+	// 		e.stopPropagation();
+	// 	}
+	// };
 
 	const galleryFragment = new DocumentFragment();
 
