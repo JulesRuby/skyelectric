@@ -178,10 +178,20 @@ const populateGallery = metaData => {
 
 	const frames = document.querySelectorAll('.frame');
 
-	frames.forEach(frame => frame.addEventListener('click', handleClick));
+	frames.forEach(frame =>
+		frame.addEventListener('click', e => handleClick(e, focusImage, boxOverlay))
+	);
 
-	boxOverlay.addEventListener('click', closeOverlay, true);
-	closeButton.addEventListener('click', closeOverlay, true);
+	boxOverlay.addEventListener(
+		'click',
+		e => closeOverlay(e, focusImage, boxOverlay),
+		true
+	);
+	closeButton.addEventListener(
+		'click',
+		e => closeOverlay(e, focusImage, boxOverlay),
+		true
+	);
 };
 
 (async () => {
