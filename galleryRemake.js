@@ -27,12 +27,14 @@ const createFrameFromMetadata = (data, idx) => {
 	image.classList.add('gallery-image');
 
 	// TODO find a better way to go about this part, this is temporary
-	if (idx > 3) {
-		image.src = `./assets/images/SkyElectric-Lazy-Placeholder.jpg`;
-		image.dataset.src = `https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/${data.id}&w=500&h=700`;
-	} else {
-		image.src = `https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/${data.id}&w=500&h=700`;
-	}
+	image.src = `./assets/images/SkyElectric-Lazy-Placeholder.jpg`;
+	image.dataset.src = `https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/${data.id}&w=500&h=700`;
+	// if (idx > 3) {
+	// 	image.src = `./assets/images/SkyElectric-Lazy-Placeholder.jpg`;
+	// 	image.dataset.src = `https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/${data.id}&w=500&h=700`;
+	// } else {
+	// 	image.src = `https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/${data.id}&w=500&h=700`;
+	// }
 	// console.log({ image });
 
 	const overlay = document.createElement('div');
@@ -73,17 +75,17 @@ const closeOverlay = (e, focusImage, boxOverlay) => {
 
 const elementInViewport = el => {
 	const elRection = el.getBoundingClientRect();
-	console.log(
-		`elRection.top ${elRection.top}\n
-		elRection.left ${elRection.left}\n
-		elRection.bottom ${elRection.bottom}\n
-		elRection.right ${elRection.right}\n
-		window.innerHeight ${window.innerHeight}\n
-		document.documentElement.clientHeight ${document.documentElement.clientHeight}\n
-		window.innerWidth ${window.innerWidth}\n
-		document.documentElement.clientWidth ${document.documentElement.clientWidth}\n\n\n
-		`
-	);
+	// console.log(
+	// 	`elRection.top ${elRection.top}\n
+	// 	elRection.left ${elRection.left}\n
+	// 	elRection.bottom ${elRection.bottom}\n
+	// 	elRection.right ${elRection.right}\n
+	// 	window.innerHeight ${window.innerHeight}\n
+	// 	document.documentElement.clientHeight ${document.documentElement.clientHeight}\n
+	// 	window.innerWidth ${window.innerWidth}\n
+	// 	document.documentElement.clientWidth ${document.documentElement.clientWidth}\n\n\n
+	// 	`
+	// );
 	console.log(
 		elRection.top >= 0 &&
 			elRection.left >= 0 &&
