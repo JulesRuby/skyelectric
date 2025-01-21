@@ -26,16 +26,8 @@ const createFrameFromMetadata = (data, idx) => {
 	const image = new Image();
 	image.classList.add('gallery-image');
 
-	// TODO find a better way to go about this part, this is temporary
 	image.src = `./assets/images/SkyElectric-Lazy-Placeholder.jpg`;
 	image.dataset.src = `https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/${data.id}&w=500&h=700`;
-	// if (idx > 3) {
-	// 	image.src = `./assets/images/SkyElectric-Lazy-Placeholder.jpg`;
-	// 	image.dataset.src = `https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/${data.id}&w=500&h=700`;
-	// } else {
-	// 	image.src = `https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/${data.id}&w=500&h=700`;
-	// }
-	// console.log({ image });
 
 	const overlay = document.createElement('div');
 	overlay.classList.add('frame-overlay');
@@ -75,25 +67,7 @@ const closeOverlay = (e, focusImage, boxOverlay) => {
 
 const elementInViewport = el => {
 	const elRection = el.getBoundingClientRect();
-	// console.log(
-	// 	`elRection.top ${elRection.top}\n
-	// 	elRection.left ${elRection.left}\n
-	// 	elRection.bottom ${elRection.bottom}\n
-	// 	elRection.right ${elRection.right}\n
-	// 	window.innerHeight ${window.innerHeight}\n
-	// 	document.documentElement.clientHeight ${document.documentElement.clientHeight}\n
-	// 	window.innerWidth ${window.innerWidth}\n
-	// 	document.documentElement.clientWidth ${document.documentElement.clientWidth}\n\n\n
-	// 	`
-	// );
-	console.log(
-		elRection.top >= 0 &&
-			elRection.left >= 0 &&
-			elRection.bottom <=
-				(window.innerHeight || document.documentElement.clientHeight) &&
-			elRection.right <=
-				(window.innerWidth || document.documentElement.clientWidth)
-	);
+
 	return (
 		elRection.top >= 0 &&
 		elRection.left >= 0 &&
@@ -110,50 +84,28 @@ const populateGallery = metaData => {
 	const focusImage = boxOverlay.querySelector('img');
 	const closeButton = boxOverlay.querySelector('.close-button');
 
-	// const galleryLength = 29;
-
 	focusImage.onload = () => {
 		focusImage.classList.add('loaded');
 	};
 
-	// const createElementSafe = index => {
-	// 	const frame = document.createElement('div');
-	// 	const image = new Image();
-	// 	const overlay = document.createElement('div');
-	// 	const button = document.createElement('button');
-
-	// 	frame.classList.add('frame');
-	// 	image.classList.add('gallery-image');
-
-	// 	image.dataset.src = `./assets/images/gallery/skygallery-${index}.jpg`;
-	// 	image.src = `./assets/images/SkyElectric-Lazy-Placeholder.jpg`;
-	// 	overlay.classList.add('frame-overlay');
-	// 	button.classList.add('view');
-	// 	button.textContent = 'View';
-	// 	overlay.appendChild(button);
-	// 	frame.append(image, overlay);
-
-	// 	return frame;
-	// };
-
 	const galleryFragment = new DocumentFragment();
 
-	metaData.forEach((entry, idx) => {
-		const frameNode = createFrameFromMetadata(entry, idx);
-		console.log(frameNode);
-		elementInViewport(frameNode);
+	// metaData.forEach((entry, idx) => {
+	// 	const frameNode = createFrameFromMetadata(entry, idx);
+	// 	galleryFragment.appendChild(frameNode);
+	// });
 
-		galleryFragment.appendChild(createFrameFromMetadata(entry, idx));
-	});
+	metaData.forEach((entry, idx) =>
+		galleryFragment.appendChild(createFrameFromMetadata(entry, idx))
+	);
 
 	const observerOptions = {
 		root: null,
-		rootMargin: '400px',
+		rootMargin: '500px',
 		threshold: 0.1,
 	};
 
 	const lazyObserver = new IntersectionObserver(entries => {
-		console.log({ observerOptions });
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
 				entry.target.firstChild.src = entry.target.firstChild.dataset.src;
@@ -162,16 +114,6 @@ const populateGallery = metaData => {
 		});
 	}, observerOptions);
 
-	// galleryFragment.childNodes.forEach((node, idx) => {
-	// 	if (idx > 3) {
-	// 		lazyObserver.observe(node);
-	// 	}
-	// });
-	// galleryFragment.childNodes.forEach(frame =>
-	// 	frame.addEventListener('click', e => handleClick(e, focusImage, boxOverlay))
-	// );
-	console.log('gallery', gallery);
-
 	gallery.append(galleryFragment);
 
 	gallery.childNodes.forEach(frame => {
@@ -179,6 +121,7 @@ const populateGallery = metaData => {
 		frame.addEventListener('click', e =>
 			handleClick(e, focusImage, boxOverlay)
 		);
+
 		elementInViewport(frame)
 			? (frame.firstChild.src = frame.firstChild.dataset.src)
 			: lazyObserver.observe(frame);
