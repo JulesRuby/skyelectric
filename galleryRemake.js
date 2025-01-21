@@ -71,6 +71,37 @@ const closeOverlay = (e, focusImage, boxOverlay) => {
 	}
 };
 
+const elementInViewport = el => {
+	const elRection = el.getBoundingClientRect();
+	console.log(
+		`elRection.top ${elRection.top}\n
+		elRection.left ${elRection.left}\n
+		elRection.bottom ${elRection.bottom}\n
+		elRection.right ${elRection.right}\n
+		window.innerHeight ${window.innerHeight}\n
+		document.documentElement.clientHeight ${document.documentElement.clientHeight}\n
+		window.innerWidth ${window.innerWidth}\n
+		document.documentElement.clientWidth ${document.documentElement.clientWidth}\n\n\n
+		`
+	);
+	console.log(
+		elRection.top >= 0 &&
+			elRection.left >= 0 &&
+			elRection.bottom <=
+				(window.innerHeight || document.documentElement.clientHeight) &&
+			elRection.right <=
+				(window.innerWidth || document.documentElement.clientWidth)
+	);
+	return (
+		elRection.top >= 0 &&
+		elRection.left >= 0 &&
+		elRection.bottom <=
+			(window.innerHeight || document.documentElement.clientHeight) &&
+		elRection.right <=
+			(window.innerWidth || document.documentElement.clientWidth)
+	);
+};
+
 const populateGallery = metaData => {
 	const gallery = document.querySelector('.gallery');
 	const boxOverlay = document.querySelector('.box-overlay');
@@ -83,109 +114,35 @@ const populateGallery = metaData => {
 		focusImage.classList.add('loaded');
 	};
 
-	const createElementSafe = index => {
-		const frame = document.createElement('div');
-		const image = new Image();
-		const overlay = document.createElement('div');
-		const button = document.createElement('button');
-
-		frame.classList.add('frame');
-		image.classList.add('gallery-image');
-
-		image.dataset.src = `./assets/images/gallery/skygallery-${index}.jpg`;
-		image.src = `./assets/images/SkyElectric-Lazy-Placeholder.jpg`;
-		overlay.classList.add('frame-overlay');
-		button.classList.add('view');
-		button.textContent = 'View';
-		overlay.appendChild(button);
-		frame.append(image, overlay);
-
-		return frame;
-	};
-
-	// const createFrameFromMetadata = data => {
+	// const createElementSafe = index => {
 	// 	const frame = document.createElement('div');
-	// 	frame.classList.add('frame');
-	// 	// console.log({ frame });
-
 	// 	const image = new Image();
-	// 	image.classList.add('gallery-image');
-	// 	image.src = `https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/${data.id}&w=500&h=700`;
-	// 	// console.log({ image });
-
 	// 	const overlay = document.createElement('div');
-	// 	overlay.classList.add('frame-overlay');
-	// 	// console.log({ overlay });
-
 	// 	const button = document.createElement('button');
+
+	// 	frame.classList.add('frame');
+	// 	image.classList.add('gallery-image');
+
+	// 	image.dataset.src = `./assets/images/gallery/skygallery-${index}.jpg`;
+	// 	image.src = `./assets/images/SkyElectric-Lazy-Placeholder.jpg`;
+	// 	overlay.classList.add('frame-overlay');
 	// 	button.classList.add('view');
 	// 	button.textContent = 'View';
-	// 	// console.log({ button });
-
 	// 	overlay.appendChild(button);
 	// 	frame.append(image, overlay);
 
-	// 	// galleryFragment.appendChild(frame);
 	// 	return frame;
-	// };
-
-	// const handleClick = e => {
-	// 	const imageSrc = e.currentTarget.querySelector('img').src;
-	// 	focusImage.src = imageSrc;
-	// 	boxOverlay.classList.add('open');
-	// };
-
-	// const closeOverlay = e => {
-	// 	// const regexp = /(^[\w\s?]box-overlay[\s?\w]+$)|(^close-button+$)/g;
-	// 	const regexp =
-	// 		/(^(?:\w*?\s+?)*?box-overlay(?:\s+?\w*?)*?)$|(^(?:\w*?\s+?)*?close-button(?:\s+?\w*?)*?)$/g;
-
-	// 	if (!e.target.classList.value.match(regexp)) {
-	// 		e.stopPropagation();
-	// 	} else {
-	// 		boxOverlay.classList.remove('open');
-	// 		focusImage.classList.remove('loaded');
-	// 		e.stopPropagation();
-	// 	}
 	// };
 
 	const galleryFragment = new DocumentFragment();
 
 	metaData.forEach((entry, idx) => {
-		// const frame = document.createElement('div');
-		// frame.classList.add('frame');
-		// // console.log({ frame });
-
-		// const image = new Image();
-		// image.classList.add('gallery-image');
-		// image.src = `https://skyelectric.ca/.netlify/images?url=https://lh3.googleusercontent.com/d/${entry.id}&w=500&h=700`;
-		// // console.log({ image });
-
-		// const overlay = document.createElement('div');
-		// overlay.classList.add('frame-overlay');
-		// // console.log({ overlay });
-
-		// const button = document.createElement('button');
-		// button.classList.add('view');
-		// button.textContent = 'View';
-		// // console.log({ button });
-
-		// overlay.appendChild(button);
-		// frame.append(image, overlay);
+		const frameNode = createFrameFromMetadata(entry, idx);
+		console.log(frameNode);
+		elementInViewport(frameNode);
 
 		galleryFragment.appendChild(createFrameFromMetadata(entry, idx));
 	});
-
-	// galleryFragment.appendChild(testImageDrive);
-
-	// console.log(galleryFragment);
-
-	// FIXME this is commented out while I test the new solution. If it works, this can go
-	// for (let i = 1; i <= galleryLength; i++) {
-	// 	galleryFragment.appendChild(createElementSafe(i));
-	// }
-
-	// console.log(galleryFragment.childNodes);
 
 	const observerOptions = {
 		root: null,
@@ -193,37 +150,40 @@ const populateGallery = metaData => {
 		threshold: 0.1,
 	};
 
-	// console.log(IntersectionObserverEntry);
-	// console.log({ IntersectionObserverEntry });
-
 	const lazyObserver = new IntersectionObserver(entries => {
 		console.log({ observerOptions });
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
-				// console.log(entry.target);
-				// console.log(entry.target.firstChild);
-				// console.log(entry.target.firstChild.src);
-				// console.log(entry.target.firstChild.dataset.src);
-				// console.log(entry.isIntersecting);
-				// console.log(entry.boundingClientRect);
 				entry.target.firstChild.src = entry.target.firstChild.dataset.src;
 				lazyObserver.unobserve(entry.target);
 			}
 		});
 	}, observerOptions);
 
-	galleryFragment.childNodes.forEach((node, idx) => {
-		if (idx > 3) {
-			lazyObserver.observe(node);
-		}
-	});
+	// galleryFragment.childNodes.forEach((node, idx) => {
+	// 	if (idx > 3) {
+	// 		lazyObserver.observe(node);
+	// 	}
+	// });
+	// galleryFragment.childNodes.forEach(frame =>
+	// 	frame.addEventListener('click', e => handleClick(e, focusImage, boxOverlay))
+	// );
+	console.log('gallery', gallery);
+
 	gallery.append(galleryFragment);
 
-	const frames = document.querySelectorAll('.frame');
+	gallery.childNodes.forEach(frame => {
+		console.log('node');
+		frame.addEventListener('click', e =>
+			handleClick(e, focusImage, boxOverlay)
+		);
+		elementInViewport(frame)
+			? (frame.firstChild.src = frame.firstChild.dataset.src)
+			: lazyObserver.observe(frame);
+	});
 
-	frames.forEach(frame =>
-		frame.addEventListener('click', e => handleClick(e, focusImage, boxOverlay))
-	);
+	// const frames = document.querySelectorAll('.frame');
+	// const frames = document.querySelectorAll('.frame');
 
 	boxOverlay.addEventListener(
 		'click',
